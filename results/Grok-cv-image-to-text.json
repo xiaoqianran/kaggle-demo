@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-image-to-text",
+  "task": "image-to-text",
+  "domain": "cv",
+  "model": "Salesforce/blip-image-captioning-base",
+  "caption": "a cat sitting on a couch with pillows",
+  "inference_s": 1.9129114151000977,
+  "elapsed_s": 38.251423597335815,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

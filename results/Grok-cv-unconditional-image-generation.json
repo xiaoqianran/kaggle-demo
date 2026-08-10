@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-unconditional-image-generation",
+  "task": "unconditional-image-generation",
+  "domain": "cv",
+  "model": "google/ddpm-cifar10-32",
+  "image_shape": [
+    128,
+    128,
+    3
+  ],
+  "inference_s": 1.921856164932251,
+  "elapsed_s": 47.20039081573486,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

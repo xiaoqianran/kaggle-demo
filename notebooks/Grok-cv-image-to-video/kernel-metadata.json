@@ -1,0 +1,20 @@
+{
+  "id": "shuhuaqqq/grok-cv-image-to-video",
+  "title": "Grok-cv-image-to-video",
+  "code_file": "Grok-cv-image-to-video.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "keywords": [
+    "gpu",
+    "beginner"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

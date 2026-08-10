@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-zero-shot-image-classification",
+  "task": "zero-shot-image-classification",
+  "domain": "cv",
+  "model": "openai/clip-vit-base-patch32",
+  "best_label": "a cat",
+  "best_score": 0.9891321063041687,
+  "ranked": [
+    [
+      "a cat",
+      0.9891321063041687
+    ],
+    [
+      "a dog",
+      0.007541810628026724
+    ],
+    [
+      "a person",
+      0.0029406219255179167
+    ],
+    [
+      "a car",
+      0.00031003859476186335
+    ],
+    [
+      "a landscape",
+      7.550467125838622e-05
+    ]
+  ],
+  "inference_s": 0.7925701141357422,
+  "elapsed_s": 29.913262844085693,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

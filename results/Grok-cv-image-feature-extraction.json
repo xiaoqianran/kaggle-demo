@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-image-feature-extraction",
+  "task": "image-feature-extraction",
+  "domain": "cv",
+  "model": "facebook/dinov2-small",
+  "feature_dim": 384,
+  "feature_norm": 27.069868087768555,
+  "feature_mean": 0.023166945204138756,
+  "inference_s": 0.6564300060272217,
+  "elapsed_s": 22.886024713516235,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

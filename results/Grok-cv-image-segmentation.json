@@ -1,0 +1,77 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-image-segmentation",
+  "task": "image-segmentation",
+  "domain": "cv",
+  "model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "num_segments": 11,
+  "segments": [
+    {
+      "label": "wall",
+      "score": 0.0,
+      "mask_area": 4201
+    },
+    {
+      "label": "floor",
+      "score": 0.0,
+      "mask_area": 36030
+    },
+    {
+      "label": "bed ",
+      "score": 0.0,
+      "mask_area": 33570
+    },
+    {
+      "label": "curtain",
+      "score": 0.0,
+      "mask_area": 763
+    },
+    {
+      "label": "sofa",
+      "score": 0.0,
+      "mask_area": 100
+    },
+    {
+      "label": "rug",
+      "score": 0.0,
+      "mask_area": 2182
+    },
+    {
+      "label": "cushion",
+      "score": 0.0,
+      "mask_area": 137743
+    },
+    {
+      "label": "pillow",
+      "score": 0.0,
+      "mask_area": 2386
+    },
+    {
+      "label": "towel",
+      "score": 0.0,
+      "mask_area": 9034
+    },
+    {
+      "label": "bag",
+      "score": 0.0,
+      "mask_area": 6700
+    },
+    {
+      "label": "blanket",
+      "score": 0.0,
+      "mask_area": 29435
+    }
+  ],
+  "inference_s": 1.8498132228851318,
+  "elapsed_s": 42.901172161102295,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

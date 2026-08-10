@@ -1,0 +1,21 @@
+[
+  "Grok-cv-depth-estimation",
+  "Grok-cv-image-classification",
+  "Grok-cv-object-detection",
+  "Grok-cv-image-segmentation",
+  "Grok-cv-text-to-image",
+  "Grok-cv-image-to-text",
+  "Grok-cv-image-to-image",
+  "Grok-cv-image-to-video",
+  "Grok-cv-unconditional-image-generation",
+  "Grok-cv-video-classification",
+  "Grok-cv-text-to-video",
+  "Grok-cv-zero-shot-image-classification",
+  "Grok-cv-mask-generation",
+  "Grok-cv-zero-shot-object-detection",
+  "Grok-cv-text-to-3d",
+  "Grok-cv-image-to-3d",
+  "Grok-cv-image-feature-extraction",
+  "Grok-cv-keypoint-detection",
+  "Grok-cv-video-to-video"
+]

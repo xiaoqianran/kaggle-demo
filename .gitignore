@@ -45,3 +45,11 @@ logs/
 
 # Notebook checkpoints
 .ipynb_checkpoints/
+
+# bulky kaggle pull dumps (keep top-level results/*.json)
+results/cv/
+*.ply
+*.mp4
+*.npy
+*.png
+!docs/**/*.png
