@@ -1,0 +1,16 @@
+{
+  "id": "zhengyingxiong/grok-gpu-t4x2-smoke",
+  "title": "Grok-gpu-t4x2-smoke",
+  "code_file": "Grok-gpu-t4x2-smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
