@@ -3,10 +3,12 @@
   "stage": "05-pg-ppo",
   "title": "Grok-rl-05-pg-ppo",
   "metrics": {
-    "reinforce_last50": 470.52,
-    "baseline_last50": 125.4,
-    "ppo_last50": 253.22,
-    "ppo_max_avg50": 253.22
+    "reinforce_last50": 306.66,
+    "baseline_last50": 459.92,
+    "reinforce_seed_std": 166.2428031524974,
+    "baseline_seed_std": 17.103364191487795,
+    "ppo_last50": 219.52,
+    "ppo_max_avg50": 267.24
   },
   "gpu": {
     "cuda": true,
@@ -16,9 +18,9 @@
       "Tesla T4"
     ]
   },
-  "elapsed_sec": 305.1136636734009,
-  "concept": "policy gradients; PPO clips probability ratio",
+  "elapsed_sec": 1175.9299838542938,
+  "concept": "policy gradients; average baseline reduces variance; PPO clips ratio",
   "new_capability": "stable on-policy deep RL (PPO)",
   "compare_to_previous": "Stage04 Q-learning; Stage05 direct policy optimization",
-  "fix_note": "episode-based PPO with multi-epoch clip updates"
+  "fix_note": "classic EMA return baseline + multi-seed; episode PPO"
 }

@@ -38,7 +38,7 @@ def main():
     if dqn is None: fails.append("04 missing dqn")
     else:
         weak = m.get("frozen_target_last50_mean", m.get("no_replay_last50_mean", m.get("no_target_last50_mean", -1e9)))
-        if dqn < 120: fails.append(f"04 dqn weak {dqn}")
+        if dqn < 180: fails.append(f"04 dqn weak {dqn}")
         if dqn <= weak + 40: fails.append(f"04 dqn not>weak {dqn} vs {weak}")
 
     # 05
@@ -46,7 +46,9 @@ def main():
     m = d["metrics"]
     ppo = m.get("ppo_last50", m.get("ppo_last40", m.get("ppo_last30", 0)))
     rf = m.get("reinforce_last50", m.get("reinforce_last40", m.get("reinforce_last30", 0)))
-    if ppo < 150: fails.append(f"05 ppo weak {ppo}")
+    if ppo < 180: fails.append(f"05 ppo weak {ppo}")
+    bl = m.get("baseline_last50", m.get("baseline_last40", 0))
+    if bl and bl < 150: fails.append(f"05 baseline weak {bl}")
     if ppo + 50 < min(rf, 300) and ppo < rf - 80: fails.append(f"05 ppo<<rf {ppo} vs {rf}")
 
     # 06

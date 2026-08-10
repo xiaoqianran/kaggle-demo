@@ -3,10 +3,10 @@
   "stage": "04-dqn",
   "title": "Grok-rl-04-dqn",
   "metrics": {
-    "dqn_last50_mean": 144.5,
-    "dqn_best_seed_last50": 180.34,
-    "frozen_target_last50_mean": 10.059999999999999,
-    "n_seeds": 2,
+    "dqn_last50_mean": 287.65333333333336,
+    "dqn_best_seed_last50": 398.16,
+    "frozen_target_last50_mean": 9.360000000000001,
+    "n_seeds": 3,
     "episodes": 350
   },
   "gpu": {
@@ -18,7 +18,7 @@
     ],
     "device": "cuda:0"
   },
-  "elapsed_sec": 269.2279477119446,
+  "elapsed_sec": 697.569399356842,
   "concept": "replay + target network stabilize off-policy Q learning",
   "new_capability": "deep value-based RL on continuous states",
   "compare_to_previous": "Stage03 tabular; Stage04 neural Q",
