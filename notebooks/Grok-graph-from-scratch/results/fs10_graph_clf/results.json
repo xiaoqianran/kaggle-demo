@@ -1,0 +1,16 @@
+{
+  "task": "graph_classification",
+  "concept": "Node MP \u2192 readout (mean) \u2192 graph label; density regimes",
+  "metrics": {
+    "train_acc": 1.0,
+    "test_acc": 0.8333333333333334,
+    "best_test_acc": 0.8333333333333334,
+    "device": "cuda"
+  },
+  "test_acc": 0.8333333333333334,
+  "vs_prev": "\u8282\u70b9\u7ea7 \u2192 \u6574\u56fe\u7ea7\u4efb\u52a1",
+  "you_should_feel": "\u5206\u5b50/\u793e\u4ea4\u56fe\u5206\u7c7b\u4f9d\u8d56 readout \u805a\u5408",
+  "ok": true,
+  "stage": "fs10_graph_clf",
+  "saved_at": "2026-08-10T21:39:15Z"
+}

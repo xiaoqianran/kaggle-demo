@@ -1,0 +1,16 @@
+{
+  "task": "residual_gcn",
+  "concept": "Skip connections let deeper MP keep identity features",
+  "metrics": {
+    "test_acc": 1.0,
+    "val_acc": 1.0,
+    "best_val": 1.0,
+    "device": "cuda"
+  },
+  "test_acc": 1.0,
+  "vs_prev": "GCN 1.000 \u2192 ResGCN 1.000",
+  "you_should_feel": "\u6b8b\u5dee\u662f\u6cbb\u8fc7\u5e73\u6ed1/\u6df1\u5c42\u8bad\u7ec3\u7684\u5b9e\u7528\u89e3\u836f\u4e4b\u4e00",
+  "ok": true,
+  "stage": "fs15_residual_gcn",
+  "saved_at": "2026-08-10T21:39:21Z"
+}

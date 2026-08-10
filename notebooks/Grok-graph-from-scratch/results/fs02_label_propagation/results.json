@@ -1,0 +1,15 @@
+{
+  "task": "label_propagation",
+  "concept": "Diffuse train labels along edges (homophily prior)",
+  "metrics": {
+    "train_acc": 1.0,
+    "val_acc": 1.0,
+    "test_acc": 1.0
+  },
+  "test_acc": 1.0,
+  "vs_prev": "feat 0.525 \u2192 LP 1.000",
+  "you_should_feel": "\u8fb9=\u6807\u7b7e\u9ad8\u901f\u516c\u8def\uff1b\u540c\u8d28\u56fe\u4e0a LP \u6781\u5f3a\u4e14\u65e0\u9700\u7279\u5f81",
+  "ok": true,
+  "stage": "fs02_label_propagation",
+  "saved_at": "2026-08-10T21:38:49Z"
+}

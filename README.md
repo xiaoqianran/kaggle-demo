@@ -11,6 +11,7 @@ Notebook：`Grok-{领域}-{任务}`
 |------|------|------|--------|
 | `Grok-ml-t4x2-smoke` | ml | t4x2-smoke | [qiaojiajin/grok-ml-t4x2-smoke](https://www.kaggle.com/code/qiaojiajin/grok-ml-t4x2-smoke) |
 | `Grok-tabular-from-scratch` | tabular | from-scratch FS00–21 | [yunianan/grok-tabular-from-scratch](https://www.kaggle.com/code/yunianan/grok-tabular-from-scratch) ✅ |
+| `Grok-graph-from-scratch` | graph | from-scratch FS00–16 | [yunianan/grok-graph-from-scratch](https://www.kaggle.com/code/yunianan/grok-graph-from-scratch) ✅ |
 | `Grok-ml-gpu-smoke` | ml | gpu-smoke | [zhengyingxiong/grok-ml-gpu-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-ml-gpu-smoke) |
 | `Grok-gpu-t4x2-smoke` | gpu | t4x2-smoke | [zhengyingxiong/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-gpu-t4x2-smoke) |
 | `Grok-ML-gpu-smoke` | ML | gpu-smoke | [yunianan/grok-ml-gpu-smoke](https://www.kaggle.com/code/yunianan/grok-ml-gpu-smoke) ✅ |

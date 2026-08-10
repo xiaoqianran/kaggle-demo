@@ -1,0 +1,14 @@
+{
+  "task": "link_prediction",
+  "concept": "Predict missing edges from node embeddings (dot product decoder)",
+  "metrics": {
+    "auc": 0.8575607825694495,
+    "degree_baseline_auc": 0.5688578861990699
+  },
+  "auc": 0.8575607825694495,
+  "vs_prev": "\u4ece\u8282\u70b9\u5206\u7c7b \u2192 \u8fb9\u7ea7\u4efb\u52a1",
+  "you_should_feel": "\u94fe\u63a5\u9884\u6d4b\u662f\u63a8\u8350/\u77e5\u8bc6\u56fe\u8c31\u6838\u5fc3\u4efb\u52a1",
+  "ok": true,
+  "stage": "fs09_link_pred",
+  "saved_at": "2026-08-10T21:39:03Z"
+}

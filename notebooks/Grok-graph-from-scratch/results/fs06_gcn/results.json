@@ -1,0 +1,17 @@
+{
+  "task": "gcn",
+  "concept": "\u00c2 = D^{-1/2}(A+I)D^{-1/2}; stacked \u00c2 H W with ReLU",
+  "metrics": {
+    "test_acc": 1.0,
+    "val_acc": 1.0,
+    "best_val": 1.0,
+    "device": "cuda",
+    "final_train_acc": 1.0
+  },
+  "test_acc": 1.0,
+  "vs_prev": "mean-agg 0.975 \u2192 GCN 1.000",
+  "you_should_feel": "\u53ef\u5b66\u4e60\u7684\u8c31\u8fd1\u4f3c\u6d88\u606f\u4f20\u9012\uff1bGNN \u7ecf\u5178\u57fa\u77f3",
+  "ok": true,
+  "stage": "fs06_gcn",
+  "saved_at": "2026-08-10T21:38:58Z"
+}

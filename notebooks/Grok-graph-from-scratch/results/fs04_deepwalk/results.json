@@ -1,0 +1,15 @@
+{
+  "task": "deepwalk",
+  "concept": "Random walks \u2192 co-occurrence \u2192 skip-gram/PPMI embeddings",
+  "metrics": {
+    "test_acc": 1.0,
+    "val_acc": 1.0,
+    "emb_dim": 16
+  },
+  "test_acc": 1.0,
+  "vs_prev": "spectral 1.000 \u2192 DW 1.000",
+  "you_should_feel": "\u6e38\u8d70\u628a\u9ad8\u9636\u90bb\u8fd1\u53d8\u6210\u8bcd\u5411\u91cf\uff1b\u65e0\u7279\u5f81\u4e5f\u80fd\u5d4c\u5165\u8282\u70b9",
+  "ok": true,
+  "stage": "fs04_deepwalk",
+  "saved_at": "2026-08-10T21:38:50Z"
+}

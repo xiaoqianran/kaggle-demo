@@ -1,0 +1,15 @@
+{
+  "task": "graph_transformer",
+  "concept": "Global attention + structural bias (modern GPS/Transformer-GNN spirit)",
+  "metrics": {
+    "test_acc": 0.95,
+    "val_acc": 0.9875,
+    "device": "cuda"
+  },
+  "test_acc": 0.95,
+  "vs_prev": "GIN 1.000 \u2192 GT 0.950",
+  "you_should_feel": "\u73b0\u4ee3\u56fe\u6a21\u578b\uff1aTransformer \u5168\u5c40\u6ce8\u610f\u529b + \u7ed3\u6784\u504f\u7f6e",
+  "ok": true,
+  "stage": "fs12_graph_transformer",
+  "saved_at": "2026-08-10T21:39:17Z"
+}

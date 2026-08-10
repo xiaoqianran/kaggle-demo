@@ -1,0 +1,312 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "stage_count_17",
+      "ok": true,
+      "detail": "17"
+    },
+    {
+      "name": "stage_order_exact",
+      "ok": true,
+      "detail": "['fs00_protocol', 'fs01_features_only', 'fs02_label_propagation', 'fs03_spectral', 'fs04_deepwalk', 'fs05_mean_agg', 'fs06_gcn', 'fs07_gat', 'fs08_gin', 'fs09_link_pred', 'fs10_graph_clf', 'fs11_hetero', 'fs12_graph_transformer', 'fs13_contrastive', 'fs14_over_smoothing', 'fs15_residual_gcn', 'fs16_leaderboard']"
+    },
+    {
+      "name": "fs00_protocol_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs00_protocol/results.json"
+    },
+    {
+      "name": "fs00_protocol_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs00_protocol_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs01_features_only_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs01_features_only/results.json"
+    },
+    {
+      "name": "fs01_features_only_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs01_features_only_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs02_label_propagation_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs02_label_propagation/results.json"
+    },
+    {
+      "name": "fs02_label_propagation_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs02_label_propagation_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs03_spectral_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs03_spectral/results.json"
+    },
+    {
+      "name": "fs03_spectral_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs03_spectral_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs04_deepwalk_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs04_deepwalk/results.json"
+    },
+    {
+      "name": "fs04_deepwalk_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs04_deepwalk_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs05_mean_agg_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs05_mean_agg/results.json"
+    },
+    {
+      "name": "fs05_mean_agg_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs05_mean_agg_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs06_gcn_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs06_gcn/results.json"
+    },
+    {
+      "name": "fs06_gcn_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs06_gcn_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs07_gat_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs07_gat/results.json"
+    },
+    {
+      "name": "fs07_gat_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs07_gat_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs08_gin_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs08_gin/results.json"
+    },
+    {
+      "name": "fs08_gin_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs08_gin_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs09_link_pred_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs09_link_pred/results.json"
+    },
+    {
+      "name": "fs09_link_pred_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs09_link_pred_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs10_graph_clf_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs10_graph_clf/results.json"
+    },
+    {
+      "name": "fs10_graph_clf_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs10_graph_clf_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs11_hetero_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs11_hetero/results.json"
+    },
+    {
+      "name": "fs11_hetero_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs11_hetero_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs12_graph_transformer_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs12_graph_transformer/results.json"
+    },
+    {
+      "name": "fs12_graph_transformer_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs12_graph_transformer_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs13_contrastive_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs13_contrastive/results.json"
+    },
+    {
+      "name": "fs13_contrastive_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs13_contrastive_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs14_over_smoothing_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs14_over_smoothing/results.json"
+    },
+    {
+      "name": "fs14_over_smoothing_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs14_over_smoothing_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs15_residual_gcn_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs15_residual_gcn/results.json"
+    },
+    {
+      "name": "fs15_residual_gcn_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs15_residual_gcn_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "fs16_leaderboard_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs16_leaderboard/results.json"
+    },
+    {
+      "name": "fs16_leaderboard_ok",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs16_leaderboard_png",
+      "ok": true,
+      "detail": "png"
+    },
+    {
+      "name": "feat_not_trivial",
+      "ok": true,
+      "detail": "0.525"
+    },
+    {
+      "name": "lp_beats_feat",
+      "ok": true,
+      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.975, 'GCN': 1.0, 'GAT': 1.0, 'GIN': 1.0, 'GraphTR': 0.95, 'SSL': 1.0, 'ResGCN': 1.0}"
+    },
+    {
+      "name": "gcn_beats_feat",
+      "ok": true,
+      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.975, 'GCN': 1.0, 'GAT': 1.0, 'GIN': 1.0, 'GraphTR': 0.95, 'SSL': 1.0, 'ResGCN': 1.0}"
+    },
+    {
+      "name": "best_node_ge_0.80",
+      "ok": true,
+      "detail": "1.0"
+    },
+    {
+      "name": "link_auc_gt_0.7",
+      "ok": true,
+      "detail": "0.8575607825694495"
+    },
+    {
+      "name": "graph_clf_gt_0.7",
+      "ok": true,
+      "detail": "0.8333333333333334"
+    },
+    {
+      "name": "oversmooth_collapses",
+      "ok": true,
+      "detail": "0.02367693067825002"
+    },
+    {
+      "name": "homo_gt_0.5",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "n_pass": 61,
+  "n_total": 61
+}
