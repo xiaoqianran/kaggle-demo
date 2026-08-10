@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "stage": "10-frontier-dt",
+  "title": "Grok-rl-10-frontier-dt",
+  "metrics": {
+    "loss_last": 7.285307670827023e-05,
+    "return_rtg_low": -93.625,
+    "return_rtg_high": -40.0
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 11.765001058578491,
+  "concept": "RL as conditional sequence modeling with return-to-go tokens",
+  "new_capability": "frontier-style policy that can be steered by desired return without retraining",
+  "compare_to_previous": "Stage09 BC is supervised single-step; Stage10 models trajectory context + RTG conditioning"
+}

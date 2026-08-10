@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "stage": "07-continuous-sac",
+  "title": "Grok-rl-07-continuous-sac",
+  "metrics": {
+    "random_eval": -1225.1142578125,
+    "sac_eval": -152.15451049804688,
+    "last10_train_mean": -186.4495086669922
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 254.8323769569397,
+  "concept": "max-entropy continuous actor-critic for torque control",
+  "new_capability": "stable continuous action RL suitable for robot joints",
+  "compare_to_previous": "Stage06 PD needed model/reference; Stage07 learns torque policy from reward only"
+}

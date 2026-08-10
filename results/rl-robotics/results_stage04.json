@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "stage": "04-dqn",
+  "title": "Grok-rl-04-dqn",
+  "metrics": {
+    "dqn_last50_mean": 51.96,
+    "dqn_last50_max": 291.0,
+    "no_target_last50_mean": 221.62,
+    "solved_threshold_hint": 200.0
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "device": "cuda:0"
+  },
+  "elapsed_sec": 126.87081742286682,
+  "concept": "neural Q with replay+target stabilizes off-policy learning in continuous state",
+  "new_capability": "scale beyond tabular grids to continuous physics (CartPole)",
+  "compare_to_previous": "Stage03 needed discrete finite states; Stage04 approximates Q with DNN"
+}

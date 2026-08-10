@@ -154,9 +154,26 @@ Repo: https://github.com/xiaoqianran/kaggle-demo
 
 ## RL + Robotics From Scratch
 
-完整实验地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)  
-进度：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
+完整 **From Scratch 实验地图**（强化学习 × 机器人）：
 
+- 地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)
+- 进度（10/10 DONE）：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
+- 结果快照：[`results/rl-robotics/`](results/rl-robotics/)
+
+| Stage | Notebook | Kaggle |
+|------:|----------|--------|
+| 01 | `Grok-rl-01-bandits` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-01-bandits) |
+| 02 | `Grok-rl-02-mdp-dp` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-02-mdp-dp) |
+| 03 | `Grok-rl-03-mc-td-qlearning` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-03-mc-td-qlearning) |
+| 04 | `Grok-rl-04-dqn` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-04-dqn) |
+| 05 | `Grok-rl-05-pg-ppo` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-05-pg-ppo) |
+| 06 | `Grok-robotics-06-classical` | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-06-classical) |
+| 07 | `Grok-rl-07-continuous-sac` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-07-continuous-sac) |
+| 08 | `Grok-robotics-08-mbrl-mpc` | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-08-mbrl-mpc) |
+| 09 | `Grok-rl-09-imitation-offline` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-09-imitation-offline) |
+| 10 | `Grok-rl-10-frontier-dt` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-10-frontier-dt) |
+
+全部在 **Kaggle T4×2** 后台跑通；本地只做 push/轮询。
 全部在 **Kaggle T4×2** 执行。Notebook 命名 `Grok-rl-*` / `Grok-robotics-*`。
 ## NLP From Scratch
 
