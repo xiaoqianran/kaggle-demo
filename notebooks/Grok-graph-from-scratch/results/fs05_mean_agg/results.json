@@ -2,13 +2,13 @@
   "task": "mean_aggregation",
   "concept": "h_v = [x_v || mean_{u\u2208N(v)} x_u] \u2014 message passing prototype",
   "metrics": {
-    "test_acc": 0.975,
-    "val_acc": 0.9875
+    "test_acc": 0.8833333333333333,
+    "val_acc": 0.9125
   },
-  "test_acc": 0.975,
-  "vs_prev": "DW 1.000 \u2192 mean-agg 0.975",
+  "test_acc": 0.8833333333333333,
+  "vs_prev": "DW 1.000 \u2192 mean-agg 0.883",
   "you_should_feel": "\u90bb\u5c45\u5e73\u5747=\u6700\u7b80\u6d88\u606f\u4f20\u9012\uff1bGNN \u4ece\u8fd9\u91cc\u5f00\u59cb",
   "ok": true,
   "stage": "fs05_mean_agg",
-  "saved_at": "2026-08-10T21:38:50Z"
+  "saved_at": "2026-08-10T21:42:34Z"
 }

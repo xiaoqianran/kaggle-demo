@@ -3,7 +3,7 @@
 > 类似 **LLM from scratch**：一条可跑通的实验链。  
 > 每一步：**概念 → 最小实现 → 真实输入 → 可观察输出 → 与上一步对比**。
 
-**执行状态：FS00–FS16 已全部验收通过**（Kaggle T4×2 · `PROGRESS.md` · `results/ACCEPTANCE.json`）。
+**执行状态：FS00–FS16 已全部验收通过**（Kaggle T4×2 · 含链接预测无泄漏协议 · `PROGRESS.md` · `results/ACCEPTANCE.json`）。
 
 ---
 

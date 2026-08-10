@@ -3,14 +3,14 @@
   "concept": "(1+\u03b5)h + \u03a3 neighbors; MLP \u2192 WL-test expressive power",
   "metrics": {
     "test_acc": 1.0,
-    "val_acc": 1.0,
-    "best_val": 1.0,
+    "val_acc": 0.9875,
+    "best_val": 0.987500011920929,
     "device": "cuda"
   },
   "test_acc": 1.0,
-  "vs_prev": "GAT 1.000 \u2192 GIN 1.000",
+  "vs_prev": "GAT 0.892 \u2192 GIN 1.000",
   "you_should_feel": "\u6c42\u548c+MLP \u903c\u8fd1\u5355\u5c04\u805a\u5408\uff1b\u8868\u8fbe\u529b\u7406\u8bba\u5173\u952e\u7a81\u7834",
   "ok": true,
   "stage": "fs08_gin",
-  "saved_at": "2026-08-10T21:39:02Z"
+  "saved_at": "2026-08-10T21:42:46Z"
 }

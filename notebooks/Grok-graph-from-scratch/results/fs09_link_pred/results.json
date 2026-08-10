@@ -1,14 +1,17 @@
 {
   "task": "link_prediction",
-  "concept": "Predict missing edges from node embeddings (dot product decoder)",
+  "concept": "Predict missing edges; MP graph excludes test positives (no leakage)",
   "metrics": {
-    "auc": 0.8575607825694495,
-    "degree_baseline_auc": 0.5688578861990699
+    "auc": 0.7163074152873864,
+    "degree_baseline_auc": 0.4934493174596326,
+    "n_pos_train": 3236,
+    "n_pos_test": 1387,
+    "test_edges_removed_from_A": true
   },
-  "auc": 0.8575607825694495,
-  "vs_prev": "\u4ece\u8282\u70b9\u5206\u7c7b \u2192 \u8fb9\u7ea7\u4efb\u52a1",
-  "you_should_feel": "\u94fe\u63a5\u9884\u6d4b\u662f\u63a8\u8350/\u77e5\u8bc6\u56fe\u8c31\u6838\u5fc3\u4efb\u52a1",
+  "auc": 0.7163074152873864,
+  "vs_prev": "\u4ece\u8282\u70b9\u5206\u7c7b \u2192 \u8fb9\u7ea7\u4efb\u52a1\uff08\u65e0\u6d4b\u8bd5\u8fb9\u6cc4\u6f0f\uff09",
+  "you_should_feel": "\u94fe\u63a5\u9884\u6d4b\u5fc5\u987b\u85cf\u4f4f\u6d4b\u8bd5\u8fb9\uff0c\u5426\u5219\u7b49\u4e8e\u5f00\u5377\u8003\u8bd5",
   "ok": true,
   "stage": "fs09_link_pred",
-  "saved_at": "2026-08-10T21:39:03Z"
+  "saved_at": "2026-08-10T21:42:47Z"
 }

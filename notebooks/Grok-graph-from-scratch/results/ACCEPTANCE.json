@@ -274,12 +274,12 @@
     {
       "name": "lp_beats_feat",
       "ok": true,
-      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.975, 'GCN': 1.0, 'GAT': 1.0, 'GIN': 1.0, 'GraphTR': 0.95, 'SSL': 1.0, 'ResGCN': 1.0}"
+      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.8833333333333333, 'GCN': 1.0, 'GAT': 0.8916666666666667, 'GIN': 1.0, 'GraphTR': 0.8333333333333334, 'SSL': 1.0, 'ResGCN': 1.0}"
     },
     {
       "name": "gcn_beats_feat",
       "ok": true,
-      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.975, 'GCN': 1.0, 'GAT': 1.0, 'GIN': 1.0, 'GraphTR': 0.95, 'SSL': 1.0, 'ResGCN': 1.0}"
+      "detail": "{'feat': 0.525, 'LP': 1.0, 'spectral': 1.0, 'DeepWalk': 1.0, 'meanAgg': 0.8833333333333333, 'GCN': 1.0, 'GAT': 0.8916666666666667, 'GIN': 1.0, 'GraphTR': 0.8333333333333334, 'SSL': 1.0, 'ResGCN': 1.0}"
     },
     {
       "name": "best_node_ge_0.80",
@@ -287,9 +287,19 @@
       "detail": "1.0"
     },
     {
-      "name": "link_auc_gt_0.7",
+      "name": "link_auc_gt_0.65",
       "ok": true,
-      "detail": "0.8575607825694495"
+      "detail": "0.7163074152873864"
+    },
+    {
+      "name": "link_no_test_edge_leak",
+      "ok": true,
+      "detail": "{'auc': 0.7163074152873864, 'degree_baseline_auc': 0.4934493174596326, 'n_pos_train': 3236, 'n_pos_test': 1387, 'test_edges_removed_from_A': True}"
+    },
+    {
+      "name": "link_beats_or_near_degree",
+      "ok": true,
+      "detail": "{'auc': 0.7163074152873864, 'degree_baseline_auc': 0.4934493174596326, 'n_pos_train': 3236, 'n_pos_test': 1387, 'test_edges_removed_from_A': True}"
     },
     {
       "name": "graph_clf_gt_0.7",
@@ -299,14 +309,19 @@
     {
       "name": "oversmooth_collapses",
       "ok": true,
-      "detail": "0.02367693067825002"
+      "detail": "0.008455120329120635"
     },
     {
       "name": "homo_gt_0.5",
       "ok": true,
       "detail": ""
+    },
+    {
+      "name": "stage_count_unique",
+      "ok": true,
+      "detail": "17"
     }
   ],
-  "n_pass": 61,
-  "n_total": 61
+  "n_pass": 64,
+  "n_total": 64
 }

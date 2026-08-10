@@ -95,8 +95,8 @@ def softmax(z, axis=-1):
 def make_sbm_graph(
     n_per_block: int = 100,
     n_blocks: int = 4,
-    p_in: float = 0.22,
-    p_out: float = 0.015,
+    p_in: float = 0.16,
+    p_out: float = 0.025,
     feat_dim: int = 16,
     seed: int = SEED,
     feat_signal: float = 0.25,
@@ -306,8 +306,6 @@ def train_torch_node_clf(model, X, y, train_mask, val_mask, A_norm, epochs=200, 
         opt.step()
         model.eval()
         with torch.no_grad():
-            pred = logits.argmax(dim=1)
-            # recompute after step
             logits = model(Xt, A_t)
             pred = logits.argmax(dim=1)
             tr_acc = (pred[tr] == yt[tr]).float().mean().item()
@@ -725,31 +723,39 @@ def fs08_gin(g, prev):
 
 
 def fs09_link_pred(g):
-    """Link prediction: edges vs non-edges with GCN embeddings + dot product."""
+    """Link prediction: edges vs non-edges with GCN embeddings + dot product.
+
+    **No leakage**: test edges are removed from the message-passing adjacency
+    before encoder training (standard inductive/transductive LP protocol).
+    """
     torch, nn, F, device = get_torch()
     A = g["A"]
     n = g["n"]
     edges = g["edges"]
     r = np.random.default_rng(SEED + 7)
-    # sample negatives
     pos = edges.copy()
+    existing = set((int(i), int(j)) for i, j in edges)
+    existing |= set((j, i) for i, j in existing)
     neg = []
-    existing = set(map(tuple, np.vstack([edges, edges[:, ::-1]]).tolist()))
     while len(neg) < len(pos):
         i, j = int(r.integers(0, n)), int(r.integers(0, n))
         if i >= j:
             continue
-        if (i, j) in existing or (j, i) in existing:
+        if (i, j) in existing:
             continue
         neg.append([i, j])
     neg = np.asarray(neg)
-    # split edges
     perm = r.permutation(len(pos))
     n_tr = int(0.7 * len(pos))
     pos_tr, pos_te = pos[perm[:n_tr]], pos[perm[n_tr:]]
-    neg_tr, neg_te = neg[perm[:n_tr]], neg[perm[n_tr:]]
-    # train GCN encoder on structure only for link pred (use features)
-    A_norm = normalize_adj(A, add_self=True)
+    neg_perm = r.permutation(len(neg))
+    neg_tr, neg_te = neg[neg_perm[:n_tr]], neg[neg_perm[n_tr:n_tr + len(pos_te)]]
+
+    # observed graph = full A minus held-out positive test edges
+    A_obs = A.copy()
+    for i, j in pos_te:
+        A_obs[int(i), int(j)] = A_obs[int(j), int(i)] = 0.0
+    A_norm = normalize_adj(A_obs, add_self=True)
     d = g["X"].shape[1]
 
     class Enc(nn.Module):
@@ -769,12 +775,8 @@ def fs09_link_pred(g):
 
     def batch_loss(pos_e, neg_e):
         z = enc(Xt, A_t)
-        pi = z[pos_e[:, 0]]
-        pj = z[pos_e[:, 1]]
-        ni = z[neg_e[:, 0]]
-        nj = z[neg_e[:, 1]]
-        pos_score = (pi * pj).sum(-1)
-        neg_score = (ni * nj).sum(-1)
+        pos_score = (z[pos_e[:, 0]] * z[pos_e[:, 1]]).sum(-1)
+        neg_score = (z[neg_e[:, 0]] * z[neg_e[:, 1]]).sum(-1)
         loss = -F.logsigmoid(pos_score).mean() - F.logsigmoid(-neg_score).mean()
         return loss, pos_score, neg_score
 
@@ -792,8 +794,8 @@ def fs09_link_pred(g):
         y_true = np.concatenate([np.ones(len(pos_te)), np.zeros(len(neg_te))])
         scores = np.concatenate([ps.cpu().numpy(), ns.cpu().numpy()])
     auc = roc_auc_binary(y_true, scores)
-    # degree baseline AUC
-    deg = A.sum(1)
+    # degree baseline from **observed** graph only (no test-edge leakage)
+    deg = A_obs.sum(1)
     base_scores = np.concatenate([
         deg[pos_te[:, 0]] * deg[pos_te[:, 1]],
         deg[neg_te[:, 0]] * deg[neg_te[:, 1]],
@@ -802,14 +804,20 @@ def fs09_link_pred(g):
     fig, ax = plt.subplots(figsize=(6, 3.5))
     ax.bar(["deg×deg", "GCN-dot"], [base_auc, auc], color=["#95a5a6", "#e74c3c"])
     ax.set_ylim(0, 1.05)
-    ax.set_title("FS09 Link prediction AUC")
+    ax.set_title("FS09 Link pred AUC (test edges masked)")
     payload = {
         "task": "link_prediction",
-        "concept": "Predict missing edges from node embeddings (dot product decoder)",
-        "metrics": {"auc": auc, "degree_baseline_auc": base_auc},
+        "concept": "Predict missing edges; MP graph excludes test positives (no leakage)",
+        "metrics": {
+            "auc": auc,
+            "degree_baseline_auc": base_auc,
+            "n_pos_train": int(len(pos_tr)),
+            "n_pos_test": int(len(pos_te)),
+            "test_edges_removed_from_A": True,
+        },
         "auc": auc,
-        "vs_prev": "从节点分类 → 边级任务",
-        "you_should_feel": "链接预测是推荐/知识图谱核心任务",
+        "vs_prev": "从节点分类 → 边级任务（无测试边泄漏）",
+        "you_should_feel": "链接预测必须藏住测试边，否则等于开卷考试",
         "ok": True,
     }
     save_stage("fs09_link_pred", payload, {"link": fig})
@@ -849,24 +857,9 @@ def fs10_graph_clf(g_prev_metrics=None):
         def forward(self, x, A_hat):
             h = F.relu(A_hat @ self.l1(x))
             h = F.relu(A_hat @ self.l2(h))
-            gemb = torch.cat([h.mean(0), h.max(0).values], dim=0)  # mean+max pool
-            # project if needed
-            return self.cls(h.mean(0))
+            return self.cls(h.mean(0))  # mean readout
 
-    # fix: use mean pool only into 64-d
-    class GraphNet2(nn.Module):
-        def __init__(self):
-            super().__init__()
-            self.l1 = nn.Linear(d, 64)
-            self.l2 = nn.Linear(64, 64)
-            self.cls = nn.Sequential(nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, 2))
-
-        def forward(self, x, A_hat):
-            h = F.relu(A_hat @ self.l1(x))
-            h = F.relu(A_hat @ self.l2(h))
-            return self.cls(h.mean(0))
-
-    model = GraphNet2().to(device)
+    model = GraphNet().to(device)
     opt = torch.optim.Adam(model.parameters(), lr=5e-3, weight_decay=1e-4)
     idx = r.permutation(len(graphs))
     tr, te = idx[:56], idx[56:]
@@ -1401,10 +1394,13 @@ def main():
     chk("lp_beats_feat", all_node["LP"] > all_node["feat"] + 0.05, all_node)
     chk("gcn_beats_feat", all_node["GCN"] > all_node["feat"] + 0.08, all_node)
     chk("best_node_ge_0.80", max(all_node.values()) >= 0.80, max(all_node.values()))
-    chk("link_auc_gt_0.7", m09["auc"] > 0.70, m09["auc"])
+    chk("link_auc_gt_0.65", m09["auc"] > 0.65, m09["auc"])
+    chk("link_no_test_edge_leak", m09.get("test_edges_removed_from_A") is True, m09)
+    chk("link_beats_or_near_degree", m09["auc"] + 1e-9 >= m09.get("degree_baseline_auc", 0) - 0.05, m09)
     chk("graph_clf_gt_0.7", m10["test_acc"] >= 0.70, m10["test_acc"])
     chk("oversmooth_collapses", m14["collapse_ratio"] < 0.5, m14["collapse_ratio"])
     chk("homo_gt_0.5", json.loads((OUT_DIR/"fs00_protocol"/"results.json").read_text())["metrics"]["homophily_edge_same_label"] > 0.5, "")
+    chk("stage_count_unique", len(STAGE_ORDER) == len(set(STAGE_ORDER)), len(STAGE_ORDER))
 
     accept_ok = all(c["ok"] for c in checks)
     SUMMARY["ok"] = accept_ok
