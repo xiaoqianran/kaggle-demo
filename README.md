@@ -13,6 +13,7 @@ Notebook：`Grok-{领域}-{任务}`
 | `Grok-ml-gpu-smoke` | ml | gpu-smoke | [zhengyingxiong/grok-ml-gpu-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-ml-gpu-smoke) |
 | `Grok-gpu-t4x2-smoke` | gpu | t4x2-smoke | [zhengyingxiong/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-gpu-t4x2-smoke) |
 | `Grok-ML-gpu-smoke` | ML | gpu-smoke | [yunianan/grok-ml-gpu-smoke](https://www.kaggle.com/code/yunianan/grok-ml-gpu-smoke) ✅ |
+| `Grok-GPU-T4x2-Smoke` | GPU | T4x2-Smoke | [xiaosuhuaer/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/xiaosuhuaer/grok-gpu-t4x2-smoke) ✅ |
 
 目录：`notebooks/<Name>/`，内含：
 
@@ -41,6 +42,7 @@ kaggle quota
 ## Skills / MCP
 
 - CLI skill：[`skills/SKILL.md`](skills/SKILL.md) + [`skills/references/`](skills/references/)
+- Official CLI skill mirror：[`skills/kaggle-cli/`](skills/kaggle-cli/)
 - 镜像：[`docs/skills/`](docs/skills/)（write-kaggle-benchmarks / SAE / hackathon-judging）
 - MCP：[`.grok/config.toml`](.grok/config.toml) → `https://www.kaggle.com/mcp`（`${KAGGLE_API_TOKEN}`）
 
@@ -51,6 +53,9 @@ source scripts/kaggle-env.sh
 
 # Python runner：推送 + 轮询 + 失败自动重试/轻量修复 + 下载产物
 python scripts/kaggle_run.py notebooks/Grok-ml-t4x2-smoke --accelerator NvidiaTeslaT4
+
+# 本仓库新增：push_and_wait.py（解析 KernelWorkerStatus.*）
+python scripts/push_and_wait.py -p notebooks/Grok-GPU-T4x2-Smoke --accelerator NvidiaTeslaT4
 
 # Shell：auto-fix 循环
 ./scripts/auto-fix-run.sh notebooks/Grok-gpu-t4x2-smoke
@@ -64,7 +69,7 @@ python scripts/kaggle_run.py notebooks/Grok-ml-t4x2-smoke --accelerator NvidiaTe
 成功标志：
 
 - `kaggle kernels status …` → `KernelWorkerStatus.COMPLETE`
-- 产物含 `results*.json` / `SUCCESS`
+- 产物含 `results*.json` / `SUCCESS` / `SMOKE PASS`
 - `device_count == 2` 且设备名为 Tesla T4
 
 已验证结果快照：
@@ -72,21 +77,22 @@ python scripts/kaggle_run.py notebooks/Grok-ml-t4x2-smoke --accelerator NvidiaTe
 - `results/Grok-ml-t4x2-smoke.json`
 - `results/Grok-gpu-t4x2-smoke.json`（`dual_gpu=true`, 2×Tesla T4）
 - `results/Grok-ML-gpu-smoke-yunianan.json`（`device_count=2`, DataParallel, `SMOKE_OK`）
+- `results/Grok-GPU-T4x2-Smoke.json`（`device_count=2`, DataParallel, `SMOKE PASS`，账号 `xiaosuhuaer`）
 
 ## 常用命令
 
 ```bash
 kaggle quota
-kaggle kernels status yunianan/grok-ml-gpu-smoke
-kaggle kernels logs yunianan/grok-ml-gpu-smoke
-kaggle kernels output yunianan/grok-ml-gpu-smoke -p artifacts/out -o
+kaggle kernels status xiaosuhuaer/grok-gpu-t4x2-smoke
+kaggle kernels logs xiaosuhuaer/grok-gpu-t4x2-smoke
+kaggle kernels output xiaosuhuaer/grok-gpu-t4x2-smoke -p artifacts/out -o
 ```
 
 ## 约定
 
 - **禁止**在本地弱 CPU 上跑训练/大推理
 - 密钥不入库（见 `.gitignore`）
-- Commit 使用 Conventional Commits：`feat(scope): …` / `fix: …` / `docs: …`
+- Commit 使用 Conventional Commits（阿里规范）：`feat(scope): …` / `fix: …` / `docs: …`
 - 加速器：`NvidiaTeslaT4`（平台 **T4×2**；勿用 P100 + 默认 cu128 镜像）
 
 Repo: https://github.com/xiaoqianran/kaggle-demo

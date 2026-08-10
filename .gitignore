@@ -20,6 +20,7 @@ __pycache__/
 artifacts/
 **/artifacts/
 **/output/
+**/kaggle_output/
 notebooks/**/output/
 logs/
 *.run.json
