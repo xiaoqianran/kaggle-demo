@@ -1,0 +1,20 @@
+{
+  "id": "shuhuaqqq/grok-infra-t4x2-smoke",
+  "title": "Grok-infra-t4x2-smoke",
+  "code_file": "Grok-infra-t4x2-smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "keywords": [
+    "gpu",
+    "beginner"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,15 @@
+{
+  "task": "exp_smoothing",
+  "concept": "Level+trend+season recursive updates (ETS family)",
+  "metrics": {
+    "rmse_holt": 5.0133820605970145,
+    "rmse_holt_winters": 1.047722792329578,
+    "smape_hw": 3.663384608326873
+  },
+  "rmse": 1.047722792329578,
+  "vs_prev": "seas_naive 0.912 \u2192 HW 1.048",
+  "you_should_feel": "\u5e73\u6ed1\u6cd5\u7528\u9012\u5f52\u72b6\u6001\u6355\u6349\u6c34\u5e73/\u8d8b\u52bf/\u5b63\u8282",
+  "ok": true,
+  "stage": "fs15_exp_smoothing",
+  "saved_at": "2026-08-10T21:23:07Z"
+}

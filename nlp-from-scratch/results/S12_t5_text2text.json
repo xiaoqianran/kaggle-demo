@@ -1,0 +1,21 @@
+{
+  "concept": "Encoder-decoder T5 unified text-to-text interface",
+  "vs_previous": "S09 tiny seq2seq from scratch; S12 pretrained multi-task T5",
+  "translation": {
+    "input": "translate English to German: Hello, how are you?",
+    "output": "Hallo, wie sind Sie?",
+    "en_fr": {
+      "in": "I love cats",
+      "out": "Je m'aime les chats"
+    }
+  },
+  "summarization": {
+    "input": "Photosynthesis is the process by which green plants convert sunlight into chemical energy. Chlorophyll in leaves absorbs light. Carbon dioxide and water become glucose and oxygen. This process sustains most life on Earth by producing oxygen and food.",
+    "output": "photosynthesis is the process by which green plants convert sunlight into chemical energy. carbon dioxide and water become glucose and oxygen."
+  },
+  "generative_qa": {
+    "input": "question: When did the French Revolution begin? context: The French Revolution began in 1789 and reshaped European politics.",
+    "output": "1789"
+  },
+  "new_capability": "One model API for translation, summary, QA generation"
+}

@@ -1,0 +1,18 @@
+{
+  "task": "target_encoding",
+  "concept": "Smoothed P(y|category) compresses high-cardinality cats",
+  "backend": "hist+TE",
+  "metrics": {
+    "te_linear_acc": 0.728,
+    "te_linear_auc": 0.802709184004148,
+    "te_gbdt_acc": 0.71,
+    "te_gbdt_auc": 0.7868786052239289
+  },
+  "cls_acc": 0.71,
+  "reg_rmse": 0.8410577095298485,
+  "vs_prev": "cls 0.716\u21920.710 with TE",
+  "you_should_feel": "\u7c7b\u522b\u5217\u7684\u6b63\u786e\u7f16\u7801\u5f80\u5f80 > \u6362\u6a21\u578b\uff1b\u4f46\u6cc4\u6f0f\u4f1a\u865a\u9ad8",
+  "ok": true,
+  "stage": "fs08_target_encoding",
+  "saved_at": "2026-08-10T21:22:55Z"
+}

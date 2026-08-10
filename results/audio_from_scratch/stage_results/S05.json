@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ref": "hello world",
+      "hyp": "Hello world",
+      "score": 1.0,
+      "wav": "/kaggle/working/audio/s05_ref_hello_world.wav",
+      "espeak": true,
+      "all_hyps": [
+        "Hello world",
+        "Hello world!"
+      ]
+    },
+    {
+      "ref": "open the door",
+      "hyp": "Open the door.",
+      "score": 1.0,
+      "wav": "/kaggle/working/audio/s05_ref_open_the_door.wav",
+      "espeak": true,
+      "all_hyps": [
+        "Open the door.",
+        "Open the door."
+      ]
+    },
+    {
+      "ref": "one two three",
+      "hyp": "1 2 3",
+      "score": 1.0,
+      "wav": "/kaggle/working/audio/s05_ref_one_two_three.wav",
+      "espeak": true,
+      "all_hyps": [
+        "1 2 3",
+        "1 2 3"
+      ]
+    }
+  ],
+  "model": "tiny",
+  "espeak": true,
+  "mean_soft_match": 1.0,
+  "n_good": 3,
+  "concept": "large-scale supervised seq2seq ASR",
+  "comparison": "toy CTC alphabet vs natural language ASR",
+  "t": 1786397079.0268974
+}

@@ -1,0 +1,16 @@
+{
+  "task": "ft_transformer",
+  "concept": "Tokenize each feature + Transformer \u2014 modern tabular DL backbone",
+  "metrics": {
+    "cls_acc": 0.718,
+    "cls_auc": 0.7920150366193531,
+    "reg_rmse": 1.1036141391970737
+  },
+  "cls_acc": 0.718,
+  "reg_rmse": 1.1036141391970737,
+  "vs_prev": "cls 0.698\u21920.718",
+  "you_should_feel": "\u7279\u5f81\u5373 token\uff1a\u6ce8\u610f\u529b\u5efa\u6a21\u7279\u5f81\u4ea4\u4e92",
+  "ok": true,
+  "stage": "fs11_ft_transformer",
+  "saved_at": "2026-08-10T21:23:06Z"
+}

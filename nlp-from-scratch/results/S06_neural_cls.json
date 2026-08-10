@@ -1,0 +1,84 @@
+{
+  "concept": "Embedding+TextCNN end-to-end classification",
+  "metric": {
+    "test_acc": 1.0,
+    "train_time_s": 5.736380577087402,
+    "final_train_acc": 1.0
+  },
+  "vs_previous": "S01 handcrafted TF-IDF; S06 learns features from labels",
+  "demos": [
+    {
+      "input": "I really love amazing plot",
+      "gold": "pos",
+      "pred": "pos",
+      "probs": {
+        "business": 0.11217745393514633,
+        "neg": 0.21873092651367188,
+        "pos": 0.5581073760986328,
+        "sports": 0.11098427325487137
+      }
+    },
+    {
+      "input": "Terrible boring waste money",
+      "gold": "neg",
+      "pred": "neg",
+      "probs": {
+        "business": 0.07710786163806915,
+        "neg": 0.8199186325073242,
+        "pos": 0.03632190451025963,
+        "sports": 0.06665153056383133
+      }
+    },
+    {
+      "input": "Shares climb after profits",
+      "gold": "business",
+      "pred": "business",
+      "probs": {
+        "business": 0.7553101181983948,
+        "neg": 0.036207228899002075,
+        "pos": 0.14434044063091278,
+        "sports": 0.06414226442575455
+      }
+    },
+    {
+      "input": "Team wins final championship",
+      "gold": "sports",
+      "pred": "sports",
+      "probs": {
+        "business": 0.10966574400663376,
+        "neg": 0.04697979986667633,
+        "pos": 0.11540132015943527,
+        "sports": 0.7279531955718994
+      }
+    }
+  ],
+  "history_tail": [
+    {
+      "epoch": 76,
+      "loss": 0.0026689175671587386,
+      "acc": 1.0
+    },
+    {
+      "epoch": 77,
+      "loss": 0.0026128624772859942,
+      "acc": 1.0
+    },
+    {
+      "epoch": 78,
+      "loss": 0.0025591085561447674,
+      "acc": 1.0
+    },
+    {
+      "epoch": 79,
+      "loss": 0.002506916152520312,
+      "acc": 1.0
+    },
+    {
+      "epoch": 80,
+      "loss": 0.0024559193859911626,
+      "acc": 1.0
+    }
+  ],
+  "new_capability": "Neural text classification with learned embeddings",
+  "device_count": 2
+}

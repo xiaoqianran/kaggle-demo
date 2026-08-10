@@ -1,17 +1,47 @@
-.venv/
-__pycache__/
-*.pyc
+# Secrets & local auth
+.kaggle/
+**/kaggle.json
+**/access_token
 .env
 .env.*
 !.env.example
-.kaggle/
-**/access_token
-**/kaggle.json
-*.zip
-.ipynb_checkpoints/
+*.token
+
+# Python
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Artifacts / run outputs
+artifacts/
 **/artifacts/
 **/output/
+**/kaggle_output/
+notebooks/**/output/
+outputs/
 logs/
+*.log
 *.run.json
+*.zip
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+/tmp/
+
+# OS / editor
 .DS_Store
-artifacts/
+.idea/
+.vscode/
+*.swp
+
+# Notebook checkpoints
+.ipynb_checkpoints/

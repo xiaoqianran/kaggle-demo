@@ -1,0 +1,19 @@
+{
+  "task": "stacking",
+  "concept": "Blend diverse inductive biases with a meta-learner on OOF preds",
+  "metrics": {
+    "gbdt_acc": 0.738,
+    "linear_acc": 0.724,
+    "stack_acc": 0.742,
+    "stack_auc": 0.8092877049711582,
+    "oof": true,
+    "n_folds": 3
+  },
+  "cls_acc": 0.742,
+  "reg_rmse": 0.8410577095298485,
+  "vs_prev": "best base 0.738 \u2192 stack(OOF) 0.742",
+  "you_should_feel": "Stacking \u5fc5\u987b OOF\uff1b\u7528\u8bad\u7ec3\u96c6\u9884\u6d4b\u505a meta = \u6cc4\u6f0f\u865a\u9ad8",
+  "ok": true,
+  "stage": "fs12_stacking",
+  "saved_at": "2026-08-10T21:23:06Z"
+}

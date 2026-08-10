@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "notebook": "Grok-infra-t4x2-smoke",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "device_count": 2,
+  "devices": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "gpu_matmul": [
+    {
+      "device": 0,
+      "name": "Tesla T4",
+      "matmul_s": 0.15711331367492676,
+      "sum": 303801.28125
+    },
+    {
+      "device": 1,
+      "name": "Tesla T4",
+      "matmul_s": 0.057436466217041016,
+      "sum": 303801.28125
+    }
+  ],
+  "train": {
+    "steps": 80,
+    "loss_start": 2.3085663318634033,
+    "loss_end": 0.5214864015579224,
+    "train_s": 1.4395883083343506
+  }
+}

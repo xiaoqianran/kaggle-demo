@@ -1,0 +1,58 @@
+{
+  "concept": "Table QA via TAPAS pipeline + structured pandas baseline",
+  "vs_previous": "S05 text-only retrieval QA; S15 structured table reasoning",
+  "table": {
+    "City": [
+      "Tokyo",
+      "Paris",
+      "Cairo",
+      "Sao Paulo",
+      "New York"
+    ],
+    "Country": [
+      "Japan",
+      "France",
+      "Egypt",
+      "Brazil",
+      "USA"
+    ],
+    "Population_M": [
+      "37",
+      "11",
+      "22",
+      "22",
+      "19"
+    ],
+    "Language": [
+      "Japanese",
+      "French",
+      "Arabic",
+      "Portuguese",
+      "English"
+    ]
+  },
+  "demos": [
+    {
+      "q": "Which city is in Japan?",
+      "pandas_baseline": "Tokyo",
+      "tapas_error": "'token_type_ids'"
+    },
+    {
+      "q": "What language is spoken in Paris?",
+      "pandas_baseline": "French",
+      "tapas_error": "'token_type_ids'"
+    },
+    {
+      "q": "Which city has a population of 37 million?",
+      "pandas_baseline": "Tokyo",
+      "tapas_error": "'token_type_ids'"
+    },
+    {
+      "q": "What is the country of Cairo?",
+      "pandas_baseline": "Egypt",
+      "tapas_error": "'token_type_ids'"
+    }
+  ],
+  "tapas_available": true,
+  "new_capability": "Answer questions over relational tables"
+}

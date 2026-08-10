@@ -1,0 +1,15 @@
+{
+  "task": "embeddings",
+  "concept": "Learned embeddings share statistical strength across rare categories",
+  "metrics": {
+    "onehot_mlp_acc": 0.726,
+    "embed_mlp_acc": 0.698
+  },
+  "cls_acc": 0.698,
+  "reg_rmse": 0.7299001699048445,
+  "vs_prev": "onehot 0.726 vs emb 0.698",
+  "you_should_feel": "Embedding \u662f DL \u5904\u7406\u7c7b\u522b\u7684\u6b63\u786e\u59ff\u52bf",
+  "ok": true,
+  "stage": "fs10_embeddings",
+  "saved_at": "2026-08-10T21:23:03Z"
+}

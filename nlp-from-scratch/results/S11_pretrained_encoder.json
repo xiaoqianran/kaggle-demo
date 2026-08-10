@@ -1,0 +1,107 @@
+{
+  "concept": "Pretrained Transformer encoder + task heads (transfer learning)",
+  "vs_previous": "S10 tiny from-scratch Transformer; S11 large pretrained knowledge",
+  "fill_mask": {
+    "input": "The capital of France is <mask>.",
+    "top": [
+      {
+        "seq": "The capital of France is Paris.",
+        "score": 0.2703702449798584,
+        "token": " Paris"
+      },
+      {
+        "seq": "The capital of France is Lyon.",
+        "score": 0.055882930755615234,
+        "token": " Lyon"
+      },
+      {
+        "seq": "The capital of France is Barcelona.",
+        "score": 0.029897717759013176,
+        "token": " Barcelona"
+      }
+    ]
+  },
+  "similarity": [
+    {
+      "a": "I love this amazing movie",
+      "b": "A fantastic film I highly recommend",
+      "cos": 0.6149426102638245
+    },
+    {
+      "a": "I love this amazing movie",
+      "b": "The team won the championship final",
+      "cos": 0.09557460993528366
+    },
+    {
+      "a": "Photosynthesis converts sunlight to energy",
+      "b": "Plants make food using chlorophyll and light",
+      "cos": 0.5656925439834595
+    }
+  ],
+  "classification": [
+    {
+      "input": "I love this amazing wonderful movie",
+      "output": {
+        "label": "POSITIVE",
+        "score": 0.9998822212219238
+      }
+    },
+    {
+      "input": "This film is terrible and boring",
+      "output": {
+        "label": "NEGATIVE",
+        "score": 0.9998002648353577
+      }
+    },
+    {
+      "input": "The stock market rose after strong earnings",
+      "output": {
+        "label": "POSITIVE",
+        "score": 0.9981864094734192
+      }
+    }
+  ],
+  "ner": {
+    "input": "John lives in Paris and works at Google with Alice",
+    "entities": [
+      {
+        "word": "John",
+        "entity": "PER",
+        "score": 0.998832643032074
+      },
+      {
+        "word": "Paris",
+        "entity": "LOC",
+        "score": 0.9997064471244812
+      },
+      {
+        "word": "Google",
+        "entity": "ORG",
+        "score": 0.9985299110412598
+      },
+      {
+        "word": "Alice",
+        "entity": "PER",
+        "score": 0.9978766441345215
+      }
+    ]
+  },
+  "qa": [
+    {
+      "q": "What do plants produce during photosynthesis?",
+      "answer": "chemical energy",
+      "score": 0.3737497627735138
+    },
+    {
+      "q": "What does Newton's second law say?",
+      "answer": "force equals mass times acceleration",
+      "score": 0.8794702887535095
+    },
+    {
+      "q": "When did the French Revolution begin?",
+      "answer": "1789",
+      "score": 0.9737656712532043
+    }
+  ],
+  "new_capability": "Production-quality multi-task NLP via pretrained encoders"
+}

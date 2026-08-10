@@ -1,0 +1,17 @@
+{
+  "task": "decision_tree",
+  "concept": "Axis-aligned partitions learn interactions without hand FE",
+  "metrics": {
+    "cls_acc": 0.706,
+    "cls_auc": 0.7727493680731091,
+    "reg_rmse": 2.101460678483524,
+    "n_nodes": 29
+  },
+  "cls_acc": 0.706,
+  "reg_rmse": 2.101460678483524,
+  "vs_prev": "cls 0.724\u21920.706",
+  "you_should_feel": "\u6811\u81ea\u52a8\u5207\u4ea4\u4e92\uff0c\u4f46\u5355\u68f5\u9ad8\u65b9\u5dee\u3001\u8fb9\u754c\u952f\u9f7f",
+  "ok": true,
+  "stage": "fs04_trees",
+  "saved_at": "2026-08-10T21:22:42Z"
+}

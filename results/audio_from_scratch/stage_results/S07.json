@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "mse": 0.06610699743032455,
+  "spectral_convergence": 0.18951663374900818,
+  "n_iter": 40,
+  "concept": "phase reconstruction vocoder from magnitude STFT",
+  "comparison": "S06 direct synthesis vs S07 spectrogram inversion pipeline",
+  "t": 1786397080.765817
+}

@@ -1,0 +1,197 @@
+{
+  "concept": "PPMI + SVD dense embeddings (SGNS approximation)",
+  "vocab_size": 270,
+  "dim": 40,
+  "word_nn": {
+    "movie": [
+      [
+        "amazing",
+        0.9219890037027698
+      ],
+      [
+        "hate",
+        0.913982059186393
+      ],
+      [
+        "horrible",
+        0.9007242023965271
+      ],
+      [
+        "terrible",
+        0.8973410936691457
+      ],
+      [
+        "awful",
+        0.8827382340669623
+      ]
+    ],
+    "love": [
+      [
+        "dogs",
+        0.9023426686357395
+      ],
+      [
+        "cats",
+        0.9023426686357394
+      ],
+      [
+        "j",
+        0.872246241296568
+      ],
+      [
+        "aime",
+        0.8432652983587977
+      ],
+      [
+        "les",
+        0.81497379568013
+      ]
+    ],
+    "team": [
+      [
+        "won",
+        0.9944948751584742
+      ],
+      [
+        "championship",
+        0.9703607519616416
+      ],
+      [
+        "final",
+        0.9494558493015317
+      ],
+      [
+        "sports",
+        0.8615233990216186
+      ],
+      [
+        "the",
+        0.5142098859948431
+      ]
+    ],
+    "market": [
+      [
+        "stock",
+        0.9730457688357604
+      ],
+      [
+        "earnings",
+        0.925340448269881
+      ],
+      [
+        "rose",
+        0.8831451929614569
+      ],
+      [
+        "growth",
+        0.7924021158227934
+      ],
+      [
+        "shares",
+        0.6952517090977627
+      ]
+    ],
+    "photosynthesis": [
+      [
+        "plants",
+        0.9088998937463522
+      ],
+      [
+        "green",
+        0.8793712235591002
+      ],
+      [
+        "which",
+        0.8768647020418721
+      ],
+      [
+        "sunlight",
+        0.8684213656827047
+      ],
+      [
+        "convert",
+        0.8583390143086831
+      ]
+    ],
+    "force": [
+      [
+        "equals",
+        0.9421694480439082
+      ],
+      [
+        "times",
+        0.9301087560228274
+      ],
+      [
+        "mass",
+        0.9014611006723319
+      ],
+      [
+        "second",
+        0.8599192709457815
+      ],
+      [
+        "acceleration",
+        0.8451519881206744
+      ]
+    ]
+  },
+  "sentence_pairs": [
+    {
+      "a": "I love this amazing movie",
+      "b": "Fantastic film highly recommend",
+      "emb_cos": 0.35639052059044457,
+      "jaccard": 0.0
+    },
+    {
+      "a": "I love this amazing movie",
+      "b": "The team won the championship final",
+      "emb_cos": 0.008300132371529422,
+      "jaccard": 0.0
+    },
+    {
+      "a": "Investors buy shares amid growth",
+      "b": "Company profits beat estimates",
+      "emb_cos": 0.11432651439764857,
+      "jaccard": 0.0
+    },
+    {
+      "a": "Plants convert sunlight into energy",
+      "b": "Photosynthesis produces oxygen and glucose",
+      "emb_cos": 0.5803348009568757,
+      "jaccard": 0.0
+    },
+    {
+      "a": "Newton force mass acceleration",
+      "b": "Machine learning algorithms learn patterns",
+      "emb_cos": 0.014198400987732588,
+      "jaccard": 0.0
+    }
+  ],
+  "demos": [
+    {
+      "input": "A='I love this amazing movie' || B='Fantastic film highly recommend'",
+      "output": "emb_cos=0.356  jaccard=0.000"
+    },
+    {
+      "input": "A='I love this amazing movie' || B='The team won the championship final'",
+      "output": "emb_cos=0.008  jaccard=0.000"
+    },
+    {
+      "input": "A='Investors buy shares amid growth' || B='Company profits beat estimates'",
+      "output": "emb_cos=0.114  jaccard=0.000"
+    },
+    {
+      "input": "A='Plants convert sunlight into energy' || B='Photosynthesis produces oxygen and glucose'",
+      "output": "emb_cos=0.580  jaccard=0.000"
+    },
+    {
+      "input": "A='Newton force mass acceleration' || B='Machine learning algorithms learn patterns'",
+      "output": "emb_cos=0.014  jaccard=0.000"
+    }
+  ],
+  "new_capability": "Dense feature extraction & soft semantic similarity",
+  "previous": "S01 sparse TF-IDF",
+  "stage": "S02_embeddings_similarity",
+  "saved_at": "2026-08-10T21:09:15.903163+00:00"
+}

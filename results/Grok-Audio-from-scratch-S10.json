@@ -1,0 +1,67 @@
+{
+  "espeak_input": true,
+  "n_raw_vad": 5,
+  "n_merged_vad": 2,
+  "raw_vad": [
+    {
+      "hyp": "you",
+      "backend": "whisper",
+      "dur": 0.315
+    },
+    {
+      "hyp": "that i will",
+      "backend": "whisper",
+      "dur": 0.925
+    },
+    {
+      "hyp": "",
+      "backend": "dtw",
+      "dur": 0.225
+    },
+    {
+      "hyp": "femmedor",
+      "backend": "whisper",
+      "dur": 0.925
+    },
+    {
+      "hyp": "you",
+      "backend": "whisper",
+      "dur": 0.306125
+    }
+  ],
+  "merged_vad": [
+    {
+      "hyp": "hello world",
+      "backend": "whisper",
+      "dur": 1.32
+    },
+    {
+      "hyp": "open the door",
+      "backend": "whisper",
+      "dur": 1.501125
+    }
+  ],
+  "oracle_spans": [
+    {
+      "ref": "hello world",
+      "hyp": "hello world",
+      "backend": "whisper"
+    },
+    {
+      "ref": "open the door",
+      "hyp": "open the door",
+      "backend": "whisper"
+    }
+  ],
+  "best_transcripts": [
+    "hello world",
+    "open the door"
+  ],
+  "replies": [
+    "hello world",
+    "yes"
+  ],
+  "oracle_hits": 2,
+  "semantic_ok": true,
+  "lesson": "fine VAD chops break ASR; phrase-level segments restore Whisper quality (see S05)"
+}

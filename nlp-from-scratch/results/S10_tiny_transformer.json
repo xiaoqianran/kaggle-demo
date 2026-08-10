@@ -1,0 +1,114 @@
+{
+  "concept": "Multi-head Transformer encoder trained with MLM + causal LM",
+  "metric": {
+    "V": 165,
+    "d": 64,
+    "layers": 2,
+    "heads": 4
+  },
+  "vs_previous": "S09 RNN attention; S10 pure self-attention, bidirectional MLM",
+  "fill_mask": [
+    {
+      "template": [
+        "i",
+        "love",
+        "this",
+        "movie"
+      ],
+      "mask_index": 1,
+      "pred": "love",
+      "filled": [
+        "i",
+        "love",
+        "this",
+        "movie"
+      ]
+    },
+    {
+      "template": [
+        "team",
+        "won",
+        "championship",
+        "final"
+      ],
+      "mask_index": 1,
+      "pred": "won",
+      "filled": [
+        "team",
+        "won",
+        "championship",
+        "final"
+      ]
+    },
+    {
+      "template": [
+        "the",
+        "cat",
+        "sleeps"
+      ],
+      "mask_index": 1,
+      "pred": "cat",
+      "filled": [
+        "the",
+        "cat",
+        "sleeps"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "a": "i love this movie",
+      "b": "fantastic film wonderful",
+      "cos": -0.0689646452665329
+    },
+    {
+      "a": "i love this movie",
+      "b": "team won championship",
+      "cos": 0.5033416152000427
+    },
+    {
+      "a": "investors buy shares",
+      "b": "company profits growth",
+      "cos": 0.07572915405035019
+    }
+  ],
+  "generation": [
+    {
+      "prefix": [
+        "i",
+        "love"
+      ],
+      "generated": [
+        "i",
+        "love",
+        "cats"
+      ]
+    },
+    {
+      "prefix": [
+        "the",
+        "team"
+      ],
+      "generated": [
+        "the",
+        "team",
+        "is",
+        "nice"
+      ]
+    },
+    {
+      "prefix": [
+        "stock",
+        "market"
+      ],
+      "generated": [
+        "stock",
+        "market",
+        "rose",
+        "after",
+        "earnings"
+      ]
+    }
+  ],
+  "new_capability": "Fill-mask, feature extraction, and generation in one Transformer"
+}

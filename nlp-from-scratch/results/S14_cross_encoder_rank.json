@@ -1,0 +1,82 @@
+{
+  "concept": "Cross-encoder relevance scoring for text ranking / re-ranking",
+  "vs_previous": "S03 BM25 lexical; S11 bi-encoder cosine; S14 joint cross-attention scoring",
+  "demos": [
+    {
+      "query": "how do plants make food from sunlight",
+      "ranking": [
+        {
+          "score": 3.4227161407470703,
+          "id": "d1",
+          "snippet": "Photosynthesis is how plants convert sunlight into chemical "
+        },
+        {
+          "score": -11.140405654907227,
+          "id": "d2",
+          "snippet": "Newton's laws describe motion, force, mass and acceleration."
+        },
+        {
+          "score": -11.15355110168457,
+          "id": "d4",
+          "snippet": "The French Revolution began in 1789 with ideals of liberty a"
+        },
+        {
+          "score": -11.21339225769043,
+          "id": "d3",
+          "snippet": "Machine learning algorithms learn patterns from labeled and "
+        }
+      ]
+    },
+    {
+      "query": "force equals mass times acceleration",
+      "ranking": [
+        {
+          "score": 0.41328921914100647,
+          "id": "d2",
+          "snippet": "Newton's laws describe motion, force, mass and acceleration."
+        },
+        {
+          "score": -11.286725997924805,
+          "id": "d1",
+          "snippet": "Photosynthesis is how plants convert sunlight into chemical "
+        },
+        {
+          "score": -11.298273086547852,
+          "id": "d4",
+          "snippet": "The French Revolution began in 1789 with ideals of liberty a"
+        },
+        {
+          "score": -11.367364883422852,
+          "id": "d3",
+          "snippet": "Machine learning algorithms learn patterns from labeled and "
+        }
+      ]
+    },
+    {
+      "query": "learning patterns from labeled examples",
+      "ranking": [
+        {
+          "score": 5.439263343811035,
+          "id": "d3",
+          "snippet": "Machine learning algorithms learn patterns from labeled and "
+        },
+        {
+          "score": -11.352874755859375,
+          "id": "d2",
+          "snippet": "Newton's laws describe motion, force, mass and acceleration."
+        },
+        {
+          "score": -11.356958389282227,
+          "id": "d1",
+          "snippet": "Photosynthesis is how plants convert sunlight into chemical "
+        },
+        {
+          "score": -11.373336791992188,
+          "id": "d4",
+          "snippet": "The French Revolution began in 1789 with ideals of liberty a"
+        }
+      ]
+    }
+  ],
+  "new_capability": "Neural re-ranking stronger than sparse/bi-encoder baselines"
+}

@@ -1,0 +1,16 @@
+{
+  "task": "lag_tree",
+  "concept": "Tabularize TS via lags/rolling feats + GBDT",
+  "metrics": {
+    "rmse": 1.039603805682996,
+    "mae": 0.9045414153937469,
+    "smape": 3.603611083578463,
+    "backend": "hist_gbdt"
+  },
+  "rmse": 1.039603805682996,
+  "vs_prev": "HW 1.048 \u2192 lag-tree 1.040",
+  "you_should_feel": "\u65f6\u5e8f\u2192\u8868\u683c\u5316\u662f\u5de5\u4e1a\u6700\u5f3a\u6377\u5f84\u4e4b\u4e00",
+  "ok": true,
+  "stage": "fs16_lag_tree",
+  "saved_at": "2026-08-10T21:23:07Z"
+}

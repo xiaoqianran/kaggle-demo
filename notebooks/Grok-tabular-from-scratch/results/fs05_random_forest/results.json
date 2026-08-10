@@ -1,0 +1,16 @@
+{
+  "task": "random_forest",
+  "concept": "Bagging + feature subsample averages noisy trees",
+  "metrics": {
+    "cls_acc": 0.724,
+    "cls_auc": 0.8058040054442932,
+    "reg_rmse": 2.4790141957986025
+  },
+  "cls_acc": 0.724,
+  "reg_rmse": 2.4790141957986025,
+  "vs_prev": "cls 0.706\u21920.724",
+  "you_should_feel": "\u96c6\u6210\u7528\u5e73\u5747\u6362\u7a33\u5b9a\uff1bRF \u662f\u8868\u683c\u7ecf\u5178\u751c\u70b9",
+  "ok": true,
+  "stage": "fs05_random_forest",
+  "saved_at": "2026-08-10T21:22:47Z"
+}

@@ -1,0 +1,44 @@
+{
+  "concept": "Bag-of-words multinomial Naive Bayes",
+  "metric": {
+    "train_acc": 1.0,
+    "test_acc": 1.0
+  },
+  "vocab_size": 93,
+  "classes": [
+    "business",
+    "neg",
+    "pos",
+    "sports"
+  ],
+  "demos": [
+    {
+      "input": "'I really love the amazing plot'  [gold=pos]",
+      "output": "pos  (pos:0.64, neg:0.15, sports:0.12)"
+    },
+    {
+      "input": "'Terrible boring waste of money'  [gold=neg]",
+      "output": "neg  (neg:0.95, pos:0.03, business:0.01)"
+    },
+    {
+      "input": "'Shares climb after strong profits'  [gold=business]",
+      "output": "business  (business:0.81, sports:0.10, pos:0.05)"
+    },
+    {
+      "input": "'Team wins the final championship'  [gold=sports]",
+      "output": "sports  (sports:0.85, business:0.07, pos:0.04)"
+    },
+    {
+      "input": "'Superb and wonderful film experience'  [gold=pos]",
+      "output": "pos  (pos:0.75, neg:0.23, business:0.01)"
+    },
+    {
+      "input": "'Horrible disaster of a movie'  [gold=neg]",
+      "output": "neg  (neg:0.85, pos:0.10, business:0.02)"
+    }
+  ],
+  "new_capability": "First end-to-end text classifier from raw strings",
+  "previous": null,
+  "stage": "S00_bow_naive_bayes",
+  "saved_at": "2026-08-10T21:08:21.164495+00:00"
+}

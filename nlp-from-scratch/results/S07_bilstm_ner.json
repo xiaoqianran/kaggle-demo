@@ -1,0 +1,98 @@
+{
+  "concept": "BiLSTM sequence labeling with BIO tags",
+  "metric": {
+    "heldout_exact_seq": 1.0,
+    "n_tags": 5
+  },
+  "vs_previous": "S06 one label/doc; S07 label per token (NER)",
+  "demos": [
+    {
+      "tokens": [
+        "Microsoft",
+        "is",
+        "based",
+        "in",
+        "Seattle"
+      ],
+      "gold": [
+        "B-ORG",
+        "O",
+        "O",
+        "O",
+        "B-LOC"
+      ],
+      "pred": [
+        "B-ORG",
+        "O",
+        "O",
+        "O",
+        "B-LOC"
+      ]
+    },
+    {
+      "tokens": [
+        "Bob",
+        "met",
+        "Carol",
+        "in",
+        "Tokyo"
+      ],
+      "gold": [
+        "B-PER",
+        "O",
+        "B-PER",
+        "O",
+        "B-LOC"
+      ],
+      "pred": [
+        "B-PER",
+        "O",
+        "B-PER",
+        "O",
+        "B-LOC"
+      ]
+    },
+    {
+      "tokens": [
+        "John",
+        "visited",
+        "Berlin"
+      ],
+      "gold": [
+        "B-PER",
+        "O",
+        "B-LOC"
+      ],
+      "pred": [
+        "B-PER",
+        "O",
+        "B-LOC"
+      ]
+    },
+    {
+      "tokens": [
+        "Google",
+        "hired",
+        "Alice"
+      ],
+      "gold": [
+        "B-ORG",
+        "O",
+        "B-PER"
+      ],
+      "pred": [
+        "B-ORG",
+        "O",
+        "B-PER"
+      ]
+    }
+  ],
+  "new_capability": "Token classification / named entity recognition",
+  "tags": [
+    "B-LOC",
+    "B-ORG",
+    "B-PER",
+    "I-PER",
+    "O"
+  ]
+}

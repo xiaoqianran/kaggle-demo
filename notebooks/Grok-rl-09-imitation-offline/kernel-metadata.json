@@ -1,0 +1,16 @@
+{
+  "id": "qixiaer/grok-rl-09-imitation-offline",
+  "title": "Grok-rl-09-imitation-offline",
+  "code_file": "Grok-rl-09-imitation-offline.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

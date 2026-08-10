@@ -1,0 +1,85 @@
+{
+  "concept": "TextRank (PageRank on sentence similarity graph)",
+  "results": [
+    {
+      "title": "Photosynthesis",
+      "textrank": "Carbon dioxide and water become glucose and oxygen. This process sustains most life on Earth by producing oxygen and food.",
+      "lead2": "Photosynthesis is the process by which green plants convert sunlight into chemical energy. Chlorophyll in leaves absorbs light.",
+      "scores": [
+        0.18245831250738354,
+        0.037500000000000006,
+        0.20271075870361846,
+        0.3648308528637756
+      ],
+      "picked": [
+        2,
+        3
+      ]
+    },
+    {
+      "title": "Newton Laws",
+      "textrank": "The second law says force equals mass times acceleration. The third law says every action has an equal and opposite reaction.",
+      "lead2": "Newton's first law states that an object stays at rest or in uniform motion unless acted upon by a force. The second law says force equals mass times acceleration.",
+      "scores": [
+        0.27592668558791167,
+        0.36531474290273946,
+        0.35875850996032704
+      ],
+      "picked": [
+        1,
+        2
+      ]
+    },
+    {
+      "title": "Machine Learning",
+      "textrank": "Machine learning algorithms learn patterns from data without being explicitly programmed for every rule. Deep learning uses multi-layer neural networks for vision and language tasks.",
+      "lead2": "Machine learning algorithms learn patterns from data without being explicitly programmed for every rule. Supervised learning uses labeled examples.",
+      "scores": [
+        0.25728932658351966,
+        0.2447795849184917,
+        0.23178479632818388,
+        0.2661462370754899
+      ],
+      "picked": [
+        0,
+        3
+      ]
+    },
+    {
+      "title": "French Revolution",
+      "textrank": "The storming of the Bastille became a symbol of popular uprising. Ideals of liberty, equality, and fraternity influenced later democracies.",
+      "lead2": "The French Revolution began in 1789 and reshaped European politics. The storming of the Bastille became a symbol of popular uprising.",
+      "scores": [
+        0.3309696152201367,
+        0.33451512916655635,
+        0.33451512916655635
+      ],
+      "picked": [
+        1,
+        2
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "input": "[Photosynthesis] Photosynthesis is the process by which green plants convert sunlight into chemic...",
+      "output": "Carbon dioxide and water become glucose and oxygen. This process sustains most life on Earth by producing oxygen and food."
+    },
+    {
+      "input": "[Newton Laws] Newton's first law states that an object stays at rest or in uniform motion unle...",
+      "output": "The second law says force equals mass times acceleration. The third law says every action has an equal and opposite reaction."
+    },
+    {
+      "input": "[Machine Learning] Machine learning algorithms learn patterns from data without being explicitly pr...",
+      "output": "Machine learning algorithms learn patterns from data without being explicitly programmed for every rule. Deep learning uses multi-layer neural networks for vision and language tasks."
+    },
+    {
+      "input": "[French Revolution] The French Revolution began in 1789 and reshaped European politics. The storming...",
+      "output": "The storming of the Bastille became a symbol of popular uprising. Ideals of liberty, equality, and fraternity influenced later democracies."
+    }
+  ],
+  "new_capability": "Unsupervised extractive summarization without labels",
+  "previous": "S03 ranks docs; S04 ranks sentences inside a doc",
+  "stage": "S04_textrank_summarize",
+  "saved_at": "2026-08-10T21:08:21.488131+00:00"
+}

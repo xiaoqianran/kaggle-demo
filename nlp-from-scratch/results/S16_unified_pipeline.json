@@ -1,0 +1,81 @@
+{
+  "concept": "Unified modern NLP system covering all curriculum tasks",
+  "vs_previous": "Entire route from S00 bags-of-words to production pretrained stacks",
+  "unified": {
+    "input_text": "John visited Paris and said the film was absolutely wonderful.",
+    "fill_mask": "Paris is the capital of Europe.",
+    "classification": {
+      "label": "POSITIVE",
+      "score": 0.9998854398727417
+    },
+    "token_classification": [
+      {
+        "word": "John",
+        "entity": "PER"
+      },
+      {
+        "word": "Paris",
+        "entity": "LOC"
+      }
+    ],
+    "qa": {
+      "score": 0.9827024936676025,
+      "start": 13,
+      "end": 18,
+      "answer": "Paris"
+    },
+    "zero_shot": {
+      "sequence": "John visited Paris and said the film was absolutely wonderful.",
+      "labels": [
+        "travel",
+        "technology",
+        "finance",
+        "sports"
+      ],
+      "scores": [
+        0.3596555292606354,
+        0.2818808853626251,
+        0.2558000385761261,
+        0.10266352444887161
+      ]
+    },
+    "translation_fr": "J'adore ce film merveilleux",
+    "summarization": "John visited Paris in 2024.",
+    "similarity": {
+      "a": "I love this wonderful film",
+      "b": "This movie is amazing",
+      "cos": 0.7330958843231201
+    },
+    "ranking_query": "wonderful film in Paris",
+    "table_qa_pandas": "Tokyo",
+    "feature_extraction_dim": 384,
+    "ranking": [
+      {
+        "score": -1.7901898622512817,
+        "doc": "Travel guide to Paris cinemas and film festivals"
+      },
+      {
+        "score": -11.17404556274414,
+        "doc": "Stock market earnings report for investors"
+      },
+      {
+        "score": -11.255047798156738,
+        "doc": "Championship football scores and sports news"
+      }
+    ]
+  },
+  "acceptance": {
+    "text_classification": true,
+    "token_classification": true,
+    "qa": true,
+    "zero_shot": true,
+    "translation": true,
+    "summarization": true,
+    "fill_mask": true,
+    "sentence_similarity": true,
+    "text_ranking": true,
+    "table_qa": true,
+    "feature_extraction": true
+  },
+  "new_capability": "End-to-end multi-task NLP acceptance suite"
+}

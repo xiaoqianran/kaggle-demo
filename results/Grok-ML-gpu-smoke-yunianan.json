@@ -1,0 +1,51 @@
+{
+  "notebook": "Grok-ML-gpu-smoke",
+  "started_at": "2026-08-10T21:01:24Z",
+  "host": "4f235a5c4f55",
+  "python": "3.12.13",
+  "ok": true,
+  "errors": [],
+  "torch": "2.10.0+cu128",
+  "cuda_built": "12.8",
+  "cuda_available": true,
+  "device_count": 2,
+  "gpus": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "total_memory_gb": 14.56,
+      "multi_processor_count": 40
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "total_memory_gb": 14.56,
+      "multi_processor_count": 40
+    }
+  ],
+  "parallel": "DataParallel",
+  "peak_mem_gb": {
+    "cuda:0": 0.028,
+    "cuda:1": 0.022
+  },
+  "train_steps": 50,
+  "final_loss": 2.3026723861694336,
+  "loss_curve_head": [
+    2.304046869277954,
+    2.3054232597351074,
+    2.3072938919067383,
+    2.313967704772949,
+    2.3242502212524414
+  ],
+  "loss_curve_tail": [
+    2.3118906021118164,
+    2.301596164703369,
+    2.3047428131103516,
+    2.306302070617676,
+    2.3026723861694336
+  ],
+  "elapsed_sec": 1.567,
+  "p2p_copy_sec": 0.0022,
+  "remote_gemm_ok": true,
+  "finished_at": "2026-08-10T21:01:36Z"
+}

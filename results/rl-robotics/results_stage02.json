@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "stage": "02-mdp-dp",
+  "title": "Grok-rl-02-mdp-dp",
+  "gamma": 0.99,
+  "slip": 0.1,
+  "V_start_optimal": -9.606976655200098,
+  "V_start_random": -99.99973234170918,
+  "pi_vi_path_actions": [
+    "U",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X",
+    "X"
+  ],
+  "policy_iteration_iters": 5,
+  "value_iteration_iters": 26,
+  "policies_match": true,
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 0.13576221466064453,
+  "concept": "with known model, Bellman optimality yields exact V* and pi*",
+  "new_capability": "plan optimal path around cliff without trial-and-error interaction",
+  "compare_to_previous": "Stage01 chose single best arm; Stage02 sequences actions over states with long-horizon value"
+}

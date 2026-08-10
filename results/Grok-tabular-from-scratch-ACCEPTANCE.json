@@ -1,0 +1,397 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "stage_count_22",
+      "ok": true,
+      "detail": "got 22"
+    },
+    {
+      "name": "stage_order_exact",
+      "ok": true,
+      "detail": "got ['fs00_protocol', 'fs01_baselines', 'fs02_linear', 'fs03_feature_engineering', 'fs04_trees', 'fs05_random_forest', 'fs06_gbdt_scratch', 'fs07_hist_gbdt', 'fs08_target_encoding', 'fs09_mlp', 'fs10_embeddings', 'fs11_ft_transformer', 'fs12_stacking', 'fs13_ts_protocol', 'fs14_naive_forecasts', 'fs15_exp_smoothing', 'fs16_lag_tree', 'fs17_ar_linear', 'fs18_lstm', 'fs19_tcn_nbeats', 'fs20_patch_transformer', 'fs21_leaderboard']"
+    },
+    {
+      "name": "fs00_protocol_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs00_protocol/results.json"
+    },
+    {
+      "name": "fs00_protocol_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs00_protocol_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs01_baselines_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs01_baselines/results.json"
+    },
+    {
+      "name": "fs01_baselines_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs01_baselines_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs02_linear_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs02_linear/results.json"
+    },
+    {
+      "name": "fs02_linear_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs02_linear_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs03_feature_engineering_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs03_feature_engineering/results.json"
+    },
+    {
+      "name": "fs03_feature_engineering_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs03_feature_engineering_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs04_trees_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs04_trees/results.json"
+    },
+    {
+      "name": "fs04_trees_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs04_trees_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs05_random_forest_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs05_random_forest/results.json"
+    },
+    {
+      "name": "fs05_random_forest_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs05_random_forest_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs06_gbdt_scratch_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs06_gbdt_scratch/results.json"
+    },
+    {
+      "name": "fs06_gbdt_scratch_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs06_gbdt_scratch_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs07_hist_gbdt_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs07_hist_gbdt/results.json"
+    },
+    {
+      "name": "fs07_hist_gbdt_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs07_hist_gbdt_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs08_target_encoding_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs08_target_encoding/results.json"
+    },
+    {
+      "name": "fs08_target_encoding_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs08_target_encoding_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs09_mlp_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs09_mlp/results.json"
+    },
+    {
+      "name": "fs09_mlp_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs09_mlp_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs10_embeddings_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs10_embeddings/results.json"
+    },
+    {
+      "name": "fs10_embeddings_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs10_embeddings_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs11_ft_transformer_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs11_ft_transformer/results.json"
+    },
+    {
+      "name": "fs11_ft_transformer_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs11_ft_transformer_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs12_stacking_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs12_stacking/results.json"
+    },
+    {
+      "name": "fs12_stacking_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs12_stacking_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs13_ts_protocol_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs13_ts_protocol/results.json"
+    },
+    {
+      "name": "fs13_ts_protocol_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs13_ts_protocol_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs14_naive_forecasts_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs14_naive_forecasts/results.json"
+    },
+    {
+      "name": "fs14_naive_forecasts_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs14_naive_forecasts_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs15_exp_smoothing_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs15_exp_smoothing/results.json"
+    },
+    {
+      "name": "fs15_exp_smoothing_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs15_exp_smoothing_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs16_lag_tree_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs16_lag_tree/results.json"
+    },
+    {
+      "name": "fs16_lag_tree_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs16_lag_tree_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs17_ar_linear_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs17_ar_linear/results.json"
+    },
+    {
+      "name": "fs17_ar_linear_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs17_ar_linear_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs18_lstm_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs18_lstm/results.json"
+    },
+    {
+      "name": "fs18_lstm_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs18_lstm_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs19_tcn_nbeats_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs19_tcn_nbeats/results.json"
+    },
+    {
+      "name": "fs19_tcn_nbeats_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs19_tcn_nbeats_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs20_patch_transformer_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs20_patch_transformer/results.json"
+    },
+    {
+      "name": "fs20_patch_transformer_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs20_patch_transformer_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "fs21_leaderboard_results_json",
+      "ok": true,
+      "detail": "/kaggle/working/results/fs21_leaderboard/results.json"
+    },
+    {
+      "name": "fs21_leaderboard_ok_flag",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "fs21_leaderboard_has_png",
+      "ok": true,
+      "detail": "pngs=1"
+    },
+    {
+      "name": "cls_linear_beats_majority",
+      "ok": true,
+      "detail": "linear=0.724 maj=0.556"
+    },
+    {
+      "name": "cls_rf_beats_tree",
+      "ok": true,
+      "detail": "RF=0.724 tree=0.706"
+    },
+    {
+      "name": "cls_best_above_0.70",
+      "ok": true,
+      "detail": "0.742"
+    },
+    {
+      "name": "reg_ridge_beats_mean",
+      "ok": true,
+      "detail": "ridge=1.0731486155282521 mean=3.902800753582752"
+    },
+    {
+      "name": "reg_fe_beats_ridge",
+      "ok": true,
+      "detail": "FE=0.49406430776686494 ridge=1.0731486155282521"
+    },
+    {
+      "name": "reg_histgb_beats_mean",
+      "ok": true,
+      "detail": "HistGB=0.8410577095298485"
+    },
+    {
+      "name": "reg_rf_not_worse_than_tree_by_50pct",
+      "ok": true,
+      "detail": "RF=2.4790141957986025 tree=2.101460678483524"
+    },
+    {
+      "name": "ts_all_finite",
+      "ok": true,
+      "detail": "{'seas_naive': 0.9117903987066313, 'HW': 1.047722792329578, 'lag_tree': 1.039603805682996, 'AR': 0.8779134500499444, 'LSTM': 2.099674095826491, 'TCN/NB': 1.1100098756408332, 'Patch': 1.6205664243689835}"
+    },
+    {
+      "name": "ts_best_beats_naive_or_close",
+      "ok": true,
+      "detail": "{'seas_naive': 0.9117903987066313, 'HW': 1.047722792329578, 'lag_tree': 1.039603805682996, 'AR': 0.8779134500499444, 'LSTM': 2.099674095826491, 'TCN/NB': 1.1100098756408332, 'Patch': 1.6205664243689835}"
+    },
+    {
+      "name": "stacking_oof",
+      "ok": true,
+      "detail": "{'gbdt_acc': 0.738, 'linear_acc': 0.724, 'stack_acc': 0.742, 'stack_auc': 0.8092877049711582, 'oof': True, 'n_folds': 3}"
+    }
+  ],
+  "n_pass": 78,
+  "n_total": 78
+}

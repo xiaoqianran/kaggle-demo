@@ -1,0 +1,16 @@
+{
+  "id": "xiaosuhuaer/grok-audio-from-scratch",
+  "title": "Grok-Audio-from-scratch",
+  "code_file": "Grok-Audio-from-scratch.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,77 @@
+{
+  "notebook": "Grok-GPU-T4x2-Smoke",
+  "domain": "GPU",
+  "task": "T4x2-Smoke",
+  "cuda_available": true,
+  "device_count": 2,
+  "devices": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "mem_gb": 15.64
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "mem_gb": 15.64
+    }
+  ],
+  "data_parallel": true,
+  "batch_size": 256,
+  "gemm": [
+    {
+      "device": 0,
+      "n": 4096,
+      "iters": 10,
+      "seconds": 0.3292259129999593,
+      "tflops_fp32": 4.17460922864893
+    },
+    {
+      "device": 1,
+      "n": 4096,
+      "iters": 10,
+      "seconds": 0.31060593899997,
+      "tflops_fp32": 4.424865600268296
+    }
+  ],
+  "train_seconds": 3.43102786999998,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.305892840027809,
+      "val_acc": 0.107421875
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.3028695434331894,
+      "val_acc": 0.103515625
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.302691012620926,
+      "val_acc": 0.1015625
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.302386626601219,
+      "val_acc": 0.103515625
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.3024144768714905,
+      "val_acc": 0.064453125
+    }
+  ],
+  "params": 94538,
+  "torch": "2.10.0+cu128",
+  "python": "3.12.13",
+  "status": "ok"
+}
