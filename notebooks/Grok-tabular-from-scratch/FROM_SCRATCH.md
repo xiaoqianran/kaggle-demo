@@ -4,7 +4,9 @@
 > 每一步：**概念 → 最小实现 → 真实输入 → 可观察输出 → 与上一步对比**。  
 > 领域：表格分类 · 表格回归 · 时间序列预测。
 
-**执行**：`scripts/run_tabular_fs_ladder.py`（Kaggle T4×2）→ `results/fs*/` + `SUMMARY.json`。
+**执行状态：FS00–FS21 已全部验收通过**（Kaggle T4×2 · `PROGRESS.md` · `results/ACCEPTANCE.json`）。
+
+运行：`scripts/run_tabular_fs_ladder.py` → `results/fs*/` + `SUMMARY.json`。
 
 ---
 

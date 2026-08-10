@@ -303,7 +303,7 @@ class DecisionStump:
         for j in feat_idx:
             xs = X[:, j]
             # candidate thresholds: quantiles
-            qs = np.quantile(xs, np.linspace(0.1, 0.9, 9))
+            qs = np.unique(np.quantile(xs, np.linspace(0.05, 0.95, 15)))
             for thr in qs:
                 left = xs <= thr
                 right = ~left
@@ -398,24 +398,24 @@ class DecisionTreeScratch:
 
 
 class RandomForestScratch:
-    def __init__(self, n_estimators=15, max_depth=4, task="classification", seed=SEED):
+    def __init__(self, n_estimators=40, max_depth=5, task="classification", seed=SEED, max_features=None):
         self.n_estimators = n_estimators
         self.max_depth = max_depth
         self.task = task
         self.seed = seed
+        self.max_features = max_features
         self.trees = []
 
     def fit(self, X, y):
         r = np.random.default_rng(self.seed)
         self.trees = []
-        n = len(X)
+        n, d = X.shape
+        # default: more features than pure sqrt — scratch trees are weak learners
+        k = self.max_features or max(2, min(d, max(int(np.sqrt(d)) + 2, d // 2)))
         for i in range(self.n_estimators):
             idx = r.integers(0, n, size=n)
-            # feature bagging by zeroing some columns randomly via projection
-            tree = DecisionTreeScratch(max_depth=self.max_depth, task=self.task)
-            # column subsample
-            d = X.shape[1]
-            keep = r.choice(d, size=max(2, int(np.sqrt(d)) + 1), replace=False)
+            tree = DecisionTreeScratch(max_depth=self.max_depth, task=self.task, min_leaf=8)
+            keep = r.choice(d, size=k, replace=False)
             Xs = X[idx][:, keep]
             tree.fit(Xs, y[idx])
             self.trees.append((tree, keep))
@@ -1212,48 +1212,77 @@ def fs11_ft_transformer(cls_data, reg_data, prev):
 
 
 def fs12_stacking(cls_data, reg_data, prev_gbdt, prev_dl):
+    """Stacking with **out-of-fold** base predictions (no train-meta leakage)."""
     tr, va = train_val_split_idx(len(cls_data["y"]))
     X = design_matrix(cls_data["X_num"], cls_data["X_cat"], cls_data["cat_cards"], "ordinal")
-    # base1 gbdt
+    Xoh = design_matrix(cls_data["X_num"], cls_data["X_cat"], cls_data["cat_cards"], "onehot")
+    ytr = cls_data["y"][tr]
+    yva = cls_data["y"][va]
+    X_tr, X_va = X[tr], X[va]
+    Xoh_tr, Xoh_va = Xoh[tr], Xoh[va]
+
+    # --- OOF on train (3 folds) ---
+    n_tr = len(ytr)
+    folds = np.array_split(np.random.default_rng(SEED).permutation(n_tr), 3)
+    oof1 = np.zeros(n_tr)
+    oof2 = np.zeros(n_tr)
+    use_hist = True
     try:
         from sklearn.ensemble import HistGradientBoostingClassifier
-        b1 = HistGradientBoostingClassifier(max_depth=5, max_iter=50, random_state=SEED)
-        b1.fit(X[tr], cls_data["y"][tr])
-        p1 = b1.predict_proba(X[va])[:, 1]
-        p1_tr = b1.predict_proba(X[tr])[:, 1]
     except Exception:
-        b1 = GradientBoostingScratch(n_estimators=30, max_depth=2, task="classification").fit(X[tr], cls_data["y"][tr])
-        _, p1 = b1.predict(X[va])
-        _, p1_tr = b1.predict(X[tr])
-    # base2 linear
-    Xoh = design_matrix(cls_data["X_num"], cls_data["X_cat"], cls_data["cat_cards"], "onehot")
-    Xtr, mu, sd = standardize_fit(Xoh[tr])
-    Xva = standardize_apply(Xoh[va], mu, sd)
-    b2 = LogisticRegressionGD(lr=0.2, n_iter=300).fit(Xtr, cls_data["y"][tr])
-    p2 = b2.predict_proba(Xva)
-    p2_tr = b2.predict_proba(Xtr)
-    # meta
-    meta_tr = np.column_stack([p1_tr, p2_tr])
-    meta_va = np.column_stack([p1, p2])
-    meta = LogisticRegressionGD(lr=0.2, n_iter=200).fit(meta_tr, cls_data["y"][tr])
-    p_m = meta.predict_proba(meta_va)
-    acc = accuracy(cls_data["y"][va], (p_m >= 0.5).astype(int))
-    auc = roc_auc_binary(cls_data["y"][va], p_m)
-    acc1 = accuracy(cls_data["y"][va], (p1 >= 0.5).astype(int))
-    acc2 = accuracy(cls_data["y"][va], (p2 >= 0.5).astype(int))
+        use_hist = False
+
+    for fi, val_idx in enumerate(folds):
+        train_idx = np.concatenate([folds[j] for j in range(3) if j != fi])
+        if use_hist:
+            b1 = HistGradientBoostingClassifier(max_depth=5, max_iter=50, random_state=SEED + fi)
+            b1.fit(X_tr[train_idx], ytr[train_idx])
+            oof1[val_idx] = b1.predict_proba(X_tr[val_idx])[:, 1]
+        else:
+            b1 = GradientBoostingScratch(n_estimators=30, max_depth=2, task="classification").fit(X_tr[train_idx], ytr[train_idx])
+            _, pv = b1.predict(X_tr[val_idx])
+            oof1[val_idx] = pv
+        mu, sd = None, None
+        Xtr_s, mu, sd = standardize_fit(Xoh_tr[train_idx])
+        Xva_s = standardize_apply(Xoh_tr[val_idx], mu, sd)
+        b2 = LogisticRegressionGD(lr=0.2, n_iter=300).fit(Xtr_s, ytr[train_idx])
+        oof2[val_idx] = b2.predict_proba(Xva_s)
+
+    # refit bases on full train for holdout val preds
+    if use_hist:
+        b1f = HistGradientBoostingClassifier(max_depth=5, max_iter=50, random_state=SEED)
+        b1f.fit(X_tr, ytr)
+        p1 = b1f.predict_proba(X_va)[:, 1]
+    else:
+        b1f = GradientBoostingScratch(n_estimators=30, max_depth=2, task="classification").fit(X_tr, ytr)
+        _, p1 = b1f.predict(X_va)
+    Xtr_s, mu, sd = standardize_fit(Xoh_tr)
+    Xva_s = standardize_apply(Xoh_va, mu, sd)
+    b2f = LogisticRegressionGD(lr=0.2, n_iter=300).fit(Xtr_s, ytr)
+    p2 = b2f.predict_proba(Xva_s)
+
+    meta = LogisticRegressionGD(lr=0.2, n_iter=250).fit(np.column_stack([oof1, oof2]), ytr)
+    p_m = meta.predict_proba(np.column_stack([p1, p2]))
+    acc = accuracy(yva, (p_m >= 0.5).astype(int))
+    auc = roc_auc_binary(yva, p_m)
+    acc1 = accuracy(yva, (p1 >= 0.5).astype(int))
+    acc2 = accuracy(yva, (p2 >= 0.5).astype(int))
 
     fig, ax = plt.subplots(figsize=(6, 3.5))
-    ax.bar(["GBDT", "Linear", "Stack"], [acc1, acc2, acc], color=["#2c3e50", "#2980b9", "#27ae60"])
-    ax.set_title("Stacking ensemble")
+    ax.bar(["GBDT", "Linear", "Stack(OOF)"], [acc1, acc2, acc], color=["#2c3e50", "#2980b9", "#27ae60"])
+    ax.set_title("Stacking ensemble (OOF meta)")
     ax.set_ylim(0, 1)
     payload = {
         "task": "stacking",
-        "concept": "Blend diverse inductive biases with a meta-learner",
-        "metrics": {"gbdt_acc": acc1, "linear_acc": acc2, "stack_acc": acc, "stack_auc": auc},
+        "concept": "Blend diverse inductive biases with a meta-learner on OOF preds",
+        "metrics": {
+            "gbdt_acc": acc1, "linear_acc": acc2, "stack_acc": acc, "stack_auc": auc,
+            "oof": True, "n_folds": 3,
+        },
         "cls_acc": acc,
         "reg_rmse": prev_gbdt.get("reg_rmse"),
-        "vs_prev": f"best base {max(acc1,acc2):.3f} → stack {acc:.3f}",
-        "you_should_feel": "竞赛后期靠多样性 stacking 抠点",
+        "vs_prev": f"best base {max(acc1,acc2):.3f} → stack(OOF) {acc:.3f}",
+        "you_should_feel": "Stacking 必须 OOF；用训练集预测做 meta = 泄漏虚高",
         "ok": True,
     }
     save_stage("fs12_stacking", payload, {"stacking": fig})
@@ -1502,8 +1531,8 @@ def fs18_lstm(ts_data, prev):
     class LSTMForecaster(nn.Module):
         def __init__(self):
             super().__init__()
-            self.lstm = nn.LSTM(1, 32, batch_first=True)
-            self.head = nn.Linear(32, 1)
+            self.lstm = nn.LSTM(1, 64, num_layers=2, batch_first=True, dropout=0.1)
+            self.head = nn.Linear(64, 1)
 
         def forward(self, x):
             out, _ = self.lstm(x)
@@ -1511,20 +1540,16 @@ def fs18_lstm(ts_data, prev):
 
     model = LSTMForecaster().to(device)
     opt = torch.optim.Adam(model.parameters(), lr=1e-3)
-    for ep in range(25):
+    for ep in range(40):
         model.train()
-        opt.zero_grad()
-        # mini batches
         perm = torch.randperm(len(Xtr_t), device=device)
-        total = 0.0
         for i in range(0, len(Xtr_t), 128):
             idx = perm[i:i + 128]
+            opt.zero_grad()
             pred = model(Xtr_t[idx])
             loss = nn.functional.mse_loss(pred, ytr_t[idx])
             loss.backward()
             opt.step()
-            opt.zero_grad()
-            total += float(loss.item())
     # recursive forecast
     model.eval()
     hist = list(yn[:split])
@@ -1804,7 +1829,25 @@ def fs21_leaderboard(all_cls, all_reg, all_ts):
 
 
 def main():
+    global STAGE_ORDER, SUMMARY
+    STAGE_ORDER = []
+    SUMMARY = {"stages": {}, "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     t0 = time.time()
+    # clean previous result dirs for deterministic single-run artifacts
+    if OUT_DIR.exists():
+        for child in OUT_DIR.iterdir():
+            if child.is_dir() and child.name.startswith("fs"):
+                for f in child.glob("*"):
+                    try:
+                        f.unlink()
+                    except Exception:
+                        pass
+            elif child.name in ("SUMMARY.json", "ACCEPTANCE.json"):
+                try:
+                    child.unlink()
+                except Exception:
+                    pass
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     print("OUT_DIR=", OUT_DIR)
     try:
         import torch
@@ -1876,9 +1919,8 @@ def main():
     board = fs21_leaderboard(all_cls, all_reg, all_ts)
 
     SUMMARY["elapsed_sec"] = round(time.time() - t0, 2)
-    SUMMARY["stage_order"] = STAGE_ORDER
+    SUMMARY["stage_order"] = list(STAGE_ORDER)
     SUMMARY["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    SUMMARY["ok"] = all(True for _ in STAGE_ORDER)
     SUMMARY["leaderboard"] = {
         "classification_acc": all_cls,
         "regression_rmse": all_reg,
@@ -1887,12 +1929,75 @@ def main():
         "best_reg": board["best_reg"],
         "best_ts": board["best_ts"],
     }
+
+    # ---- hard acceptance ----
+    EXPECTED_STAGES = [
+        "fs00_protocol","fs01_baselines","fs02_linear","fs03_feature_engineering","fs04_trees",
+        "fs05_random_forest","fs06_gbdt_scratch","fs07_hist_gbdt","fs08_target_encoding","fs09_mlp",
+        "fs10_embeddings","fs11_ft_transformer","fs12_stacking","fs13_ts_protocol","fs14_naive_forecasts",
+        "fs15_exp_smoothing","fs16_lag_tree","fs17_ar_linear","fs18_lstm","fs19_tcn_nbeats",
+        "fs20_patch_transformer","fs21_leaderboard",
+    ]
+    checks = []
+    def chk(name, cond, detail=""):
+        checks.append({"name": name, "ok": bool(cond), "detail": detail})
+        if not cond:
+            print("ACCEPT_FAIL", name, detail)
+
+    chk("stage_count_22", len(STAGE_ORDER) == 22, f"got {len(STAGE_ORDER)}")
+    chk("stage_order_exact", STAGE_ORDER == EXPECTED_STAGES, f"got {STAGE_ORDER}")
+    for st in EXPECTED_STAGES:
+        rd = OUT_DIR / st / "results.json"
+        chk(f"{st}_results_json", rd.is_file(), str(rd))
+        if rd.is_file():
+            payload = json.loads(rd.read_text())
+            chk(f"{st}_ok_flag", payload.get("ok") is True, str(payload.get("ok")))
+        pngs = list((OUT_DIR / st).glob("*.png"))
+        chk(f"{st}_has_png", len(pngs) >= 1, f"pngs={len(pngs)}")
+
+    # pedagogical metric sanity (not "every step improves", but no broken baselines)
+    chk("cls_linear_beats_majority", all_cls["linear"] > all_cls["maj"] + 0.05,
+        f"linear={all_cls['linear']} maj={all_cls['maj']}")
+    chk("cls_rf_beats_tree", all_cls["RF"] >= all_cls["tree"] - 1e-9,
+        f"RF={all_cls['RF']} tree={all_cls['tree']}")
+    chk("cls_best_above_0.70", max(all_cls.values()) >= 0.70, str(max(all_cls.values())))
+    chk("reg_ridge_beats_mean", all_reg["ridge"] < all_reg["mean"] * 0.6,
+        f"ridge={all_reg['ridge']} mean={all_reg['mean']}")
+    chk("reg_fe_beats_ridge", all_reg["FE"] < all_reg["ridge"],
+        f"FE={all_reg['FE']} ridge={all_reg['ridge']}")
+    chk("reg_histgb_beats_mean", all_reg["HistGB"] < all_reg["mean"] * 0.5,
+        f"HistGB={all_reg['HistGB']}")
+    # RF regression should not be catastrophically worse than a single tree
+    chk("reg_rf_not_worse_than_tree_by_50pct", all_reg["RF"] <= all_reg["tree"] * 1.5 + 0.25,
+        f"RF={all_reg['RF']} tree={all_reg['tree']}")
+    chk("ts_all_finite", all(np.isfinite(list(all_ts.values()))), str(all_ts))
+    chk("ts_best_beats_naive_or_close", min(all_ts.values()) <= all_ts["seas_naive"] * 1.05,
+        str(all_ts))
+    # stacking uses OOF — must report oof flag if present
+    fs12 = json.loads((OUT_DIR / "fs12_stacking" / "results.json").read_text())
+    chk("stacking_oof", fs12.get("metrics", {}).get("oof") is True, str(fs12.get("metrics")))
+
+    accept_ok = all(c["ok"] for c in checks)
+    SUMMARY["ok"] = accept_ok and all(
+        json.loads((OUT_DIR / st / "results.json").read_text()).get("ok") is True
+        for st in EXPECTED_STAGES
+    )
+    SUMMARY["acceptance"] = {"ok": accept_ok, "checks": checks, "n_pass": sum(c["ok"] for c in checks), "n_total": len(checks)}
     (OUT_DIR / "SUMMARY.json").write_text(json.dumps(SUMMARY, indent=2))
+    (OUT_DIR / "ACCEPTANCE.json").write_text(json.dumps(SUMMARY["acceptance"], indent=2))
     print("SUMMARY written", OUT_DIR / "SUMMARY.json")
+    print("ACCEPTANCE", SUMMARY["acceptance"]["n_pass"], "/", SUMMARY["acceptance"]["n_total"], "ok=", accept_ok)
+    if not accept_ok:
+        failed = [c for c in checks if not c["ok"]]
+        raise RuntimeError("ACCEPTANCE FAILED: " + json.dumps(failed, ensure_ascii=False)[:2000])
     print("SMOKE_OK stages=", len(STAGE_ORDER), "elapsed=", SUMMARY["elapsed_sec"])
+    print("TABULAR_FS_OK")
     return SUMMARY
 
 
-# CLI: python run_tabular_fs_ladder.py
-if __name__ == "__main__" and "get_ipython" not in dir():
-    main()
+# CLI only — notebooks must call main() explicitly once
+if __name__ == "__main__":
+    try:
+        get_ipython  # type: ignore  # noqa: F821
+    except NameError:
+        main()

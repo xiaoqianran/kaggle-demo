@@ -6,10 +6,10 @@
       "metrics": {
         "class_base_rate": 0.551,
         "acc_perfect": 1.0,
-        "acc_random": 0.5135,
+        "acc_random": 0.5115,
         "acc_all_zero": 0.449,
         "auc_perfect": 1.0,
-        "auc_random": 0.5010953965052405,
+        "auc_random": 0.5133074507172624,
         "reg_y_std": 3.96639793457995,
         "reg_rmse_mean_baseline": 3.96639793457995,
         "ts_length": 1500,
@@ -66,12 +66,12 @@
       "task": "decision_tree",
       "concept": "Axis-aligned partitions learn interactions without hand FE",
       "metrics": {
-        "cls_acc": 0.686,
-        "cls_auc": 0.7725387257761358,
-        "reg_rmse": 2.0289746620967812,
-        "n_nodes": 27
+        "cls_acc": 0.706,
+        "cls_auc": 0.7727493680731091,
+        "reg_rmse": 2.101460678483524,
+        "n_nodes": 29
       },
-      "vs_prev": "cls 0.724\u21920.686",
+      "vs_prev": "cls 0.724\u21920.706",
       "you_should_feel": "\u6811\u81ea\u52a8\u5207\u4ea4\u4e92\uff0c\u4f46\u5355\u68f5\u9ad8\u65b9\u5dee\u3001\u8fb9\u754c\u952f\u9f7f",
       "ok": true
     },
@@ -79,11 +79,11 @@
       "task": "random_forest",
       "concept": "Bagging + feature subsample averages noisy trees",
       "metrics": {
-        "cls_acc": 0.728,
-        "cls_auc": 0.8170976732127812,
-        "reg_rmse": 2.792691777021854
+        "cls_acc": 0.724,
+        "cls_auc": 0.8058040054442932,
+        "reg_rmse": 2.4790141957986025
       },
-      "vs_prev": "cls 0.686\u21920.728",
+      "vs_prev": "cls 0.706\u21920.724",
       "you_should_feel": "\u96c6\u6210\u7528\u5e73\u5747\u6362\u7a33\u5b9a\uff1bRF \u662f\u8868\u683c\u7ecf\u5178\u751c\u70b9",
       "ok": true
     },
@@ -92,10 +92,10 @@
       "concept": "Stage-wise additive modeling on residuals / pseudo-residuals",
       "metrics": {
         "cls_acc": 0.726,
-        "cls_auc": 0.801315704193402,
-        "reg_rmse": 1.4045432612976125
+        "cls_auc": 0.8045320500356472,
+        "reg_rmse": 1.3779533589391664
       },
-      "vs_prev": "cls 0.728\u21920.726; rmse 2.793\u21921.405",
+      "vs_prev": "cls 0.724\u21920.726; rmse 2.479\u21921.378",
       "you_should_feel": "Boosting \u7528\u504f\u5dee\u6362\u7cbe\u5ea6\uff1b\u8868\u683c\u738b\u5ea7\u7684\u6838\u5fc3\u673a\u5236",
       "ok": true
     },
@@ -129,8 +129,8 @@
       "concept": "Deep MLP + early stopping on standardized tabular inputs",
       "metrics": {
         "cls_acc": 0.704,
-        "cls_auc": 0.7857767839782228,
-        "reg_rmse": 0.7492352816377801
+        "cls_auc": 0.7925497439885929,
+        "reg_rmse": 0.7299001699048445
       },
       "vs_prev": "cls 0.710\u21920.704 (often GBDT still wins small data)",
       "you_should_feel": "\u7eaf MLP \u5728\u4e2d\u5c0f\u8868\u683c\u5e38\u8f93\u7ed9 GBDT\u2014\u2014\u8fd9\u662f\u9886\u57df\u4e8b\u5b9e",
@@ -140,10 +140,10 @@
       "task": "embeddings",
       "concept": "Learned embeddings share statistical strength across rare categories",
       "metrics": {
-        "onehot_mlp_acc": 0.704,
-        "embed_mlp_acc": 0.728
+        "onehot_mlp_acc": 0.726,
+        "embed_mlp_acc": 0.698
       },
-      "vs_prev": "onehot 0.704 vs emb 0.728",
+      "vs_prev": "onehot 0.726 vs emb 0.698",
       "you_should_feel": "Embedding \u662f DL \u5904\u7406\u7c7b\u522b\u7684\u6b63\u786e\u59ff\u52bf",
       "ok": true
     },
@@ -151,25 +151,27 @@
       "task": "ft_transformer",
       "concept": "Tokenize each feature + Transformer \u2014 modern tabular DL backbone",
       "metrics": {
-        "cls_acc": 0.734,
-        "cls_auc": 0.7973945168189772,
-        "reg_rmse": 1.0477130505957564
+        "cls_acc": 0.718,
+        "cls_auc": 0.7920150366193531,
+        "reg_rmse": 1.1036141391970737
       },
-      "vs_prev": "cls 0.728\u21920.734",
+      "vs_prev": "cls 0.698\u21920.718",
       "you_should_feel": "\u7279\u5f81\u5373 token\uff1a\u6ce8\u610f\u529b\u5efa\u6a21\u7279\u5f81\u4ea4\u4e92",
       "ok": true
     },
     "fs12_stacking": {
       "task": "stacking",
-      "concept": "Blend diverse inductive biases with a meta-learner",
+      "concept": "Blend diverse inductive biases with a meta-learner on OOF preds",
       "metrics": {
         "gbdt_acc": 0.738,
         "linear_acc": 0.724,
-        "stack_acc": 0.722,
-        "stack_auc": 0.8056581761617733
+        "stack_acc": 0.742,
+        "stack_auc": 0.8092877049711582,
+        "oof": true,
+        "n_folds": 3
       },
-      "vs_prev": "best base 0.738 \u2192 stack 0.722",
-      "you_should_feel": "\u7ade\u8d5b\u540e\u671f\u9760\u591a\u6837\u6027 stacking \u62a0\u70b9",
+      "vs_prev": "best base 0.738 \u2192 stack(OOF) 0.742",
+      "you_should_feel": "Stacking \u5fc5\u987b OOF\uff1b\u7528\u8bad\u7ec3\u96c6\u9884\u6d4b\u505a meta = \u6cc4\u6f0f\u865a\u9ad8",
       "ok": true
     },
     "fs13_ts_protocol": {
@@ -240,12 +242,12 @@
       "task": "lstm",
       "concept": "Sequence model memorizes temporal state end-to-end",
       "metrics": {
-        "rmse": 2.2351406996129497,
-        "smape": 7.8539465322357245,
+        "rmse": 2.099674095826491,
+        "smape": 7.240043095268913,
         "device": "cuda"
       },
-      "rmse": 2.2351406996129497,
-      "vs_prev": "AR 0.878 \u2192 LSTM 2.235",
+      "rmse": 2.099674095826491,
+      "vs_prev": "AR 0.878 \u2192 LSTM 2.100",
       "you_should_feel": "LSTM \u81ea\u52a8\u5b66\u8bb0\u5fc6\uff0c\u4f46\u5c0f\u6570\u636e\u6613\u8fc7\u62df\u5408\u3001\u8bad\u7ec3\u66f4\u91cd",
       "ok": true
     },
@@ -253,14 +255,14 @@
       "task": "tcn_nbeats",
       "concept": "Dilated conv (TCN) and doubly residual basis (N-BEATS)",
       "metrics": {
-        "rmse_tcn": 1.6633436595875437,
-        "rmse_nbeats": 0.8118687688831862,
-        "best_rmse": 0.8118687688831862,
+        "rmse_tcn": 1.483176384828343,
+        "rmse_nbeats": 1.1100098756408332,
+        "best_rmse": 1.1100098756408332,
         "device": "cuda",
-        "rmse": 0.8118687688831862
+        "rmse": 1.1100098756408332
       },
-      "rmse": 0.8118687688831862,
-      "vs_prev": "LSTM 2.235 \u2192 best conv/nbeats 0.812",
+      "rmse": 1.1100098756408332,
+      "vs_prev": "LSTM 2.100 \u2192 best conv/nbeats 1.110",
       "you_should_feel": "\u73b0\u4ee3\u65f6\u5e8f DL\uff1a\u5377\u79ef\u611f\u53d7\u91ce\u4e0e\u53ef\u89e3\u91ca stack \u5757",
       "ok": true
     },
@@ -268,12 +270,12 @@
       "task": "patch_transformer",
       "concept": "Patchify time + Transformer channels \u2014 PatchTST spirit",
       "metrics": {
-        "rmse": 1.3820505264148928,
-        "smape": 5.128600853177454,
+        "rmse": 1.6205664243689835,
+        "smape": 5.987856839734749,
         "device": "cuda"
       },
-      "rmse": 1.3820505264148928,
-      "vs_prev": "TCN/NBEATS 0.812 \u2192 Patch 1.382",
+      "rmse": 1.6205664243689835,
+      "vs_prev": "TCN/NBEATS 1.110 \u2192 Patch 1.621",
       "you_should_feel": "\u524d\u6cbf\u65f6\u5e8f\uff1a\u628a\u65f6\u95f4\u5207 patch \u5f53 token",
       "ok": true
     },
@@ -284,31 +286,9 @@
       "ok": true
     }
   },
-  "started_at": "2026-08-10T21:17:41Z",
-  "elapsed_sec": 18.56,
+  "started_at": "2026-08-10T21:22:41Z",
+  "elapsed_sec": 31.73,
   "stage_order": [
-    "fs00_protocol",
-    "fs01_baselines",
-    "fs02_linear",
-    "fs03_feature_engineering",
-    "fs04_trees",
-    "fs05_random_forest",
-    "fs06_gbdt_scratch",
-    "fs07_hist_gbdt",
-    "fs08_target_encoding",
-    "fs09_mlp",
-    "fs10_embeddings",
-    "fs11_ft_transformer",
-    "fs12_stacking",
-    "fs13_ts_protocol",
-    "fs14_naive_forecasts",
-    "fs15_exp_smoothing",
-    "fs16_lag_tree",
-    "fs17_ar_linear",
-    "fs18_lstm",
-    "fs19_tcn_nbeats",
-    "fs20_patch_transformer",
-    "fs21_leaderboard",
     "fs00_protocol",
     "fs01_baselines",
     "fs02_linear",
@@ -332,45 +312,442 @@
     "fs20_patch_transformer",
     "fs21_leaderboard"
   ],
-  "finished_at": "2026-08-10T21:18:28Z",
-  "ok": true,
+  "finished_at": "2026-08-10T21:23:13Z",
   "leaderboard": {
     "classification_acc": {
       "maj": 0.556,
       "linear": 0.724,
       "FE": 0.724,
-      "tree": 0.686,
-      "RF": 0.728,
+      "tree": 0.706,
+      "RF": 0.724,
       "GBDTs": 0.726,
       "HistGB": 0.716,
       "TE": 0.71,
       "MLP": 0.704,
-      "Emb": 0.728,
-      "FTT": 0.734,
-      "Stack": 0.722
+      "Emb": 0.698,
+      "FTT": 0.718,
+      "Stack": 0.742
     },
     "regression_rmse": {
       "mean": 3.902800753582752,
       "ridge": 1.0731486155282521,
       "FE": 0.49406430776686494,
-      "tree": 2.0289746620967812,
-      "RF": 2.792691777021854,
-      "GBDTs": 1.4045432612976125,
+      "tree": 2.101460678483524,
+      "RF": 2.4790141957986025,
+      "GBDTs": 1.3779533589391664,
       "HistGB": 0.8410577095298485,
-      "MLP": 0.7492352816377801,
-      "FTT": 1.0477130505957564
+      "MLP": 0.7299001699048445,
+      "FTT": 1.1036141391970737
     },
     "timeseries_rmse": {
       "seas_naive": 0.9117903987066313,
       "HW": 1.047722792329578,
       "lag_tree": 1.039603805682996,
       "AR": 0.8779134500499444,
-      "LSTM": 2.2351406996129497,
-      "TCN/NB": 0.8118687688831862,
-      "Patch": 1.3820505264148928
+      "LSTM": 2.099674095826491,
+      "TCN/NB": 1.1100098756408332,
+      "Patch": 1.6205664243689835
     },
-    "best_cls": "FTT",
+    "best_cls": "Stack",
     "best_reg": "FE",
-    "best_ts": "TCN/NB"
+    "best_ts": "AR"
+  },
+  "ok": true,
+  "acceptance": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "stage_count_22",
+        "ok": true,
+        "detail": "got 22"
+      },
+      {
+        "name": "stage_order_exact",
+        "ok": true,
+        "detail": "got ['fs00_protocol', 'fs01_baselines', 'fs02_linear', 'fs03_feature_engineering', 'fs04_trees', 'fs05_random_forest', 'fs06_gbdt_scratch', 'fs07_hist_gbdt', 'fs08_target_encoding', 'fs09_mlp', 'fs10_embeddings', 'fs11_ft_transformer', 'fs12_stacking', 'fs13_ts_protocol', 'fs14_naive_forecasts', 'fs15_exp_smoothing', 'fs16_lag_tree', 'fs17_ar_linear', 'fs18_lstm', 'fs19_tcn_nbeats', 'fs20_patch_transformer', 'fs21_leaderboard']"
+      },
+      {
+        "name": "fs00_protocol_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs00_protocol/results.json"
+      },
+      {
+        "name": "fs00_protocol_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs00_protocol_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs01_baselines_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs01_baselines/results.json"
+      },
+      {
+        "name": "fs01_baselines_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs01_baselines_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs02_linear_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs02_linear/results.json"
+      },
+      {
+        "name": "fs02_linear_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs02_linear_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs03_feature_engineering_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs03_feature_engineering/results.json"
+      },
+      {
+        "name": "fs03_feature_engineering_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs03_feature_engineering_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs04_trees_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs04_trees/results.json"
+      },
+      {
+        "name": "fs04_trees_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs04_trees_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs05_random_forest_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs05_random_forest/results.json"
+      },
+      {
+        "name": "fs05_random_forest_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs05_random_forest_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs06_gbdt_scratch_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs06_gbdt_scratch/results.json"
+      },
+      {
+        "name": "fs06_gbdt_scratch_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs06_gbdt_scratch_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs07_hist_gbdt_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs07_hist_gbdt/results.json"
+      },
+      {
+        "name": "fs07_hist_gbdt_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs07_hist_gbdt_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs08_target_encoding_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs08_target_encoding/results.json"
+      },
+      {
+        "name": "fs08_target_encoding_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs08_target_encoding_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs09_mlp_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs09_mlp/results.json"
+      },
+      {
+        "name": "fs09_mlp_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs09_mlp_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs10_embeddings_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs10_embeddings/results.json"
+      },
+      {
+        "name": "fs10_embeddings_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs10_embeddings_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs11_ft_transformer_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs11_ft_transformer/results.json"
+      },
+      {
+        "name": "fs11_ft_transformer_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs11_ft_transformer_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs12_stacking_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs12_stacking/results.json"
+      },
+      {
+        "name": "fs12_stacking_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs12_stacking_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs13_ts_protocol_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs13_ts_protocol/results.json"
+      },
+      {
+        "name": "fs13_ts_protocol_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs13_ts_protocol_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs14_naive_forecasts_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs14_naive_forecasts/results.json"
+      },
+      {
+        "name": "fs14_naive_forecasts_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs14_naive_forecasts_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs15_exp_smoothing_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs15_exp_smoothing/results.json"
+      },
+      {
+        "name": "fs15_exp_smoothing_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs15_exp_smoothing_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs16_lag_tree_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs16_lag_tree/results.json"
+      },
+      {
+        "name": "fs16_lag_tree_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs16_lag_tree_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs17_ar_linear_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs17_ar_linear/results.json"
+      },
+      {
+        "name": "fs17_ar_linear_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs17_ar_linear_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs18_lstm_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs18_lstm/results.json"
+      },
+      {
+        "name": "fs18_lstm_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs18_lstm_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs19_tcn_nbeats_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs19_tcn_nbeats/results.json"
+      },
+      {
+        "name": "fs19_tcn_nbeats_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs19_tcn_nbeats_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs20_patch_transformer_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs20_patch_transformer/results.json"
+      },
+      {
+        "name": "fs20_patch_transformer_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs20_patch_transformer_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "fs21_leaderboard_results_json",
+        "ok": true,
+        "detail": "/kaggle/working/results/fs21_leaderboard/results.json"
+      },
+      {
+        "name": "fs21_leaderboard_ok_flag",
+        "ok": true,
+        "detail": "True"
+      },
+      {
+        "name": "fs21_leaderboard_has_png",
+        "ok": true,
+        "detail": "pngs=1"
+      },
+      {
+        "name": "cls_linear_beats_majority",
+        "ok": true,
+        "detail": "linear=0.724 maj=0.556"
+      },
+      {
+        "name": "cls_rf_beats_tree",
+        "ok": true,
+        "detail": "RF=0.724 tree=0.706"
+      },
+      {
+        "name": "cls_best_above_0.70",
+        "ok": true,
+        "detail": "0.742"
+      },
+      {
+        "name": "reg_ridge_beats_mean",
+        "ok": true,
+        "detail": "ridge=1.0731486155282521 mean=3.902800753582752"
+      },
+      {
+        "name": "reg_fe_beats_ridge",
+        "ok": true,
+        "detail": "FE=0.49406430776686494 ridge=1.0731486155282521"
+      },
+      {
+        "name": "reg_histgb_beats_mean",
+        "ok": true,
+        "detail": "HistGB=0.8410577095298485"
+      },
+      {
+        "name": "reg_rf_not_worse_than_tree_by_50pct",
+        "ok": true,
+        "detail": "RF=2.4790141957986025 tree=2.101460678483524"
+      },
+      {
+        "name": "ts_all_finite",
+        "ok": true,
+        "detail": "{'seas_naive': 0.9117903987066313, 'HW': 1.047722792329578, 'lag_tree': 1.039603805682996, 'AR': 0.8779134500499444, 'LSTM': 2.099674095826491, 'TCN/NB': 1.1100098756408332, 'Patch': 1.6205664243689835}"
+      },
+      {
+        "name": "ts_best_beats_naive_or_close",
+        "ok": true,
+        "detail": "{'seas_naive': 0.9117903987066313, 'HW': 1.047722792329578, 'lag_tree': 1.039603805682996, 'AR': 0.8779134500499444, 'LSTM': 2.099674095826491, 'TCN/NB': 1.1100098756408332, 'Patch': 1.6205664243689835}"
+      },
+      {
+        "name": "stacking_oof",
+        "ok": true,
+        "detail": "{'gbdt_acc': 0.738, 'linear_acc': 0.724, 'stack_acc': 0.742, 'stack_auc': 0.8092877049711582, 'oof': True, 'n_folds': 3}"
+      }
+    ],
+    "n_pass": 78,
+    "n_total": 78
   }
 }
