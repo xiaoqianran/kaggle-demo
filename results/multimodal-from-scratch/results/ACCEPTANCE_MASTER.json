@@ -12,6 +12,8 @@
     "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs03-fs04-captioning": {
       "FS03_cls_val": true,
       "FS03_greedy_exact": true,
+      "FS03_loss_finite": true,
+      "FS04_loss_finite": true,
       "FS04_cls_val": true,
       "FS04_greedy_exact": true
     },
@@ -40,5 +42,6 @@
       "FS14_route_acc": true
     }
   },
-  "stages_fs00_fs14": "ALL_PASS"
+  "stages_fs00_fs14": "ALL_PASS",
+  "notes": "FS04 nan CE fixed via non-pad masked loss"
 }

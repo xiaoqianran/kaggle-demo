@@ -4,122 +4,122 @@
   "history": [
     {
       "epoch": 1,
-      "loss": NaN,
+      "loss": 2.8317,
       "cls_val": 0.6222
     },
     {
       "epoch": 2,
-      "loss": NaN,
-      "cls_val": 0.3259
+      "loss": 2.4609,
+      "cls_val": 0.6222
     },
     {
       "epoch": 3,
-      "loss": NaN,
+      "loss": 1.986,
       "cls_val": 0.6222
     },
     {
       "epoch": 4,
-      "loss": NaN,
+      "loss": 1.5518,
       "cls_val": 0.6222
     },
     {
       "epoch": 5,
-      "loss": NaN,
-      "cls_val": 0.8296
+      "loss": 1.2532,
+      "cls_val": 1.0
     },
     {
       "epoch": 6,
-      "loss": NaN,
+      "loss": 1.0648,
       "cls_val": 1.0
     },
     {
       "epoch": 7,
-      "loss": NaN,
+      "loss": 0.9292,
       "cls_val": 1.0
     },
     {
       "epoch": 8,
-      "loss": NaN,
+      "loss": 0.8124,
       "cls_val": 1.0
     },
     {
       "epoch": 9,
-      "loss": NaN,
+      "loss": 0.702,
       "cls_val": 1.0
     },
     {
       "epoch": 10,
-      "loss": NaN,
+      "loss": 0.5929,
       "cls_val": 1.0
     },
     {
       "epoch": 11,
-      "loss": NaN,
+      "loss": 0.4866,
       "cls_val": 1.0
     },
     {
       "epoch": 12,
-      "loss": NaN,
+      "loss": 0.404,
       "cls_val": 1.0
     },
     {
       "epoch": 13,
-      "loss": NaN,
+      "loss": 0.325,
       "cls_val": 1.0
     },
     {
       "epoch": 14,
-      "loss": NaN,
+      "loss": 0.2566,
       "cls_val": 1.0
     },
     {
       "epoch": 15,
-      "loss": NaN,
+      "loss": 0.1982,
       "cls_val": 1.0
     },
     {
       "epoch": 16,
-      "loss": NaN,
+      "loss": 0.16,
       "cls_val": 1.0
     },
     {
       "epoch": 17,
-      "loss": NaN,
+      "loss": 0.1307,
       "cls_val": 1.0
     },
     {
       "epoch": 18,
-      "loss": NaN,
+      "loss": 0.1076,
       "cls_val": 1.0
     },
     {
       "epoch": 19,
-      "loss": NaN,
+      "loss": 0.0898,
       "cls_val": 1.0
     },
     {
       "epoch": 20,
-      "loss": NaN,
+      "loss": 0.0757,
       "cls_val": 1.0
     },
     {
       "epoch": 21,
-      "loss": NaN,
+      "loss": 0.0644,
       "cls_val": 1.0
     },
     {
       "epoch": 22,
-      "loss": NaN,
+      "loss": 0.0549,
       "cls_val": 1.0
     },
     {
       "epoch": 23,
-      "loss": NaN,
+      "loss": 0.0469,
       "cls_val": 1.0
     },
     {
       "epoch": 24,
-      "loss": NaN,
+      "loss": 0.0403,
       "cls_val": 1.0
     }
   ],
