@@ -1893,5 +1893,6 @@ def main():
     return SUMMARY
 
 
-if __name__ == "__main__":
+# CLI: python run_tabular_fs_ladder.py
+if __name__ == "__main__" and "get_ipython" not in dir():
     main()
