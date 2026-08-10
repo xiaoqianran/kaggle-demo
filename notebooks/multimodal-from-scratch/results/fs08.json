@@ -1,0 +1,172 @@
+{
+  "stage": "FS08",
+  "method": "patch embeddings + MaxSim (ColPali-style visual doc retrieval)",
+  "visual_R@1": 0.6,
+  "text_tfidf_R@1": 1.0,
+  "rows": [
+    {
+      "q": "What is the invoice number for Acme?",
+      "gt_doc": "d1",
+      "vis_ret": "d1",
+      "ok": true,
+      "sims": [
+        0.233,
+        0.222,
+        -0.023,
+        -0.028
+      ]
+    },
+    {
+      "q": "How many dollars does Globex invoice?",
+      "gt_doc": "d2",
+      "vis_ret": "d1",
+      "ok": false,
+      "sims": [
+        0.712,
+        0.707,
+        0.51,
+        0.494
+      ]
+    },
+    {
+      "q": "What is the headcount?",
+      "gt_doc": "d3",
+      "vis_ret": "d3",
+      "ok": true,
+      "sims": [
+        0.338,
+        0.336,
+        0.357,
+        0.34
+      ]
+    },
+    {
+      "q": "What is max temperature?",
+      "gt_doc": "d4",
+      "vis_ret": "d1",
+      "ok": false,
+      "sims": [
+        0.265,
+        0.264,
+        0.26,
+        0.253
+      ]
+    },
+    {
+      "q": "Who is the vendor on invoice 1001?",
+      "gt_doc": "d1",
+      "vis_ret": "d1",
+      "ok": true,
+      "sims": [
+        0.613,
+        0.606,
+        0.533,
+        0.522
+      ]
+    }
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.3862
+    },
+    {
+      "epoch": 2,
+      "loss": 1.3857
+    },
+    {
+      "epoch": 3,
+      "loss": 1.3858
+    },
+    {
+      "epoch": 4,
+      "loss": 1.3852
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3844
+    },
+    {
+      "epoch": 6,
+      "loss": 1.3823
+    },
+    {
+      "epoch": 7,
+      "loss": 1.3793
+    },
+    {
+      "epoch": 8,
+      "loss": 1.3742
+    },
+    {
+      "epoch": 9,
+      "loss": 1.3677
+    },
+    {
+      "epoch": 10,
+      "loss": 1.3657
+    },
+    {
+      "epoch": 11,
+      "loss": 1.3657
+    },
+    {
+      "epoch": 12,
+      "loss": 1.3545
+    },
+    {
+      "epoch": 13,
+      "loss": 1.3478
+    },
+    {
+      "epoch": 14,
+      "loss": 1.3666
+    },
+    {
+      "epoch": 15,
+      "loss": 1.347
+    },
+    {
+      "epoch": 16,
+      "loss": 1.328
+    },
+    {
+      "epoch": 17,
+      "loss": 1.3163
+    },
+    {
+      "epoch": 18,
+      "loss": 1.3213
+    },
+    {
+      "epoch": 19,
+      "loss": 1.3792
+    },
+    {
+      "epoch": 20,
+      "loss": 1.3782
+    },
+    {
+      "epoch": 21,
+      "loss": 1.3707
+    },
+    {
+      "epoch": 22,
+      "loss": 1.3664
+    },
+    {
+      "epoch": 23,
+      "loss": 1.3536
+    },
+    {
+      "epoch": 24,
+      "loss": 1.319
+    },
+    {
+      "epoch": 25,
+      "loss": 1.2976
+    }
+  ],
+  "vs_prev": "FS07 retrieves on OCR text only; FS08 retrieves from page pixels/patches",
+  "figure": "figures/fs08_patches.png"
+}

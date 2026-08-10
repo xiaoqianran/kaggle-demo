@@ -1,0 +1,8 @@
+{
+  "notebook": "Grok-multimodal-fs05-fs06-align-vqa",
+  "progress": {
+    "FS05": "ok",
+    "FS06": "ok"
+  },
+  "device": "cuda:0"
+}

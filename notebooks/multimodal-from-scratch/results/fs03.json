@@ -1,0 +1,92 @@
+{
+  "stage": "FS03",
+  "method": "Show-and-Tell CNN encoder + LSTM decoder",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.5325,
+      "val_token_acc": 0.4414
+    },
+    {
+      "epoch": 2,
+      "loss": 1.8785,
+      "val_token_acc": 0.4727
+    },
+    {
+      "epoch": 3,
+      "loss": 1.3893,
+      "val_token_acc": 0.707
+    },
+    {
+      "epoch": 4,
+      "loss": 1.0419,
+      "val_token_acc": 0.7656
+    },
+    {
+      "epoch": 5,
+      "loss": 0.8107,
+      "val_token_acc": 0.8203
+    },
+    {
+      "epoch": 6,
+      "loss": 0.6804,
+      "val_token_acc": 0.8203
+    },
+    {
+      "epoch": 7,
+      "loss": 0.6037,
+      "val_token_acc": 0.8203
+    },
+    {
+      "epoch": 8,
+      "loss": 0.565,
+      "val_token_acc": 0.8086
+    },
+    {
+      "epoch": 9,
+      "loss": 0.5378,
+      "val_token_acc": 0.8203
+    },
+    {
+      "epoch": 10,
+      "loss": 0.521,
+      "val_token_acc": 0.8125
+    },
+    {
+      "epoch": 11,
+      "loss": 0.5091,
+      "val_token_acc": 0.8203
+    }
+  ],
+  "samples": [
+    {
+      "input": "red_circle",
+      "pred": "a green triangle",
+      "refs": [
+        "a red circle",
+        "red round shape",
+        "a circle that is red"
+      ]
+    },
+    {
+      "input": "blue_square",
+      "pred": "a green triangle",
+      "refs": [
+        "a blue square",
+        "blue box shape",
+        "a square that is blue"
+      ]
+    },
+    {
+      "input": "green_triangle",
+      "pred": "a green triangle",
+      "refs": [
+        "a green triangle",
+        "green pointed shape",
+        "a triangle that is green"
+      ]
+    }
+  ],
+  "vs_prev": "FS02 closed-set class word; FS03 open sequence generation",
+  "figure": "figures/fs03_captions.png"
+}

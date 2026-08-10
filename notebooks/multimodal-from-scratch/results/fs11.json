@@ -1,0 +1,133 @@
+{
+  "stage": "FS11",
+  "method": "class-conditioned mini DDPM image generation",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.92103
+    },
+    {
+      "epoch": 2,
+      "loss": 0.72613
+    },
+    {
+      "epoch": 3,
+      "loss": 0.63602
+    },
+    {
+      "epoch": 4,
+      "loss": 0.58691
+    },
+    {
+      "epoch": 5,
+      "loss": 0.55884
+    },
+    {
+      "epoch": 6,
+      "loss": 0.53902
+    },
+    {
+      "epoch": 7,
+      "loss": 0.52089
+    },
+    {
+      "epoch": 8,
+      "loss": 0.5152
+    },
+    {
+      "epoch": 9,
+      "loss": 0.50651
+    },
+    {
+      "epoch": 10,
+      "loss": 0.49515
+    },
+    {
+      "epoch": 11,
+      "loss": 0.4861
+    },
+    {
+      "epoch": 12,
+      "loss": 0.47686
+    },
+    {
+      "epoch": 13,
+      "loss": 0.46561
+    },
+    {
+      "epoch": 14,
+      "loss": 0.46033
+    },
+    {
+      "epoch": 15,
+      "loss": 0.45551
+    },
+    {
+      "epoch": 16,
+      "loss": 0.45175
+    },
+    {
+      "epoch": 17,
+      "loss": 0.43873
+    },
+    {
+      "epoch": 18,
+      "loss": 0.44514
+    },
+    {
+      "epoch": 19,
+      "loss": 0.43204
+    },
+    {
+      "epoch": 20,
+      "loss": 0.4328
+    },
+    {
+      "epoch": 21,
+      "loss": 0.43067
+    },
+    {
+      "epoch": 22,
+      "loss": 0.41764
+    },
+    {
+      "epoch": 23,
+      "loss": 0.40821
+    },
+    {
+      "epoch": 24,
+      "loss": 0.41416
+    },
+    {
+      "epoch": 25,
+      "loss": 0.41159
+    },
+    {
+      "epoch": 26,
+      "loss": 0.41253
+    },
+    {
+      "epoch": 27,
+      "loss": 0.40169
+    },
+    {
+      "epoch": 28,
+      "loss": 0.40155
+    },
+    {
+      "epoch": 29,
+      "loss": 0.39745
+    },
+    {
+      "epoch": 30,
+      "loss": 0.39535
+    }
+  ],
+  "color_l2_to_gt_mean": {
+    "red_circle": 0.33716055750846863,
+    "blue_square": 0.3486288785934448,
+    "green_triangle": 0.36283281445503235
+  },
+  "vs_prev": "earlier stages understand/describe images; FS11 synthesizes pixels from condition",
+  "figure": "figures/fs11_gen.png"
+}

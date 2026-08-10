@@ -1,0 +1,156 @@
+{
+  "stage": "FS06",
+  "method": "CNN+question-emb concat fusion VQA",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.5861,
+      "acc": 0.4302
+    },
+    {
+      "epoch": 2,
+      "loss": 0.5403,
+      "acc": 0.8729
+    },
+    {
+      "epoch": 3,
+      "loss": 0.1149,
+      "acc": 0.9953
+    },
+    {
+      "epoch": 4,
+      "loss": 0.0154,
+      "acc": 1.0
+    },
+    {
+      "epoch": 5,
+      "loss": 0.0054,
+      "acc": 1.0
+    },
+    {
+      "epoch": 6,
+      "loss": 0.0034,
+      "acc": 1.0
+    },
+    {
+      "epoch": 7,
+      "loss": 0.0026,
+      "acc": 1.0
+    },
+    {
+      "epoch": 8,
+      "loss": 0.0018,
+      "acc": 1.0
+    },
+    {
+      "epoch": 9,
+      "loss": 0.0015,
+      "acc": 1.0
+    },
+    {
+      "epoch": 10,
+      "loss": 0.0012,
+      "acc": 1.0
+    },
+    {
+      "epoch": 11,
+      "loss": 0.001,
+      "acc": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0008,
+      "acc": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": 0.0006,
+      "acc": 1.0
+    },
+    {
+      "epoch": 14,
+      "loss": 0.0005,
+      "acc": 1.0
+    },
+    {
+      "epoch": 15,
+      "loss": 0.0005,
+      "acc": 1.0
+    }
+  ],
+  "acc": 1.0,
+  "rows": [
+    {
+      "image": "red_circle",
+      "question": "what color?",
+      "gt": "red",
+      "pred": "red",
+      "ok": true
+    },
+    {
+      "image": "red_circle",
+      "question": "what shape?",
+      "gt": "circle",
+      "pred": "circle",
+      "ok": true
+    },
+    {
+      "image": "red_circle",
+      "question": "is it blue?",
+      "gt": "no",
+      "pred": "no",
+      "ok": true
+    },
+    {
+      "image": "blue_square",
+      "question": "what color?",
+      "gt": "blue",
+      "pred": "blue",
+      "ok": true
+    },
+    {
+      "image": "blue_square",
+      "question": "what shape?",
+      "gt": "square",
+      "pred": "square",
+      "ok": true
+    },
+    {
+      "image": "blue_square",
+      "question": "is it a square?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "image": "green_triangle",
+      "question": "what color?",
+      "gt": "green",
+      "pred": "green",
+      "ok": true
+    },
+    {
+      "image": "green_triangle",
+      "question": "what shape?",
+      "gt": "triangle",
+      "pred": "triangle",
+      "ok": true
+    },
+    {
+      "image": "yellow_circle",
+      "question": "what color?",
+      "gt": "yellow",
+      "pred": "yellow",
+      "ok": true
+    },
+    {
+      "image": "yellow_circle",
+      "question": "is it a circle?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    }
+  ],
+  "vs_prev": "FS05 retrieves similar images; FS06 answers free questions about one image",
+  "figure": "figures/fs06_vqa.png"
+}

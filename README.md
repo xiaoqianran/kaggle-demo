@@ -75,3 +75,12 @@ kaggle kernels output qiaojiajin/grok-ml-t4x2-smoke -p artifacts/out -o
 - **禁止**在本地弱 CPU 上跑训练/大推理
 - 密钥不入库（见 `.gitignore`）
 - Commit 使用 Conventional Commits：`feat(scope): …` / `fix: …` / `docs: …`
+
+
+## Multimodal From Scratch
+
+完整多模态实验路线（FS00–FS14），全部在 Kaggle **T4×2** 跑通：
+
+- 地图与进度：[`notebooks/multimodal-from-scratch/`](notebooks/multimodal-from-scratch/)
+- Kernels：`Grok-multimodal-fs00-fs02-foundations` … `Grok-multimodal-fs13-fs14-unified`
+- 覆盖：音频→文 · 图像→文 · 图文→图 · 图文→视频 · VQA · DocQA · 视频→文 · 视觉文档检索 · Any-to-Any

@@ -1,0 +1,176 @@
+{
+  "stage": "FS10",
+  "method": "log-mel + CNN/BiGRU utterance ASR (synthetic tones)",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.3871,
+      "val_acc": 0.2
+    },
+    {
+      "epoch": 2,
+      "loss": 1.3805,
+      "val_acc": 0.2
+    },
+    {
+      "epoch": 3,
+      "loss": 1.3699,
+      "val_acc": 0.3625
+    },
+    {
+      "epoch": 4,
+      "loss": 1.3557,
+      "val_acc": 0.5
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3249,
+      "val_acc": 0.4375
+    },
+    {
+      "epoch": 6,
+      "loss": 1.2624,
+      "val_acc": 0.4375
+    },
+    {
+      "epoch": 7,
+      "loss": 1.1222,
+      "val_acc": 0.55
+    },
+    {
+      "epoch": 8,
+      "loss": 0.8822,
+      "val_acc": 0.5125
+    },
+    {
+      "epoch": 9,
+      "loss": 0.7454,
+      "val_acc": 0.575
+    },
+    {
+      "epoch": 10,
+      "loss": 0.7109,
+      "val_acc": 0.5625
+    },
+    {
+      "epoch": 11,
+      "loss": 0.6996,
+      "val_acc": 0.425
+    },
+    {
+      "epoch": 12,
+      "loss": 0.7426,
+      "val_acc": 0.4875
+    },
+    {
+      "epoch": 13,
+      "loss": 0.7463,
+      "val_acc": 0.5875
+    },
+    {
+      "epoch": 14,
+      "loss": 0.7195,
+      "val_acc": 0.5625
+    },
+    {
+      "epoch": 15,
+      "loss": 0.6707,
+      "val_acc": 0.4375
+    },
+    {
+      "epoch": 16,
+      "loss": 0.6724,
+      "val_acc": 0.575
+    },
+    {
+      "epoch": 17,
+      "loss": 0.6491,
+      "val_acc": 0.6875
+    },
+    {
+      "epoch": 18,
+      "loss": 0.6272,
+      "val_acc": 0.5375
+    },
+    {
+      "epoch": 19,
+      "loss": 0.5944,
+      "val_acc": 0.7875
+    },
+    {
+      "epoch": 20,
+      "loss": 0.5376,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 21,
+      "loss": 0.5049,
+      "val_acc": 0.6375
+    },
+    {
+      "epoch": 22,
+      "loss": 0.4739,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 23,
+      "loss": 0.4299,
+      "val_acc": 0.7625
+    },
+    {
+      "epoch": 24,
+      "loss": 0.3958,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 25,
+      "loss": 0.3785,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 26,
+      "loss": 0.3777,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 27,
+      "loss": 0.4313,
+      "val_acc": 0.7625
+    },
+    {
+      "epoch": 28,
+      "loss": 0.5529,
+      "val_acc": 0.7
+    },
+    {
+      "epoch": 29,
+      "loss": 0.4743,
+      "val_acc": 0.7
+    }
+  ],
+  "samples": [
+    {
+      "gt": "red",
+      "pred": "red",
+      "ok": true
+    },
+    {
+      "gt": "blue",
+      "pred": "blue",
+      "ok": true
+    },
+    {
+      "gt": "green",
+      "pred": "blue",
+      "ok": false
+    },
+    {
+      "gt": "stop",
+      "pred": "stop",
+      "ok": true
+    }
+  ],
+  "acc": 0.75,
+  "vs_prev": "FS09 video frames; FS10 time-frequency audio pathway to text",
+  "figure": "figures/fs10_asr.png"
+}

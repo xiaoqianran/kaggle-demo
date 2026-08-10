@@ -1,0 +1,36 @@
+{
+  "stage": "FS00",
+  "concept": "modalities as tensors + alignment as comparable score",
+  "rows": [
+    {
+      "image": "red_circle",
+      "text": "a red circle",
+      "dot_embed": 0.6185,
+      "hand_align_0_2": 2,
+      "match": true
+    },
+    {
+      "image": "blue_square",
+      "text": "a blue square",
+      "dot_embed": 0.5567,
+      "hand_align_0_2": 2,
+      "match": true
+    },
+    {
+      "image": "green_triangle",
+      "text": "a green triangle",
+      "dot_embed": 0.5577,
+      "hand_align_0_2": 2,
+      "match": true
+    },
+    {
+      "image": "red_circle",
+      "text": "a blue square",
+      "dot_embed": 0.5555,
+      "hand_align_0_2": 0,
+      "match": false
+    }
+  ],
+  "figure": "figures/fs00_modalities.png",
+  "takeaway": "matched pairs hand_align=2, mismatches <2"
+}

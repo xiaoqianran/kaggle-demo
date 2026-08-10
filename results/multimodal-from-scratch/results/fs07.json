@@ -1,0 +1,55 @@
+{
+  "stage": "FS07",
+  "method": "page render + OCR text + TF-IDF retrieve + span answer",
+  "retrieval_acc": 1.0,
+  "answer_acc": 1.0,
+  "rows": [
+    {
+      "q": "What is the invoice number for Acme?",
+      "gt": "1001",
+      "gt_doc": "d1",
+      "ret_doc": "d1",
+      "ret_ok": true,
+      "ans": "1001",
+      "ans_ok": true
+    },
+    {
+      "q": "How many dollars does Globex invoice?",
+      "gt": "99 dollars",
+      "gt_doc": "d2",
+      "ret_doc": "d2",
+      "ret_ok": true,
+      "ans": "99 dollars",
+      "ans_ok": true
+    },
+    {
+      "q": "What is the headcount?",
+      "gt": "350",
+      "gt_doc": "d3",
+      "ret_doc": "d3",
+      "ret_ok": true,
+      "ans": "350",
+      "ans_ok": true
+    },
+    {
+      "q": "What is max temperature?",
+      "gt": "80 celsius",
+      "gt_doc": "d4",
+      "ret_doc": "d4",
+      "ret_ok": true,
+      "ans": "80 celsius",
+      "ans_ok": true
+    },
+    {
+      "q": "Who is the vendor on invoice 1001?",
+      "gt": "Acme Corp",
+      "gt_doc": "d1",
+      "ret_doc": "d1",
+      "ret_ok": true,
+      "ans": "Acme Corp",
+      "ans_ok": true
+    }
+  ],
+  "vs_prev": "FS06 answers about shapes; FS07 answers from multi-page text documents",
+  "figure": "figures/fs07_pages.png"
+}

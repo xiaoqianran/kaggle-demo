@@ -1,0 +1,15 @@
+{
+  "notebook": "Grok-multimodal-fs00-fs02-foundations",
+  "device": "cuda:0",
+  "gpu_count": 2,
+  "progress": {
+    "FS00": "ok",
+    "FS01": "ok",
+    "FS02": "ok"
+  },
+  "chain": [
+    "FS00: define tensors + alignment score",
+    "FS01: rule-based image to text",
+    "FS02: learned CNN image to label-word"
+  ]
+}

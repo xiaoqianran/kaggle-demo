@@ -1,0 +1,8 @@
+{
+  "notebook": "Grok-multimodal-fs07-fs08-doc",
+  "progress": {
+    "FS07": "ok",
+    "FS08": "ok"
+  },
+  "device": "cuda:0"
+}

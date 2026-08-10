@@ -1,0 +1,42 @@
+{
+  "stage": "FS01",
+  "method": "bag-of-colors + geometry heuristics",
+  "exact_match_acc": 0.6666666666666666,
+  "rows": [
+    {
+      "input": "red_circle",
+      "gt": "a red circle",
+      "pred": "a red square",
+      "exact_match": false,
+      "mean_rgb": [
+        0.905,
+        0.226,
+        0.199
+      ]
+    },
+    {
+      "input": "blue_square",
+      "gt": "a blue square",
+      "pred": "a blue square",
+      "exact_match": true,
+      "mean_rgb": [
+        0.199,
+        0.293,
+        0.856
+      ]
+    },
+    {
+      "input": "green_triangle",
+      "gt": "a green triangle",
+      "pred": "a green triangle",
+      "exact_match": true,
+      "mean_rgb": [
+        0.45,
+        0.825,
+        0.513
+      ]
+    }
+  ],
+  "vs_prev": "FS00 only scored pairs; FS01 emits captions",
+  "figure": "figures/fs01_captions.png"
+}

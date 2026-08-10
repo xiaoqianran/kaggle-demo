@@ -1,0 +1,8 @@
+{
+  "notebook": "Grok-multimodal-fs11-fs12-generation",
+  "progress": {
+    "FS11": "ok",
+    "FS12": "ok"
+  },
+  "device": "cuda:0"
+}

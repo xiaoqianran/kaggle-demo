@@ -1,0 +1,155 @@
+{
+  "stage": "FS05",
+  "method": "dual-encoder InfoNCE (CLIP mini)",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 3.3333,
+      "batch_acc": 0.0516
+    },
+    {
+      "epoch": 2,
+      "loss": 2.7927,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 3,
+      "loss": 2.789,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 4,
+      "loss": 2.7942,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 5,
+      "loss": 2.8045,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 6,
+      "loss": 2.7918,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 7,
+      "loss": 2.7992,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 8,
+      "loss": 2.7914,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 9,
+      "loss": 2.798,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 10,
+      "loss": 2.7988,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 11,
+      "loss": 2.7919,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 12,
+      "loss": 2.7918,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 13,
+      "loss": 2.7977,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 14,
+      "loss": 2.7983,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 15,
+      "loss": 2.7892,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 16,
+      "loss": 2.8016,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 17,
+      "loss": 2.7897,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 18,
+      "loss": 2.7998,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 19,
+      "loss": 2.7998,
+      "batch_acc": 0.0625
+    },
+    {
+      "epoch": 20,
+      "loss": 2.8004,
+      "batch_acc": 0.0625
+    }
+  ],
+  "retrieval": [
+    {
+      "query": "a red circle",
+      "top1": "red_circle",
+      "scores": [
+        0.796,
+        -0.107,
+        -0.695,
+        -0.003
+      ],
+      "hit": true
+    },
+    {
+      "query": "a blue square",
+      "top1": "blue_square",
+      "scores": [
+        -0.124,
+        0.818,
+        0.013,
+        -0.642
+      ],
+      "hit": true
+    },
+    {
+      "query": "a green triangle",
+      "top1": "green_triangle",
+      "scores": [
+        -0.651,
+        -0.0,
+        0.792,
+        -0.092
+      ],
+      "hit": true
+    },
+    {
+      "query": "a yellow circle",
+      "top1": "yellow_circle",
+      "scores": [
+        -0.018,
+        -0.587,
+        -0.058,
+        0.809
+      ],
+      "hit": true
+    }
+  ],
+  "R@1": 1.0,
+  "vs_prev": "FS03/04 generate text; FS05 learns shared embedding for retrieval",
+  "figure": "figures/fs05_clip_sim.png"
+}

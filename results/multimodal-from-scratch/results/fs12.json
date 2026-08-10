@@ -1,0 +1,173 @@
+{
+  "stage": "FS12",
+  "method": "conditional latent MLP video generator (supervised motion)",
+  "history": [
+    {
+      "epoch": 1,
+      "mse": 0.14707
+    },
+    {
+      "epoch": 2,
+      "mse": 0.01295
+    },
+    {
+      "epoch": 3,
+      "mse": 0.00595
+    },
+    {
+      "epoch": 4,
+      "mse": 0.00382
+    },
+    {
+      "epoch": 5,
+      "mse": 0.0025
+    },
+    {
+      "epoch": 6,
+      "mse": 0.00174
+    },
+    {
+      "epoch": 7,
+      "mse": 0.00132
+    },
+    {
+      "epoch": 8,
+      "mse": 0.00103
+    },
+    {
+      "epoch": 9,
+      "mse": 0.00081
+    },
+    {
+      "epoch": 10,
+      "mse": 0.00063
+    },
+    {
+      "epoch": 11,
+      "mse": 0.0005
+    },
+    {
+      "epoch": 12,
+      "mse": 0.00043
+    },
+    {
+      "epoch": 13,
+      "mse": 0.00033
+    },
+    {
+      "epoch": 14,
+      "mse": 0.00028
+    },
+    {
+      "epoch": 15,
+      "mse": 0.00024
+    },
+    {
+      "epoch": 16,
+      "mse": 0.0002
+    },
+    {
+      "epoch": 17,
+      "mse": 0.00017
+    },
+    {
+      "epoch": 18,
+      "mse": 0.00014
+    },
+    {
+      "epoch": 19,
+      "mse": 0.00012
+    },
+    {
+      "epoch": 20,
+      "mse": 0.00011
+    },
+    {
+      "epoch": 21,
+      "mse": 9e-05
+    },
+    {
+      "epoch": 22,
+      "mse": 9e-05
+    },
+    {
+      "epoch": 23,
+      "mse": 7e-05
+    },
+    {
+      "epoch": 24,
+      "mse": 6e-05
+    },
+    {
+      "epoch": 25,
+      "mse": 6e-05
+    },
+    {
+      "epoch": 26,
+      "mse": 5e-05
+    },
+    {
+      "epoch": 27,
+      "mse": 4e-05
+    },
+    {
+      "epoch": 28,
+      "mse": 4e-05
+    },
+    {
+      "epoch": 29,
+      "mse": 3e-05
+    },
+    {
+      "epoch": 30,
+      "mse": 3e-05
+    },
+    {
+      "epoch": 31,
+      "mse": 3e-05
+    },
+    {
+      "epoch": 32,
+      "mse": 2e-05
+    },
+    {
+      "epoch": 33,
+      "mse": 2e-05
+    },
+    {
+      "epoch": 34,
+      "mse": 2e-05
+    },
+    {
+      "epoch": 35,
+      "mse": 2e-05
+    },
+    {
+      "epoch": 36,
+      "mse": 1e-05
+    },
+    {
+      "epoch": 37,
+      "mse": 1e-05
+    },
+    {
+      "epoch": 38,
+      "mse": 1e-05
+    },
+    {
+      "epoch": 39,
+      "mse": 1e-05
+    },
+    {
+      "epoch": 40,
+      "mse": 1e-05
+    }
+  ],
+  "frame_mse": {
+    "red_circle": 3.83851556762238e-06,
+    "blue_square": 4.084728061570786e-06,
+    "green_triangle": 7.771982382109854e-06
+  },
+  "vs_prev": "FS11 single image; FS12 emits temporal sequence conditioned on class/text id",
+  "figure": "figures/fs12_video_gen.png"
+}

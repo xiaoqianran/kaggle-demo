@@ -1,0 +1,9 @@
+{
+  "notebook": "Grok-multimodal-fs03-fs04-captioning",
+  "progress": {
+    "FS03": "ok",
+    "FS04": "ok"
+  },
+  "device": "cuda:0",
+  "gpu_count": 2
+}
