@@ -1,0 +1,188 @@
+{
+  "concept": "Okapi BM25 classical IR ranking",
+  "rankings": {
+    "how do plants make food from sunlight": [
+      {
+        "id": "d1",
+        "score": 3.6014625539502108,
+        "title": "Photosynthesis"
+      },
+      {
+        "id": "d3",
+        "score": 1.186745848461177,
+        "title": "Machine Learning"
+      },
+      {
+        "id": "d2",
+        "score": 0.0,
+        "title": "Newton Laws"
+      },
+      {
+        "id": "d4",
+        "score": 0.0,
+        "title": "French Revolution"
+      }
+    ],
+    "force mass acceleration law": [
+      {
+        "id": "d2",
+        "score": 5.858641892221217,
+        "title": "Newton Laws"
+      },
+      {
+        "id": "d1",
+        "score": 0.0,
+        "title": "Photosynthesis"
+      },
+      {
+        "id": "d3",
+        "score": 0.0,
+        "title": "Machine Learning"
+      },
+      {
+        "id": "d4",
+        "score": 0.0,
+        "title": "French Revolution"
+      }
+    ],
+    "learning patterns from labeled data": [
+      {
+        "id": "d3",
+        "score": 7.565025303779939,
+        "title": "Machine Learning"
+      },
+      {
+        "id": "d1",
+        "score": 0.0,
+        "title": "Photosynthesis"
+      },
+      {
+        "id": "d2",
+        "score": 0.0,
+        "title": "Newton Laws"
+      },
+      {
+        "id": "d4",
+        "score": 0.0,
+        "title": "French Revolution"
+      }
+    ],
+    "1789 liberty equality revolution": [
+      {
+        "id": "d4",
+        "score": 5.741102388521671,
+        "title": "French Revolution"
+      },
+      {
+        "id": "d1",
+        "score": 0.0,
+        "title": "Photosynthesis"
+      },
+      {
+        "id": "d2",
+        "score": 0.0,
+        "title": "Newton Laws"
+      },
+      {
+        "id": "d3",
+        "score": 0.0,
+        "title": "Machine Learning"
+      }
+    ],
+    "oxygen produced by chlorophyll": [
+      {
+        "id": "d1",
+        "score": 3.9050503844567226,
+        "title": "Photosynthesis"
+      },
+      {
+        "id": "d2",
+        "score": 0.6533159804608788,
+        "title": "Newton Laws"
+      },
+      {
+        "id": "d3",
+        "score": 0.0,
+        "title": "Machine Learning"
+      },
+      {
+        "id": "d4",
+        "score": 0.0,
+        "title": "French Revolution"
+      }
+    ]
+  },
+  "contrast_vs_count": [
+    {
+      "query": "how do plants make food from sunlight",
+      "bm25": [
+        "Photosynthesis",
+        "Machine Learning",
+        "Newton Laws",
+        "French Revolution"
+      ],
+      "count": [
+        "Photosynthesis",
+        "Machine Learning",
+        "Newton Laws",
+        "French Revolution"
+      ]
+    },
+    {
+      "query": "force mass acceleration law",
+      "bm25": [
+        "Newton Laws",
+        "Photosynthesis",
+        "Machine Learning",
+        "French Revolution"
+      ],
+      "count": [
+        "Newton Laws",
+        "Photosynthesis",
+        "Machine Learning",
+        "French Revolution"
+      ]
+    },
+    {
+      "query": "learning patterns from labeled data",
+      "bm25": [
+        "Machine Learning",
+        "Photosynthesis",
+        "Newton Laws",
+        "French Revolution"
+      ],
+      "count": [
+        "Machine Learning",
+        "Photosynthesis",
+        "Newton Laws",
+        "French Revolution"
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "input": "how do plants make food from sunlight",
+      "output": "Photosynthesis(3.60) | Machine Learning(1.19) | Newton Laws(0.00) | French Revolution(0.00)"
+    },
+    {
+      "input": "force mass acceleration law",
+      "output": "Newton Laws(5.86) | Photosynthesis(0.00) | Machine Learning(0.00) | French Revolution(0.00)"
+    },
+    {
+      "input": "learning patterns from labeled data",
+      "output": "Machine Learning(7.57) | Photosynthesis(0.00) | Newton Laws(0.00) | French Revolution(0.00)"
+    },
+    {
+      "input": "1789 liberty equality revolution",
+      "output": "French Revolution(5.74) | Photosynthesis(0.00) | Newton Laws(0.00) | Machine Learning(0.00)"
+    },
+    {
+      "input": "oxygen produced by chlorophyll",
+      "output": "Photosynthesis(3.91) | Newton Laws(0.65) | Machine Learning(0.00) | French Revolution(0.00)"
+    }
+  ],
+  "new_capability": "Principled multi-document ranking for search-like queries",
+  "previous": "S02 similarity was pairwise vectors; BM25 is IR ranking",
+  "stage": "S03_bm25_ranking",
+  "saved_at": "2026-08-10T21:08:21.406353+00:00"
+}

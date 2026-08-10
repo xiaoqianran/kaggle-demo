@@ -1,0 +1,61 @@
+{
+  "concept": "Bidirectional GRU encoder + GRU decoder with attention",
+  "metric": {
+    "final_loss": 0.0006766432779841125,
+    "token_recall": 1.0
+  },
+  "vs_previous": "S08 unconditional LM; S09 conditional MT generation",
+  "demos": [
+    {
+      "src": "hello",
+      "gold": "bonjour",
+      "hyp": "bonjour"
+    },
+    {
+      "src": "goodbye",
+      "gold": "au revoir",
+      "hyp": "au revoir"
+    },
+    {
+      "src": "thank you",
+      "gold": "merci",
+      "hyp": "merci"
+    },
+    {
+      "src": "good morning",
+      "gold": "bonjour",
+      "hyp": "bonjour"
+    },
+    {
+      "src": "I love cats",
+      "gold": "j aime les chats",
+      "hyp": "j aime les chats"
+    },
+    {
+      "src": "I love dogs",
+      "gold": "j aime les chiens",
+      "hyp": "j aime les chiens"
+    },
+    {
+      "src": "the cat sleeps",
+      "gold": "le chat dort",
+      "hyp": "le chat dort"
+    },
+    {
+      "src": "the dog runs",
+      "gold": "le chien court",
+      "hyp": "le chien court"
+    },
+    {
+      "src": "I love cats",
+      "gold": "j aime les chats",
+      "hyp": "j aime les chats"
+    },
+    {
+      "src": "the dog runs",
+      "gold": "le chien court",
+      "hyp": "le chien court"
+    }
+  ],
+  "new_capability": "Neural machine translation (en→fr mini)"
+}

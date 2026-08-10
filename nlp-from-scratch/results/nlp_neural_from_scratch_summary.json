@@ -1,0 +1,403 @@
+{
+  "stages": [
+    "S06_neural_cls",
+    "S07_bilstm_ner",
+    "S08_rnn_lm",
+    "S09_seq2seq_mt",
+    "S10_tiny_transformer"
+  ],
+  "gpu": {
+    "count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "torch": "2.10.0+cu128",
+  "results": {
+    "S06_neural_cls": {
+      "concept": "Embedding+TextCNN end-to-end classification",
+      "metric": {
+        "test_acc": 1.0,
+        "train_time_s": 5.736380577087402,
+        "final_train_acc": 1.0
+      },
+      "vs_previous": "S01 handcrafted TF-IDF; S06 learns features from labels",
+      "demos": [
+        {
+          "input": "I really love amazing plot",
+          "gold": "pos",
+          "pred": "pos",
+          "probs": {
+            "business": 0.11217745393514633,
+            "neg": 0.21873092651367188,
+            "pos": 0.5581073760986328,
+            "sports": 0.11098427325487137
+          }
+        },
+        {
+          "input": "Terrible boring waste money",
+          "gold": "neg",
+          "pred": "neg",
+          "probs": {
+            "business": 0.07710786163806915,
+            "neg": 0.8199186325073242,
+            "pos": 0.03632190451025963,
+            "sports": 0.06665153056383133
+          }
+        },
+        {
+          "input": "Shares climb after profits",
+          "gold": "business",
+          "pred": "business",
+          "probs": {
+            "business": 0.7553101181983948,
+            "neg": 0.036207228899002075,
+            "pos": 0.14434044063091278,
+            "sports": 0.06414226442575455
+          }
+        },
+        {
+          "input": "Team wins final championship",
+          "gold": "sports",
+          "pred": "sports",
+          "probs": {
+            "business": 0.10966574400663376,
+            "neg": 0.04697979986667633,
+            "pos": 0.11540132015943527,
+            "sports": 0.7279531955718994
+          }
+        }
+      ],
+      "history_tail": [
+        {
+          "epoch": 76,
+          "loss": 0.0026689175671587386,
+          "acc": 1.0
+        },
+        {
+          "epoch": 77,
+          "loss": 0.0026128624772859942,
+          "acc": 1.0
+        },
+        {
+          "epoch": 78,
+          "loss": 0.0025591085561447674,
+          "acc": 1.0
+        },
+        {
+          "epoch": 79,
+          "loss": 0.002506916152520312,
+          "acc": 1.0
+        },
+        {
+          "epoch": 80,
+          "loss": 0.0024559193859911626,
+          "acc": 1.0
+        }
+      ],
+      "new_capability": "Neural text classification with learned embeddings",
+      "device_count": 2
+    },
+    "S07_bilstm_ner": {
+      "concept": "BiLSTM sequence labeling with BIO tags",
+      "metric": {
+        "heldout_exact_seq": 1.0,
+        "n_tags": 5
+      },
+      "vs_previous": "S06 one label/doc; S07 label per token (NER)",
+      "demos": [
+        {
+          "tokens": [
+            "Microsoft",
+            "is",
+            "based",
+            "in",
+            "Seattle"
+          ],
+          "gold": [
+            "B-ORG",
+            "O",
+            "O",
+            "O",
+            "B-LOC"
+          ],
+          "pred": [
+            "B-ORG",
+            "O",
+            "O",
+            "O",
+            "B-LOC"
+          ]
+        },
+        {
+          "tokens": [
+            "Bob",
+            "met",
+            "Carol",
+            "in",
+            "Tokyo"
+          ],
+          "gold": [
+            "B-PER",
+            "O",
+            "B-PER",
+            "O",
+            "B-LOC"
+          ],
+          "pred": [
+            "B-PER",
+            "O",
+            "B-PER",
+            "O",
+            "B-LOC"
+          ]
+        },
+        {
+          "tokens": [
+            "John",
+            "visited",
+            "Berlin"
+          ],
+          "gold": [
+            "B-PER",
+            "O",
+            "B-LOC"
+          ],
+          "pred": [
+            "B-PER",
+            "O",
+            "B-LOC"
+          ]
+        },
+        {
+          "tokens": [
+            "Google",
+            "hired",
+            "Alice"
+          ],
+          "gold": [
+            "B-ORG",
+            "O",
+            "B-PER"
+          ],
+          "pred": [
+            "B-ORG",
+            "O",
+            "B-PER"
+          ]
+        }
+      ],
+      "new_capability": "Token classification / named entity recognition",
+      "tags": [
+        "B-LOC",
+        "B-ORG",
+        "B-PER",
+        "I-PER",
+        "O"
+      ]
+    },
+    "S08_rnn_lm": {
+      "concept": "Char LSTM language model + sampling",
+      "metric": {
+        "final_loss": 0.1360442204534678,
+        "vocab_chars": 26
+      },
+      "vs_previous": "S06/S07 discriminative; S08 generative density model",
+      "demos": [
+        {
+          "prefix": "i love ",
+          "generated": "i love cats j aime les chats i love dogs j aime les chiens the cat "
+        },
+        {
+          "prefix": "the team ",
+          "generated": "the team won championship final athlete breaks world record coach pra"
+        },
+        {
+          "prefix": "bonjour ",
+          "generated": "bonjour i love cats j aime les chats i love dogs j aime les chiens t"
+        },
+        {
+          "prefix": "stock ",
+          "generated": "stock market rose after earnings investors buy shares strong growt"
+        }
+      ],
+      "new_capability": "Open-ended text generation from a learned LM"
+    },
+    "S09_seq2seq_mt": {
+      "concept": "Bidirectional GRU encoder + GRU decoder with attention",
+      "metric": {
+        "final_loss": 0.0006766432779841125,
+        "token_recall": 1.0
+      },
+      "vs_previous": "S08 unconditional LM; S09 conditional MT generation",
+      "demos": [
+        {
+          "src": "hello",
+          "gold": "bonjour",
+          "hyp": "bonjour"
+        },
+        {
+          "src": "goodbye",
+          "gold": "au revoir",
+          "hyp": "au revoir"
+        },
+        {
+          "src": "thank you",
+          "gold": "merci",
+          "hyp": "merci"
+        },
+        {
+          "src": "good morning",
+          "gold": "bonjour",
+          "hyp": "bonjour"
+        },
+        {
+          "src": "I love cats",
+          "gold": "j aime les chats",
+          "hyp": "j aime les chats"
+        },
+        {
+          "src": "I love dogs",
+          "gold": "j aime les chiens",
+          "hyp": "j aime les chiens"
+        },
+        {
+          "src": "the cat sleeps",
+          "gold": "le chat dort",
+          "hyp": "le chat dort"
+        },
+        {
+          "src": "the dog runs",
+          "gold": "le chien court",
+          "hyp": "le chien court"
+        },
+        {
+          "src": "I love cats",
+          "gold": "j aime les chats",
+          "hyp": "j aime les chats"
+        },
+        {
+          "src": "the dog runs",
+          "gold": "le chien court",
+          "hyp": "le chien court"
+        }
+      ],
+      "new_capability": "Neural machine translation (en→fr mini)"
+    },
+    "S10_tiny_transformer": {
+      "concept": "Multi-head Transformer encoder trained with MLM + causal LM",
+      "metric": {
+        "V": 165,
+        "d": 64,
+        "layers": 2,
+        "heads": 4
+      },
+      "vs_previous": "S09 RNN attention; S10 pure self-attention, bidirectional MLM",
+      "fill_mask": [
+        {
+          "template": [
+            "i",
+            "love",
+            "this",
+            "movie"
+          ],
+          "mask_index": 1,
+          "pred": "love",
+          "filled": [
+            "i",
+            "love",
+            "this",
+            "movie"
+          ]
+        },
+        {
+          "template": [
+            "team",
+            "won",
+            "championship",
+            "final"
+          ],
+          "mask_index": 1,
+          "pred": "won",
+          "filled": [
+            "team",
+            "won",
+            "championship",
+            "final"
+          ]
+        },
+        {
+          "template": [
+            "the",
+            "cat",
+            "sleeps"
+          ],
+          "mask_index": 1,
+          "pred": "cat",
+          "filled": [
+            "the",
+            "cat",
+            "sleeps"
+          ]
+        }
+      ],
+      "features": [
+        {
+          "a": "i love this movie",
+          "b": "fantastic film wonderful",
+          "cos": -0.0689646452665329
+        },
+        {
+          "a": "i love this movie",
+          "b": "team won championship",
+          "cos": 0.5033416152000427
+        },
+        {
+          "a": "investors buy shares",
+          "b": "company profits growth",
+          "cos": 0.07572915405035019
+        }
+      ],
+      "generation": [
+        {
+          "prefix": [
+            "i",
+            "love"
+          ],
+          "generated": [
+            "i",
+            "love",
+            "cats"
+          ]
+        },
+        {
+          "prefix": [
+            "the",
+            "team"
+          ],
+          "generated": [
+            "the",
+            "team",
+            "is",
+            "nice"
+          ]
+        },
+        {
+          "prefix": [
+            "stock",
+            "market"
+          ],
+          "generated": [
+            "stock",
+            "market",
+            "rose",
+            "after",
+            "earnings"
+          ]
+        }
+      ],
+      "new_capability": "Fill-mask, feature extraction, and generation in one Transformer"
+    }
+  }
+}

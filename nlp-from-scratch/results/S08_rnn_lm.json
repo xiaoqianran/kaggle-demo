@@ -1,0 +1,27 @@
+{
+  "concept": "Char LSTM language model + sampling",
+  "metric": {
+    "final_loss": 0.1360442204534678,
+    "vocab_chars": 26
+  },
+  "vs_previous": "S06/S07 discriminative; S08 generative density model",
+  "demos": [
+    {
+      "prefix": "i love ",
+      "generated": "i love cats j aime les chats i love dogs j aime les chiens the cat "
+    },
+    {
+      "prefix": "the team ",
+      "generated": "the team won championship final athlete breaks world record coach pra"
+    },
+    {
+      "prefix": "bonjour ",
+      "generated": "bonjour i love cats j aime les chats i love dogs j aime les chiens t"
+    },
+    {
+      "prefix": "stock ",
+      "generated": "stock market rose after earnings investors buy shares strong growt"
+    }
+  ],
+  "new_capability": "Open-ended text generation from a learned LM"
+}

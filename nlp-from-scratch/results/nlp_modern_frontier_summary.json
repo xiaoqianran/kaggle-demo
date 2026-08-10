@@ -1,0 +1,30 @@
+{
+  "stages": [
+    "S11_pretrained_encoder",
+    "S12_t5_text2text",
+    "S13_zero_shot",
+    "S14_cross_encoder_rank",
+    "S15_table_qa",
+    "S16_unified_pipeline"
+  ],
+  "gpu": {
+    "count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "acceptance": {
+    "text_classification": true,
+    "token_classification": true,
+    "qa": true,
+    "zero_shot": true,
+    "translation": true,
+    "summarization": true,
+    "fill_mask": true,
+    "sentence_similarity": true,
+    "text_ranking": true,
+    "table_qa": true,
+    "feature_extraction": true
+  }
+}

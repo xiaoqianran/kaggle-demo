@@ -105,11 +105,17 @@ kaggle kernels output shuhuaqqq/grok-infra-t4x2-smoke -p artifacts/out -o
 
 Repo: https://github.com/xiaoqianran/kaggle-demo
 
-
 ## RL + Robotics From Scratch
 
 完整实验地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)  
 进度：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
 
 全部在 **Kaggle T4×2** 执行。Notebook 命名 `Grok-rl-*` / `Grok-robotics-*`。
+## NLP From Scratch
 
+完整 NLP 实验路线（S00→S16）：经典 IR/统计 → 神经 from-scratch → 预训练现代系统。
+
+- 目录：[`nlp-from-scratch/`](nlp-from-scratch/) · 进度：[`nlp-from-scratch/PROGRESS.md`](nlp-from-scratch/PROGRESS.md)
+- Kaggle T4×2：
+  - [Grok-nlp-neural-from-scratch](https://www.kaggle.com/code/zhengyingxiong/grok-nlp-neural-from-scratch) (S06–S10)
+  - [Grok-nlp-modern-frontier](https://www.kaggle.com/code/zhengyingxiong/grok-nlp-modern-frontier) (S11–S16，全任务验收通过)

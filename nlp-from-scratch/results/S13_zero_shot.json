@@ -1,0 +1,67 @@
+{
+  "concept": "NLI-based zero-shot classification (entailment to label hypotheses)",
+  "vs_previous": "S06/S11 need labeled training data; S13 only needs label names",
+  "demos": [
+    {
+      "text": "The team won the championship after a thrilling final",
+      "labels": [
+        "sports",
+        "movie review",
+        "business",
+        "science"
+      ],
+      "scores": [
+        0.4629735052585602,
+        0.23693223297595978,
+        0.20624859631061554,
+        0.09384559094905853
+      ]
+    },
+    {
+      "text": "Investors cheered as company profits beat estimates",
+      "labels": [
+        "business",
+        "sports",
+        "movie review",
+        "science"
+      ],
+      "scores": [
+        0.5487914681434631,
+        0.1853387951850891,
+        0.16491426527500153,
+        0.1009555459022522
+      ]
+    },
+    {
+      "text": "I absolutely loved this wonderful cinema masterpiece",
+      "labels": [
+        "movie review",
+        "science",
+        "business",
+        "sports"
+      ],
+      "scores": [
+        0.7254949808120728,
+        0.10209403187036514,
+        0.09607191383838654,
+        0.07633902877569199
+      ]
+    },
+    {
+      "text": "A new study explains how chlorophyll absorbs sunlight",
+      "labels": [
+        "sports",
+        "science",
+        "movie review",
+        "business"
+      ],
+      "scores": [
+        0.28433138132095337,
+        0.26180213689804077,
+        0.25046098232269287,
+        0.203405499458313
+      ]
+    }
+  ],
+  "new_capability": "Zero-shot text classification without fine-tuning"
+}

@@ -1,0 +1,164 @@
+{
+  "concept": "Retrieve-then-extract QA (BM25 + sentence + heuristics)",
+  "metric": {
+    "soft_accuracy": 1.0,
+    "n": 4
+  },
+  "rows": [
+    {
+      "question": "What do plants produce during photosynthesis?",
+      "doc_id": "d1",
+      "doc_title": "Photosynthesis",
+      "sentence": "Carbon dioxide and water become glucose and oxygen.",
+      "answer": "glucose and oxygen",
+      "retrieval": [
+        {
+          "id": "d1",
+          "score": 2.9168893084687575,
+          "title": "Photosynthesis"
+        },
+        {
+          "id": "d2",
+          "score": 0.0,
+          "title": "Newton Laws"
+        }
+      ],
+      "gold_doc": "d1",
+      "gold_ans": "oxygen",
+      "cover": 1.0,
+      "ok": true
+    },
+    {
+      "question": "What does Newton's second law say?",
+      "doc_id": "d2",
+      "doc_title": "Newton Laws",
+      "sentence": "The second law says force equals mass times acceleration.",
+      "answer": "equals mass times acceleration",
+      "retrieval": [
+        {
+          "id": "d2",
+          "score": 5.858641892221217,
+          "title": "Newton Laws"
+        },
+        {
+          "id": "d1",
+          "score": 0.0,
+          "title": "Photosynthesis"
+        }
+      ],
+      "gold_doc": "d2",
+      "gold_ans": "force equals mass times acceleration",
+      "cover": 0.8,
+      "ok": true
+    },
+    {
+      "question": "What does supervised learning use?",
+      "doc_id": "d3",
+      "doc_title": "Machine Learning",
+      "sentence": "Supervised learning uses labeled examples.",
+      "answer": "labeled examples",
+      "retrieval": [
+        {
+          "id": "d3",
+          "score": 3.489223142360253,
+          "title": "Machine Learning"
+        },
+        {
+          "id": "d1",
+          "score": 0.0,
+          "title": "Photosynthesis"
+        }
+      ],
+      "gold_doc": "d3",
+      "gold_ans": "labeled examples",
+      "cover": 1.0,
+      "ok": true
+    },
+    {
+      "question": "When did the French Revolution begin?",
+      "doc_id": "d4",
+      "doc_title": "French Revolution",
+      "sentence": "The French Revolution began in 1789 and reshaped European politics.",
+      "answer": "1789",
+      "retrieval": [
+        {
+          "id": "d4",
+          "score": 4.265474543444445,
+          "title": "French Revolution"
+        },
+        {
+          "id": "d2",
+          "score": 0.488272168783427,
+          "title": "Newton Laws"
+        }
+      ],
+      "gold_doc": "d4",
+      "gold_ans": "1789",
+      "cover": 1.0,
+      "ok": true
+    }
+  ],
+  "free_queries": [
+    {
+      "question": "What absorbs light in leaves?",
+      "doc_id": "d1",
+      "doc_title": "Photosynthesis",
+      "sentence": "Chlorophyll in leaves absorbs light.",
+      "answer": "chlorophyll in",
+      "retrieval": [
+        {
+          "id": "d1",
+          "score": 3.706518069723534,
+          "title": "Photosynthesis"
+        },
+        {
+          "id": "d4",
+          "score": 0.11432187558252072,
+          "title": "French Revolution"
+        }
+      ]
+    },
+    {
+      "question": "What is the third law of Newton?",
+      "doc_id": "d2",
+      "doc_title": "Newton Laws",
+      "sentence": "The third law says every action has an equal and opposite reaction.",
+      "answer": "every action has an equal and opposite reaction",
+      "retrieval": [
+        {
+          "id": "d2",
+          "score": 5.212126680825136,
+          "title": "Newton Laws"
+        },
+        {
+          "id": "d4",
+          "score": 2.7195098480160045,
+          "title": "French Revolution"
+        }
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "input": "What do plants produce during photosynthesis?",
+      "output": "glucose and oxygen  ← Photosynthesis"
+    },
+    {
+      "input": "What does Newton's second law say?",
+      "output": "equals mass times acceleration  ← Newton Laws"
+    },
+    {
+      "input": "What does supervised learning use?",
+      "output": "labeled examples  ← Machine Learning"
+    },
+    {
+      "input": "When did the French Revolution begin?",
+      "output": "1789  ← French Revolution"
+    }
+  ],
+  "new_capability": "Answer NL questions from a document collection",
+  "previous": "S03 ranking only; S05 returns an answer span",
+  "limitation": "Brittle paraphrase; neural RC comes later",
+  "stage": "S05_retrieval_qa",
+  "saved_at": "2026-08-10T21:09:39.465316+00:00"
+}
