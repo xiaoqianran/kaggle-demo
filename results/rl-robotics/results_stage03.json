@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "stage": "03-mc-td-qlearning",
+  "title": "Grok-rl-03-mc-td-qlearning",
+  "metrics": {
+    "sarsa_last100": -28.89,
+    "qlearning_last100": -26.67,
+    "mc_last100": -75.73
+  },
+  "policies": {
+    "SARSA": [
+      "R R R R R R R R R R U L",
+      "U U U R U U R R U R R D",
+      "U U R L U U L U L U L D",
+      "U C C C C C C C C C C G"
+    ],
+    "Q-Learning": [
+      "R R R R R R R R R R D D",
+      "R R R R R R R R R R R D",
+      "U R R U R U U R U R R D",
+      "U C C C C C C C C C C G"
+    ],
+    "MC": [
+      "U D R R U R R R R R D L",
+      "U R R U R U R R U R D D",
+      "R U U U L U L R U R R D",
+      "D C C C C C C C C C C G"
+    ]
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 1.5038793087005615,
+  "concept": "learn value/policy from sampled transitions without knowing P",
+  "new_capability": "on-policy (SARSA, safer) vs off-policy (Q-learning, optimal) control from interaction",
+  "compare_to_previous": "Stage02 needed full model; Stage03 only needs env.step samples"
+}
