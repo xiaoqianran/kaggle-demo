@@ -23,7 +23,7 @@
         659.25
       ],
       "concept": "waveform\u2192STFT\u2192Mel\u2192MFCC feature chain",
-      "t": 1786397022.1578407
+      "t": 1786397544.6084828
     },
     "S01": {
       "ok": true,
@@ -48,7 +48,7 @@
       ],
       "comparison": "energy catches loud events; flatness prefers tonal; merged mask yields multi segments",
       "concept": "VAD = frame feature + threshold \u2192 time regions",
-      "t": 1786397022.749488
+      "t": 1786397545.1948423
     },
     "S02": {
       "ok": true,
@@ -63,7 +63,7 @@
       "acc_cnn": 1.0,
       "comparison": "handcrafted=0.975 vs Mel-CNN=1.0",
       "concept": "classification = features\u2192label; CNN learns features on Mel",
-      "t": 1786397033.7401633
+      "t": 1786397556.1895792
     },
     "S03": {
       "ok": true,
@@ -77,7 +77,7 @@
       "n_test": 40,
       "concept": "ASR classic: MFCC+delta sequence + DTW template matching",
       "comparison": "S02 global label vs S03 time-aligned sequence matching",
-      "t": 1786397041.0869992
+      "t": 1786397563.7834318
     },
     "S04": {
       "ok": true,
@@ -89,7 +89,7 @@
       ],
       "history": {
         "epoch": 4,
-        "loss": 0.27687573589776693,
+        "loss": 0.2737955645118889,
         "demo_exact": 7
       },
       "demos": [
@@ -127,7 +127,7 @@
       "multi_ok": 4,
       "concept": "CTC: per-frame class+blank, collapse repeats \u2192 string",
       "comparison": "S03 needs templates; S04 learns sequence mapping end-to-end",
-      "t": 1786397048.1310856
+      "t": 1786397570.8258777
     },
     "S05": {
       "ok": true,
@@ -172,7 +172,7 @@
       "n_good": 3,
       "concept": "large-scale supervised seq2seq ASR",
       "comparison": "toy CTC alphabet vs natural language ASR",
-      "t": 1786397079.0268974
+      "t": 1786397602.187706
     },
     "S06": {
       "ok": true,
@@ -186,7 +186,7 @@
       "phone_set": 21,
       "concept": "rule formant TTS: text\u2192phones\u2192f0+formants\u2192wave",
       "comparison": "inverse of ASR: generate speech instead of recognize",
-      "t": 1786397079.7786314
+      "t": 1786397602.9354396
     },
     "S07": {
       "ok": true,
@@ -195,7 +195,7 @@
       "n_iter": 40,
       "concept": "phase reconstruction vocoder from magnitude STFT",
       "comparison": "S06 direct synthesis vs S07 spectrogram inversion pipeline",
-      "t": 1786397080.765817
+      "t": 1786397604.0061135
     },
     "S08": {
       "ok": true,
@@ -207,7 +207,7 @@
       ],
       "concept": "text/tag conditioned non-speech audio generation (procedural stand-in for TTA models)",
       "comparison": "speech TTS vs general sound generation",
-      "t": 1786397081.97074
+      "t": 1786397605.252264
     },
     "S09": {
       "ok": true,
@@ -220,11 +220,16 @@
         "denoised",
         "brighter"
       ],
-      "f0_orig": 133.33333333333334,
-      "f0_pitch_up": 168.42105263157896,
+      "sine_f0": 160.0,
+      "sine_f0_up": 202.53164556962025,
+      "sine_f0_down": 126.98412698412699,
+      "ratio_up": 1.2658227848101267,
+      "ratio_down": 0.7936507936507937,
+      "expected_ratio": 1.2599210498948732,
+      "method": "resample pitch shift (duration scales); TD frame hop time-stretch",
       "concept": "signal processing A2A: pitch/time/noise/timbre",
       "comparison": "generation (S08) vs transformation (S09)",
-      "t": 1786397083.2574873
+      "t": 1786397606.275186
     },
     "S10": {
       "ok": true,
@@ -268,7 +273,7 @@
       "lesson": "fine VAD chops break ASR; phrase-level segments restore Whisper quality (see S05)",
       "concept": "VAD\u2192ASR\u2192policy\u2192TTS; segmentation quality dominates ASR",
       "comparison": "raw VAD vs merged VAD vs oracle spans",
-      "t": 1786397084.2863932
+      "t": 1786397607.293291
     }
   },
   "artifacts": {
@@ -291,6 +296,7 @@
       "s07_gl.png",
       "s08_mels.png",
       "s08_scenes.png",
+      "s09_f0.png",
       "s09_waves.png",
       "s10_reply.png",
       "s10_user.png"
@@ -333,6 +339,8 @@
       "s09_orig.wav",
       "s09_pitch_down_4st.wav",
       "s09_pitch_up_4st.wav",
+      "s09_pitch_up_4st_raw.wav",
+      "s09_sine_up.wav",
       "s10_merged_0.wav",
       "s10_merged_1.wav",
       "s10_oracle_0.wav",
