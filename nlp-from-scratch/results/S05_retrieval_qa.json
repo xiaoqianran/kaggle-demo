@@ -160,5 +160,5 @@
   "previous": "S03 ranking only; S05 returns an answer span",
   "limitation": "Brittle paraphrase; neural RC comes later",
   "stage": "S05_retrieval_qa",
-  "saved_at": "2026-08-10T21:28:05.278693+00:00"
+  "saved_at": "2026-08-10T21:38:18.878989+00:00"
 }

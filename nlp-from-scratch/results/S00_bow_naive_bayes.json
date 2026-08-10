@@ -40,5 +40,5 @@
   "new_capability": "First end-to-end text classifier from raw strings",
   "previous": null,
   "stage": "S00_bow_naive_bayes",
-  "saved_at": "2026-08-10T21:24:53.719111+00:00"
+  "saved_at": "2026-08-10T21:38:18.515968+00:00"
 }

@@ -58,12 +58,19 @@ def main() -> int:
     d = load("S11_pretrained_encoder")
     need("paris" in d["fill_mask"]["top"][0]["token"].lower(), "S11 fill token")
     need(d["similarity"][0]["cos"] > d["similarity"][1]["cos"], "S11 sim order")
+    qa0 = d["qa"][0]["answer"].lower()
+    need(any(x in qa0 for x in ("oxygen", "glucose")), f"S11 plants QA {qa0!r}")
+
 
     d = load("S12_t5_text2text")
     need(bool(d["translation"]["output"]) and bool(d["summarization"]["output"]), "S12")
 
     d = load("S13_zero_shot")
     need(d["demos"][0]["labels"][0] == "sports", f"S13 {d['demos'][0]['labels'][:2]}")
+    sci = next((x for x in d["demos"] if "chlorophyll" in x["text"].lower() or x.get("gold")=="science"), None)
+    if sci is not None:
+        need(sci["labels"][0] == "science" or sci.get("gold") == sci["labels"][0], f"S13 science→{sci['labels'][0]}")
+
 
     d = load("S14_cross_encoder_rank")
     need(d["demos"][0]["ranking"][0]["id"] == "d1", "S14 rank")

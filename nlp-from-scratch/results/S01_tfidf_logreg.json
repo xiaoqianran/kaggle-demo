@@ -125,5 +125,5 @@
   "new_capability": "Interpretable linear weights; rare terms up-weighted via IDF",
   "previous": "S00",
   "stage": "S01_tfidf_logreg",
-  "saved_at": "2026-08-10T21:28:05.234340+00:00"
+  "saved_at": "2026-08-10T21:38:18.604434+00:00"
 }
