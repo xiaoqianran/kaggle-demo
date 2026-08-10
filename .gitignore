@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.kaggle/
+**/access_token
+**/kaggle.json
+*.zip
+.ipynb_checkpoints/
+**/artifacts/
+**/output/
+logs/
+*.run.json
+.DS_Store

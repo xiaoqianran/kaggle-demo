@@ -1,0 +1,7 @@
+# Project-level Kaggle MCP (token from env — never commit secrets)
+[mcp_servers.kaggle]
+url = "https://www.kaggle.com/mcp"
+enabled = true
+
+[mcp_servers.kaggle.headers]
+Authorization = "Bearer ${KAGGLE_API_TOKEN}"

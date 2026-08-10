@@ -1,0 +1,49 @@
+{
+  "notebook": "Grok-ml-t4x2-smoke",
+  "domain": "ml",
+  "task": "t4x2-smoke",
+  "ok": true,
+  "cuda_available": true,
+  "device_count": 2,
+  "device_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "dual_t4": true,
+  "gemm": {
+    "n": 4096,
+    "iters": 10,
+    "seconds": 0.3492,
+    "tflops_fp32": 3.936
+  },
+  "train_seconds": 3.643,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.30579,
+      "val_acc": 0.10742
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.30307,
+      "val_acc": 0.10352
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.30264,
+      "val_acc": 0.10352
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.30284,
+      "val_acc": 0.10352
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.30269,
+      "val_acc": 0.06445
+    }
+  ],
+  "params": 94538,
+  "data_parallel": true
+}
