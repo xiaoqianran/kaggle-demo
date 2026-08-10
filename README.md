@@ -12,6 +12,7 @@ Notebook：`Grok-{领域}-{任务}`
 | `Grok-ml-t4x2-smoke` | ml | t4x2-smoke | [qiaojiajin/grok-ml-t4x2-smoke](https://www.kaggle.com/code/qiaojiajin/grok-ml-t4x2-smoke) |
 | `Grok-ml-gpu-smoke` | ml | gpu-smoke | [zhengyingxiong/grok-ml-gpu-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-ml-gpu-smoke) |
 | `Grok-gpu-t4x2-smoke` | gpu | t4x2-smoke | [zhengyingxiong/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-gpu-t4x2-smoke) |
+| `Grok-ML-gpu-smoke` | ML | gpu-smoke | [yunianan/grok-ml-gpu-smoke](https://www.kaggle.com/code/yunianan/grok-ml-gpu-smoke) ✅ |
 
 目录：`notebooks/<Name>/`，内含：
 
@@ -56,7 +57,7 @@ python scripts/kaggle_run.py notebooks/Grok-ml-t4x2-smoke --accelerator NvidiaTe
 
 # 轻量 shell 轮询
 ./scripts/push-and-wait.sh notebooks/Grok-gpu-t4x2-smoke
-./scripts/push_and_wait.sh notebooks/Grok-ml-gpu-smoke
+./scripts/push_and_wait.sh notebooks/Grok-ML-gpu-smoke
 ./scripts/run_on_kaggle.sh notebooks/Grok-ml-t4x2-smoke
 ```
 
@@ -70,14 +71,15 @@ python scripts/kaggle_run.py notebooks/Grok-ml-t4x2-smoke --accelerator NvidiaTe
 
 - `results/Grok-ml-t4x2-smoke.json`
 - `results/Grok-gpu-t4x2-smoke.json`（`dual_gpu=true`, 2×Tesla T4）
+- `results/Grok-ML-gpu-smoke-yunianan.json`（`device_count=2`, DataParallel, `SMOKE_OK`）
 
 ## 常用命令
 
 ```bash
 kaggle quota
-kaggle kernels status zhengyingxiong/grok-gpu-t4x2-smoke
-kaggle kernels logs zhengyingxiong/grok-gpu-t4x2-smoke
-kaggle kernels output zhengyingxiong/grok-gpu-t4x2-smoke -p artifacts/out -o
+kaggle kernels status yunianan/grok-ml-gpu-smoke
+kaggle kernels logs yunianan/grok-ml-gpu-smoke
+kaggle kernels output yunianan/grok-ml-gpu-smoke -p artifacts/out -o
 ```
 
 ## 约定
