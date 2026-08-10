@@ -23,24 +23,32 @@
         659.25
       ],
       "concept": "waveform\u2192STFT\u2192Mel\u2192MFCC feature chain",
-      "t": 1786396700.889728
+      "t": 1786397022.1578407
     },
     "S01": {
       "ok": true,
-      "n_frames": 293,
-      "energy_speech_ratio": 0.07849829351535836,
-      "flat_speech_ratio": 0.09215017064846416,
-      "combo_ratio": 0.07849829351535836,
-      "n_segments": 1,
+      "n_frames": 283,
+      "energy_speech_ratio": 0.6042402826855123,
+      "flat_speech_ratio": 0.5547703180212014,
+      "combo_ratio": 0.5123674911660777,
+      "n_segments": 3,
       "segments": [
         [
-          230,
-          253
+          62,
+          131
+        ],
+        [
+          171,
+          223
+        ],
+        [
+          225,
+          249
         ]
       ],
-      "comparison": "energy catches loud tones; flatness prefers tonal speech-like; AND reduces false beeps somewhat",
+      "comparison": "energy catches loud events; flatness prefers tonal; merged mask yields multi segments",
       "concept": "VAD = frame feature + threshold \u2192 time regions",
-      "t": 1786396701.36546
+      "t": 1786397022.749488
     },
     "S02": {
       "ok": true,
@@ -51,11 +59,11 @@
         "beep_pulse"
       ],
       "n_per_class": 40,
-      "acc_handcrafted": 1.0,
+      "acc_handcrafted": 0.975,
       "acc_cnn": 1.0,
-      "comparison": "handcrafted=1.000 vs Mel-CNN=1.0",
+      "comparison": "handcrafted=0.975 vs Mel-CNN=1.0",
       "concept": "classification = features\u2192label; CNN learns features on Mel",
-      "t": 1786396709.9416666
+      "t": 1786397033.7401633
     },
     "S03": {
       "ok": true,
@@ -65,11 +73,11 @@
         "2",
         "3"
       ],
-      "acc_dtw": 0.5625,
-      "n_test": 32,
-      "concept": "ASR classic: MFCC sequence + DTW template matching",
+      "acc_dtw": 0.975,
+      "n_test": 40,
+      "concept": "ASR classic: MFCC+delta sequence + DTW template matching",
       "comparison": "S02 global label vs S03 time-aligned sequence matching",
-      "t": 1786396715.643195
+      "t": 1786397041.0869992
     },
     "S04": {
       "ok": true,
@@ -80,57 +88,91 @@
         "c"
       ],
       "history": {
-        "epoch": 20,
-        "loss": 1.7345472574234009,
-        "demo_exact": 0
+        "epoch": 4,
+        "loss": 0.27687573589776693,
+        "demo_exact": 7
       },
       "demos": [
         [
           "a",
-          ""
+          "a"
+        ],
+        [
+          "b",
+          "b"
+        ],
+        [
+          "c",
+          "c"
+        ],
+        [
+          "ab",
+          "ab"
         ],
         [
           "abc",
-          ""
+          "abc"
         ],
         [
           "cab",
-          ""
+          "cab"
         ],
         [
           "bca",
-          ""
+          "bca"
         ]
       ],
+      "demo_exact": 7,
+      "single_ok": 3,
+      "multi_ok": 4,
       "concept": "CTC: per-frame class+blank, collapse repeats \u2192 string",
       "comparison": "S03 needs templates; S04 learns sequence mapping end-to-end",
-      "t": 1786396721.1177876
+      "t": 1786397048.1310856
     },
     "S05": {
       "ok": true,
       "results": [
         {
           "ref": "hello world",
-          "hyp": "That I will.",
-          "wav": "/kaggle/working/audio/s05_ref_hello_world.wav"
+          "hyp": "Hello world",
+          "score": 1.0,
+          "wav": "/kaggle/working/audio/s05_ref_hello_world.wav",
+          "espeak": true,
+          "all_hyps": [
+            "Hello world",
+            "Hello world!"
+          ]
         },
         {
           "ref": "open the door",
-          "hyp": "open the door.",
-          "wav": "/kaggle/working/audio/s05_ref_open_the_door.wav"
+          "hyp": "Open the door.",
+          "score": 1.0,
+          "wav": "/kaggle/working/audio/s05_ref_open_the_door.wav",
+          "espeak": true,
+          "all_hyps": [
+            "Open the door.",
+            "Open the door."
+          ]
         },
         {
           "ref": "one two three",
           "hyp": "1 2 3",
-          "wav": "/kaggle/working/audio/s05_ref_one_two_three.wav"
+          "score": 1.0,
+          "wav": "/kaggle/working/audio/s05_ref_one_two_three.wav",
+          "espeak": true,
+          "all_hyps": [
+            "1 2 3",
+            "1 2 3"
+          ]
         }
       ],
       "model": "tiny",
       "espeak": true,
-      "mean_cer": 0.6303030303030304,
+      "mean_soft_match": 1.0,
+      "n_good": 3,
       "concept": "large-scale supervised seq2seq ASR",
       "comparison": "toy CTC alphabet vs natural language ASR",
-      "t": 1786396751.0109296
+      "t": 1786397079.0268974
     },
     "S06": {
       "ok": true,
@@ -144,16 +186,16 @@
       "phone_set": 21,
       "concept": "rule formant TTS: text\u2192phones\u2192f0+formants\u2192wave",
       "comparison": "inverse of ASR: generate speech instead of recognize",
-      "t": 1786396751.6256592
+      "t": 1786397079.7786314
     },
     "S07": {
       "ok": true,
-      "mse": 0.04849592596292496,
-      "spectral_convergence": 0.2036827802658081,
+      "mse": 0.06610699743032455,
+      "spectral_convergence": 0.18951663374900818,
       "n_iter": 40,
       "concept": "phase reconstruction vocoder from magnitude STFT",
       "comparison": "S06 direct synthesis vs S07 spectrogram inversion pipeline",
-      "t": 1786396752.4815392
+      "t": 1786397080.765817
     },
     "S08": {
       "ok": true,
@@ -165,7 +207,7 @@
       ],
       "concept": "text/tag conditioned non-speech audio generation (procedural stand-in for TTA models)",
       "comparison": "speech TTS vs general sound generation",
-      "t": 1786396753.471913
+      "t": 1786397081.97074
     },
     "S09": {
       "ok": true,
@@ -182,7 +224,7 @@
       "f0_pitch_up": 168.42105263157896,
       "concept": "signal processing A2A: pitch/time/noise/timbre",
       "comparison": "generation (S08) vs transformation (S09)",
-      "t": 1786396754.5494838
+      "t": 1786397083.2574873
     },
     "S10": {
       "ok": true,
@@ -226,7 +268,7 @@
       "lesson": "fine VAD chops break ASR; phrase-level segments restore Whisper quality (see S05)",
       "concept": "VAD\u2192ASR\u2192policy\u2192TTS; segmentation quality dominates ASR",
       "comparison": "raw VAD vs merged VAD vs oracle spans",
-      "t": 1786396755.4885738
+      "t": 1786397084.2863932
     }
   },
   "artifacts": {
@@ -256,6 +298,8 @@
     "audio": [
       "s00_chord.wav",
       "s01_seg_0.wav",
+      "s01_seg_1.wav",
+      "s01_seg_2.wav",
       "s01_vad_input.wav",
       "s02_beep_pulse.wav",
       "s02_noise.wav",
@@ -266,10 +310,12 @@
       "s03_template_2.wav",
       "s03_template_3.wav",
       "s04_abc.wav",
+      "s05_ref_hello_world.espeak.wav",
       "s05_ref_hello_world.wav",
+      "s05_ref_one_two_three.espeak.wav",
       "s05_ref_one_two_three.wav",
+      "s05_ref_open_the_door.espeak.wav",
       "s05_ref_open_the_door.wav",
-      "s05_tmp.wav",
       "s06_tts_audio_from_scratch.wav",
       "s06_tts_hello_world.wav",
       "s06_tts_one_two_three.wav",

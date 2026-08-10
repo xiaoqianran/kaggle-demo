@@ -6,9 +6,9 @@
     "2",
     "3"
   ],
-  "acc_dtw": 0.5625,
-  "n_test": 32,
-  "concept": "ASR classic: MFCC sequence + DTW template matching",
+  "acc_dtw": 0.975,
+  "n_test": 40,
+  "concept": "ASR classic: MFCC+delta sequence + DTW template matching",
   "comparison": "S02 global label vs S03 time-aligned sequence matching",
-  "t": 1786396715.643195
+  "t": 1786397041.0869992
 }

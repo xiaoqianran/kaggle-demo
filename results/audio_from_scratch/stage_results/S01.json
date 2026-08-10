@@ -1,17 +1,25 @@
 {
   "ok": true,
-  "n_frames": 293,
-  "energy_speech_ratio": 0.07849829351535836,
-  "flat_speech_ratio": 0.09215017064846416,
-  "combo_ratio": 0.07849829351535836,
-  "n_segments": 1,
+  "n_frames": 283,
+  "energy_speech_ratio": 0.6042402826855123,
+  "flat_speech_ratio": 0.5547703180212014,
+  "combo_ratio": 0.5123674911660777,
+  "n_segments": 3,
   "segments": [
     [
-      230,
-      253
+      62,
+      131
+    ],
+    [
+      171,
+      223
+    ],
+    [
+      225,
+      249
     ]
   ],
-  "comparison": "energy catches loud tones; flatness prefers tonal speech-like; AND reduces false beeps somewhat",
+  "comparison": "energy catches loud events; flatness prefers tonal; merged mask yields multi segments",
   "concept": "VAD = frame feature + threshold \u2192 time regions",
-  "t": 1786396701.36546
+  "t": 1786397022.749488
 }

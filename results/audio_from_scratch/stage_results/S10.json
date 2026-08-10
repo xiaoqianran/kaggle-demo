@@ -40,5 +40,5 @@
   "lesson": "fine VAD chops break ASR; phrase-level segments restore Whisper quality (see S05)",
   "concept": "VAD\u2192ASR\u2192policy\u2192TTS; segmentation quality dominates ASR",
   "comparison": "raw VAD vs merged VAD vs oracle spans",
-  "t": 1786396755.4885738
+  "t": 1786397084.2863932
 }

@@ -7,29 +7,44 @@
     "c"
   ],
   "history": {
-    "epoch": 20,
-    "loss": 1.7345472574234009,
-    "demo_exact": 0
+    "epoch": 4,
+    "loss": 0.27687573589776693,
+    "demo_exact": 7
   },
   "demos": [
     [
       "a",
-      ""
+      "a"
+    ],
+    [
+      "b",
+      "b"
+    ],
+    [
+      "c",
+      "c"
+    ],
+    [
+      "ab",
+      "ab"
     ],
     [
       "abc",
-      ""
+      "abc"
     ],
     [
       "cab",
-      ""
+      "cab"
     ],
     [
       "bca",
-      ""
+      "bca"
     ]
   ],
+  "demo_exact": 7,
+  "single_ok": 3,
+  "multi_ok": 4,
   "concept": "CTC: per-frame class+blank, collapse repeats \u2192 string",
   "comparison": "S03 needs templates; S04 learns sequence mapping end-to-end",
-  "t": 1786396721.1177876
+  "t": 1786397048.1310856
 }
