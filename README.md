@@ -16,6 +16,7 @@ Notebook：`Grok-{领域}-{任务}`
 | `Grok-ML-gpu-smoke` | ML | gpu-smoke | [yunianan/grok-ml-gpu-smoke](https://www.kaggle.com/code/yunianan/grok-ml-gpu-smoke) ✅ |
 | `Grok-GPU-T4x2-Smoke` | GPU | T4x2-Smoke | [xiaosuhuaer/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/xiaosuhuaer/grok-gpu-t4x2-smoke) ✅ |
 | `Grok-infra-t4x2-smoke` | infra | t4x2-smoke | [shuhuaqqq/grok-infra-t4x2-smoke](https://www.kaggle.com/code/shuhuaqqq/grok-infra-t4x2-smoke) ✅ |
+| `Grok-Audio-from-scratch` | Audio | from-scratch | [xiaosuhuaer/grok-audio-from-scratch](https://www.kaggle.com/code/xiaosuhuaer/grok-audio-from-scratch) ✅ |
 
 目录：`notebooks/<Name>/`，内含：
 
@@ -83,6 +84,8 @@ python scripts/push_and_wait.py -p notebooks/Grok-GPU-T4x2-Smoke --accelerator N
 - `results/Grok-ML-gpu-smoke-yunianan.json`（`device_count=2`, DataParallel, `SMOKE_OK`）
 - `results/Grok-GPU-T4x2-Smoke.json`（`device_count=2`, DataParallel, `SMOKE PASS`，账号 `xiaosuhuaer`）
 - `results/Grok-infra-t4x2-smoke.json`（`device_count=2`, 2×Tesla T4, loss 2.31→0.52, 账号 `shuhuaqqq`）
+- `results/audio_from_scratch/` · Speech/Audio From Scratch S00–S10 全通过
+- `PROGRESS.md` · 实验进度与能力阶梯
 
 ## 常用命令
 

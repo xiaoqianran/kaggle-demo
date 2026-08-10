@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "variants": [
+    "orig",
+    "pitch_up_4st",
+    "pitch_down_4st",
+    "faster_1.25x",
+    "noisy",
+    "denoised",
+    "brighter"
+  ],
+  "f0_orig": 133.33333333333334,
+  "f0_pitch_up": 168.42105263157896,
+  "concept": "signal processing A2A: pitch/time/noise/timbre",
+  "comparison": "generation (S08) vs transformation (S09)",
+  "t": 1786396754.5494838
+}

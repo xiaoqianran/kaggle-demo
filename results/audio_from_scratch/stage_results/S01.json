@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "n_frames": 293,
+  "energy_speech_ratio": 0.07849829351535836,
+  "flat_speech_ratio": 0.09215017064846416,
+  "combo_ratio": 0.07849829351535836,
+  "n_segments": 1,
+  "segments": [
+    [
+      230,
+      253
+    ]
+  ],
+  "comparison": "energy catches loud tones; flatness prefers tonal speech-like; AND reduces false beeps somewhat",
+  "concept": "VAD = frame feature + threshold \u2192 time regions",
+  "t": 1786396701.36546
+}

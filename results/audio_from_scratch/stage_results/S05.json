@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "ref": "hello world",
+      "hyp": "That I will.",
+      "wav": "/kaggle/working/audio/s05_ref_hello_world.wav"
+    },
+    {
+      "ref": "open the door",
+      "hyp": "open the door.",
+      "wav": "/kaggle/working/audio/s05_ref_open_the_door.wav"
+    },
+    {
+      "ref": "one two three",
+      "hyp": "1 2 3",
+      "wav": "/kaggle/working/audio/s05_ref_one_two_three.wav"
+    }
+  ],
+  "model": "tiny",
+  "espeak": true,
+  "mean_cer": 0.6303030303030304,
+  "concept": "large-scale supervised seq2seq ASR",
+  "comparison": "toy CTC alphabet vs natural language ASR",
+  "t": 1786396751.0109296
+}

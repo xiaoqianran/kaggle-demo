@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "classes": [
+    "sine",
+    "noise",
+    "speechish",
+    "beep_pulse"
+  ],
+  "n_per_class": 40,
+  "acc_handcrafted": 1.0,
+  "acc_cnn": 1.0,
+  "comparison": "handcrafted=1.000 vs Mel-CNN=1.0",
+  "concept": "classification = features\u2192label; CNN learns features on Mel",
+  "t": 1786396709.9416666
+}

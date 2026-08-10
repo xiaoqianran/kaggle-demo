@@ -1,0 +1,326 @@
+{
+  "title": "Grok-Audio-from-scratch",
+  "device": "cuda:0",
+  "stages": {
+    "S00": {
+      "ok": true,
+      "wav": "/kaggle/working/audio/s00_chord.wav",
+      "stft_shape": [
+        257,
+        151
+      ],
+      "mel_shape": [
+        40,
+        151
+      ],
+      "mfcc_shape": [
+        13,
+        151
+      ],
+      "tones_hz": [
+        440.0,
+        523.25,
+        659.25
+      ],
+      "concept": "waveform\u2192STFT\u2192Mel\u2192MFCC feature chain",
+      "t": 1786396700.889728
+    },
+    "S01": {
+      "ok": true,
+      "n_frames": 293,
+      "energy_speech_ratio": 0.07849829351535836,
+      "flat_speech_ratio": 0.09215017064846416,
+      "combo_ratio": 0.07849829351535836,
+      "n_segments": 1,
+      "segments": [
+        [
+          230,
+          253
+        ]
+      ],
+      "comparison": "energy catches loud tones; flatness prefers tonal speech-like; AND reduces false beeps somewhat",
+      "concept": "VAD = frame feature + threshold \u2192 time regions",
+      "t": 1786396701.36546
+    },
+    "S02": {
+      "ok": true,
+      "classes": [
+        "sine",
+        "noise",
+        "speechish",
+        "beep_pulse"
+      ],
+      "n_per_class": 40,
+      "acc_handcrafted": 1.0,
+      "acc_cnn": 1.0,
+      "comparison": "handcrafted=1.000 vs Mel-CNN=1.0",
+      "concept": "classification = features\u2192label; CNN learns features on Mel",
+      "t": 1786396709.9416666
+    },
+    "S03": {
+      "ok": true,
+      "digits": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "acc_dtw": 0.5625,
+      "n_test": 32,
+      "concept": "ASR classic: MFCC sequence + DTW template matching",
+      "comparison": "S02 global label vs S03 time-aligned sequence matching",
+      "t": 1786396715.643195
+    },
+    "S04": {
+      "ok": true,
+      "chars": [
+        "<blank>",
+        "a",
+        "b",
+        "c"
+      ],
+      "history": {
+        "epoch": 20,
+        "loss": 1.7345472574234009,
+        "demo_exact": 0
+      },
+      "demos": [
+        [
+          "a",
+          ""
+        ],
+        [
+          "abc",
+          ""
+        ],
+        [
+          "cab",
+          ""
+        ],
+        [
+          "bca",
+          ""
+        ]
+      ],
+      "concept": "CTC: per-frame class+blank, collapse repeats \u2192 string",
+      "comparison": "S03 needs templates; S04 learns sequence mapping end-to-end",
+      "t": 1786396721.1177876
+    },
+    "S05": {
+      "ok": true,
+      "results": [
+        {
+          "ref": "hello world",
+          "hyp": "That I will.",
+          "wav": "/kaggle/working/audio/s05_ref_hello_world.wav"
+        },
+        {
+          "ref": "open the door",
+          "hyp": "open the door.",
+          "wav": "/kaggle/working/audio/s05_ref_open_the_door.wav"
+        },
+        {
+          "ref": "one two three",
+          "hyp": "1 2 3",
+          "wav": "/kaggle/working/audio/s05_ref_one_two_three.wav"
+        }
+      ],
+      "model": "tiny",
+      "espeak": true,
+      "mean_cer": 0.6303030303030304,
+      "concept": "large-scale supervised seq2seq ASR",
+      "comparison": "toy CTC alphabet vs natural language ASR",
+      "t": 1786396751.0109296
+    },
+    "S06": {
+      "ok": true,
+      "utterances": [
+        "hello world",
+        "open the door",
+        "one two three",
+        "audio from scratch"
+      ],
+      "lexicon_size": 13,
+      "phone_set": 21,
+      "concept": "rule formant TTS: text\u2192phones\u2192f0+formants\u2192wave",
+      "comparison": "inverse of ASR: generate speech instead of recognize",
+      "t": 1786396751.6256592
+    },
+    "S07": {
+      "ok": true,
+      "mse": 0.04849592596292496,
+      "spectral_convergence": 0.2036827802658081,
+      "n_iter": 40,
+      "concept": "phase reconstruction vocoder from magnitude STFT",
+      "comparison": "S06 direct synthesis vs S07 spectrogram inversion pipeline",
+      "t": 1786396752.4815392
+    },
+    "S08": {
+      "ok": true,
+      "scenes": [
+        "rain on the street",
+        "emergency alarm",
+        "footsteps in hallway",
+        "wind outside"
+      ],
+      "concept": "text/tag conditioned non-speech audio generation (procedural stand-in for TTA models)",
+      "comparison": "speech TTS vs general sound generation",
+      "t": 1786396753.471913
+    },
+    "S09": {
+      "ok": true,
+      "variants": [
+        "orig",
+        "pitch_up_4st",
+        "pitch_down_4st",
+        "faster_1.25x",
+        "noisy",
+        "denoised",
+        "brighter"
+      ],
+      "f0_orig": 133.33333333333334,
+      "f0_pitch_up": 168.42105263157896,
+      "concept": "signal processing A2A: pitch/time/noise/timbre",
+      "comparison": "generation (S08) vs transformation (S09)",
+      "t": 1786396754.5494838
+    },
+    "S10": {
+      "ok": true,
+      "espeak_input": true,
+      "n_raw_vad": 5,
+      "n_merged_vad": 2,
+      "merged_vad": [
+        {
+          "hyp": "hello world",
+          "backend": "whisper",
+          "dur": 1.32
+        },
+        {
+          "hyp": "open the door",
+          "backend": "whisper",
+          "dur": 1.501125
+        }
+      ],
+      "oracle_spans": [
+        {
+          "ref": "hello world",
+          "hyp": "hello world",
+          "backend": "whisper"
+        },
+        {
+          "ref": "open the door",
+          "hyp": "open the door",
+          "backend": "whisper"
+        }
+      ],
+      "best_transcripts": [
+        "hello world",
+        "open the door"
+      ],
+      "replies": [
+        "hello world",
+        "yes"
+      ],
+      "oracle_hits": 2,
+      "semantic_ok": true,
+      "lesson": "fine VAD chops break ASR; phrase-level segments restore Whisper quality (see S05)",
+      "concept": "VAD\u2192ASR\u2192policy\u2192TTS; segmentation quality dominates ASR",
+      "comparison": "raw VAD vs merged VAD vs oracle spans",
+      "t": 1786396755.4885738
+    }
+  },
+  "artifacts": {
+    "figs": [
+      "s00_mel.png",
+      "s00_mfcc.png",
+      "s00_stft.png",
+      "s00_wave.png",
+      "s01_vad.png",
+      "s01_wave.png",
+      "s02_acc.png",
+      "s02_mels.png",
+      "s03_dtw.png",
+      "s04_ctc_align.png",
+      "s06_audio_from_scratch.png",
+      "s06_hello_world.png",
+      "s06_mel.png",
+      "s06_one_two_three.png",
+      "s06_open_the_door.png",
+      "s07_gl.png",
+      "s08_mels.png",
+      "s08_scenes.png",
+      "s09_waves.png",
+      "s10_reply.png",
+      "s10_user.png"
+    ],
+    "audio": [
+      "s00_chord.wav",
+      "s01_seg_0.wav",
+      "s01_vad_input.wav",
+      "s02_beep_pulse.wav",
+      "s02_noise.wav",
+      "s02_sine.wav",
+      "s02_speechish.wav",
+      "s03_template_0.wav",
+      "s03_template_1.wav",
+      "s03_template_2.wav",
+      "s03_template_3.wav",
+      "s04_abc.wav",
+      "s05_ref_hello_world.wav",
+      "s05_ref_one_two_three.wav",
+      "s05_ref_open_the_door.wav",
+      "s05_tmp.wav",
+      "s06_tts_audio_from_scratch.wav",
+      "s06_tts_hello_world.wav",
+      "s06_tts_one_two_three.wav",
+      "s06_tts_open_the_door.wav",
+      "s07_griffinlim.wav",
+      "s07_source.wav",
+      "s08_emergency_alarm.wav",
+      "s08_footsteps_in_hallway.wav",
+      "s08_rain_on_the_street.wav",
+      "s08_wind_outside.wav",
+      "s09_brighter.wav",
+      "s09_denoised.wav",
+      "s09_faster_1.25x.wav",
+      "s09_noisy.wav",
+      "s09_orig.wav",
+      "s09_pitch_down_4st.wav",
+      "s09_pitch_up_4st.wav",
+      "s10_merged_0.wav",
+      "s10_merged_1.wav",
+      "s10_oracle_0.wav",
+      "s10_oracle_1.wav",
+      "s10_recording.wav",
+      "s10_response.wav",
+      "s10_tmpl_hello_world.tmp.wav",
+      "s10_tmpl_hello_world.wav",
+      "s10_tmpl_no.tmp.wav",
+      "s10_tmpl_no.wav",
+      "s10_tmpl_one_two_three.tmp.wav",
+      "s10_tmpl_one_two_three.wav",
+      "s10_tmpl_open_the_door.tmp.wav",
+      "s10_tmpl_open_the_door.wav",
+      "s10_tmpl_yes.tmp.wav",
+      "s10_tmpl_yes.wav",
+      "s10_u1.tmp.wav",
+      "s10_u1.wav",
+      "s10_u2.tmp.wav",
+      "s10_u2.wav"
+    ],
+    "stage_json": [
+      "S00.json",
+      "S01.json",
+      "S02.json",
+      "S03.json",
+      "S04.json",
+      "S05.json",
+      "S06.json",
+      "S07.json",
+      "S08.json",
+      "S09.json",
+      "S10.json",
+      "S10_pipeline.json"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "utterances": [
+    "hello world",
+    "open the door",
+    "one two three",
+    "audio from scratch"
+  ],
+  "lexicon_size": 13,
+  "phone_set": 21,
+  "concept": "rule formant TTS: text\u2192phones\u2192f0+formants\u2192wave",
+  "comparison": "inverse of ASR: generate speech instead of recognize",
+  "t": 1786396751.6256592
+}
