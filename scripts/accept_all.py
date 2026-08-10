@@ -12,7 +12,7 @@ def run(cmd: list[str]) -> subprocess.CompletedProcess:
 def main() -> int:
     fails: list[str] = []
     print("== CV ==")
-    cp = run([sys.executable, "scripts/accept_cv.py", "--live"])
+    cp = run([sys.executable, "scripts/accept_cv.py"])  # local result snapshots; --live optional/CI
     print(cp.stdout, end="")
     if cp.returncode != 0:
         fails.append("cv")
