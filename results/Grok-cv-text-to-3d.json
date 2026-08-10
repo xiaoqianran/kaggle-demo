@@ -8,8 +8,8 @@
   "num_points": 1020,
   "artifact": "/kaggle/working/text3d.ply",
   "embedding_norm": 23.476558685302734,
-  "inference_s": 0.5833992958068848,
-  "elapsed_s": 35.414021253585815,
+  "inference_s": 0.9616413116455078,
+  "elapsed_s": 30.33287811279297,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",

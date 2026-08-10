@@ -4,10 +4,21 @@
   "task": "zero-shot-object-detection",
   "domain": "cv",
   "model": "google/owlvit-base-patch32",
-  "num_detections": 0,
-  "detections": [],
-  "inference_s": 1.3007328510284424,
-  "elapsed_s": 32.64046049118042,
+  "num_detections": 1,
+  "detections": [
+    {
+      "label": "cat",
+      "score": 0.08411724865436554,
+      "box": {
+        "xmin": 85,
+        "ymin": 15,
+        "xmax": 646,
+        "ymax": 692
+      }
+    }
+  ],
+  "inference_s": 2.001863718032837,
+  "elapsed_s": 33.16996932029724,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",

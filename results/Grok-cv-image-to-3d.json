@@ -6,8 +6,8 @@
   "model": "dpt-hybrid-midas depth back-project",
   "num_points": 4096,
   "artifact": "/kaggle/working/img3d.ply",
-  "inference_s": 1.4631874561309814,
-  "elapsed_s": 33.29145383834839,
+  "inference_s": 0.9589180946350098,
+  "elapsed_s": 32.913180112838745,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",

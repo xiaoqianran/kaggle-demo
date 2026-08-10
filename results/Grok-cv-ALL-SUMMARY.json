@@ -4,212 +4,174 @@
   "tasks": [
     {
       "task": "depth-estimation",
-      "notebook": "Grok-cv-depth-estimation",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-depth-estimation",
       "model": "Intel/dpt-hybrid-midas",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 31.73141098022461
+      "elapsed_s": 37.7126100063324
     },
     {
       "task": "image-classification",
-      "notebook": "Grok-cv-image-classification",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-classification",
       "model": "torchvision.resnet18",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 8.017239809036255
+      "elapsed_s": 7.220128774642944
     },
     {
       "task": "object-detection",
-      "notebook": "Grok-cv-object-detection",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-object-detection",
       "model": "fasterrcnn_mobilenet_v3_large_fpn",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 9.026154279708862
+      "elapsed_s": 10.367576599121094
     },
     {
       "task": "image-segmentation",
-      "notebook": "Grok-cv-image-segmentation",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-segmentation",
       "model": "nvidia/segformer-b0-finetuned-ade-512-512",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 42.901172161102295
+      "elapsed_s": 25.56610417366028
     },
     {
       "task": "text-to-image",
-      "notebook": "Grok-cv-text-to-image",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-image",
       "model": "nota-ai/bk-sdm-tiny",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 54.81970548629761
+      "elapsed_s": 47.657079458236694
     },
     {
       "task": "image-to-text",
-      "notebook": "Grok-cv-image-to-text",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-text",
       "model": "Salesforce/blip-image-captioning-base",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 38.251423597335815
+      "elapsed_s": 36.367414712905884
     },
     {
       "task": "image-to-image",
-      "notebook": "Grok-cv-image-to-image",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-image",
       "model": "nota-ai/bk-sdm-tiny",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 44.78925848007202
+      "elapsed_s": 44.09819030761719
     },
     {
       "task": "image-to-video",
-      "notebook": "Grok-cv-image-to-video",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-video",
       "model": "affine-motion+optional-bk-sdm-tiny",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 51.35417103767395
+      "elapsed_s": 46.616678953170776
     },
     {
       "task": "unconditional-image-generation",
-      "notebook": "Grok-cv-unconditional-image-generation",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-unconditional-image-generation",
       "model": "google/ddpm-cifar10-32",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 47.20039081573486
+      "elapsed_s": 43.4464590549469
     },
     {
       "task": "video-classification",
-      "notebook": "Grok-cv-video-classification",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-video-classification",
       "model": "MCG-NJU/videomae-base-finetuned-kinetics",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 32.109819412231445
+      "elapsed_s": 47.54901313781738
     },
     {
       "task": "text-to-video",
-      "notebook": "Grok-cv-text-to-video",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-video",
       "model": "nota-ai/bk-sdm-tiny",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 53.2385618686676
+      "elapsed_s": 59.822811126708984
     },
     {
       "task": "zero-shot-image-classification",
-      "notebook": "Grok-cv-zero-shot-image-classification",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-zero-shot-image-classification",
       "model": "openai/clip-vit-base-patch32",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 29.913262844085693
+      "elapsed_s": 55.72036600112915
     },
     {
       "task": "mask-generation",
-      "notebook": "Grok-cv-mask-generation",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-mask-generation",
       "model": "facebook/sam-vit-base",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 30.935799837112427
+      "elapsed_s": 32.48220872879028
     },
     {
       "task": "zero-shot-object-detection",
-      "notebook": "Grok-cv-zero-shot-object-detection",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-zero-shot-object-detection",
       "model": "google/owlvit-base-patch32",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 32.64046049118042
+      "elapsed_s": 33.16996932029724
     },
     {
       "task": "text-to-3d",
-      "notebook": "Grok-cv-text-to-3d",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-3d",
       "model": "clip-vit-base + procedural-mesh",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 35.414021253585815
+      "elapsed_s": 30.33287811279297
     },
     {
       "task": "image-to-3d",
-      "notebook": "Grok-cv-image-to-3d",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-3d",
       "model": "dpt-hybrid-midas depth back-project",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 33.29145383834839
+      "elapsed_s": 32.913180112838745
     },
     {
       "task": "image-feature-extraction",
-      "notebook": "Grok-cv-image-feature-extraction",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-feature-extraction",
       "model": "facebook/dinov2-small",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 22.886024713516235
+      "elapsed_s": 26.173863172531128
     },
     {
       "task": "keypoint-detection",
-      "notebook": "Grok-cv-keypoint-detection",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-keypoint-detection",
       "model": "keypointrcnn_resnet50_fpn",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 11.293680191040039
+      "elapsed_s": 12.46022367477417
     },
     {
       "task": "video-to-video",
-      "notebook": "Grok-cv-video-to-video",
-      "kaggle": "https://www.kaggle.com/code/shuhuaqqq/grok-cv-video-to-video",
       "model": "torch-gpu-stylize-v2v",
       "devices": [
         "Tesla T4",
         "Tesla T4"
       ],
-      "elapsed_s": 5.631937026977539
+      "elapsed_s": 6.332316160202026
     }
   ]
 }

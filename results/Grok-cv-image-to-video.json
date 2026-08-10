@@ -11,8 +11,8 @@
     3
   ],
   "diffusion_refine": true,
-  "inference_s": 0.41433238983154297,
-  "elapsed_s": 51.35417103767395,
+  "inference_s": 0.3365647792816162,
+  "elapsed_s": 46.616678953170776,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",

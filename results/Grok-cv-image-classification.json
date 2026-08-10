@@ -6,8 +6,8 @@
   "model": "torchvision.resnet18",
   "label": "tabby",
   "confidence": 0.5469372868537903,
-  "inference_s": 0.8558318614959717,
-  "elapsed_s": 8.017239809036255,
+  "inference_s": 0.7335317134857178,
+  "elapsed_s": 7.220128774642944,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",

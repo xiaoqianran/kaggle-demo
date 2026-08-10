@@ -181,7 +181,7 @@ def apply_fix(folder: Path, attempt: int, log_text: str) -> None:
         ipynb.write_text(json.dumps(nb, indent=1))
 
 
-def run_one(task: str, max_attempts: int = 4) -> bool:
+def run_one(task: str, max_attempts: int = 5) -> bool:
     name = f"Grok-cv-{task}"
     folder = ROOT / "notebooks" / name
     meta = json.loads((folder / "kernel-metadata.json").read_text())

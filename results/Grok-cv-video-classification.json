@@ -7,8 +7,8 @@
   "label": "petting cat",
   "confidence": 0.698474645614624,
   "num_frames": 16,
-  "inference_s": 0.8992784023284912,
-  "elapsed_s": 32.109819412231445,
+  "inference_s": 1.5731523036956787,
+  "elapsed_s": 47.54901313781738,
   "gpu": {
     "torch": "2.10.0+cu128",
     "cuda": "12.8",
