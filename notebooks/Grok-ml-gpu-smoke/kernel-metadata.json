@@ -1,0 +1,16 @@
+{
+  "id": "qixiaer/grok-ml-gpu-smoke",
+  "title": "Grok-ml-gpu-smoke",
+  "code_file": "Grok-ml-gpu-smoke.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "false",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
