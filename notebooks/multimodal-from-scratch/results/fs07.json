@@ -1,6 +1,5 @@
 {
   "stage": "FS07",
-  "method": "page render + OCR text + TF-IDF retrieve + span answer",
   "retrieval_acc": 1.0,
   "answer_acc": 1.0,
   "rows": [
@@ -50,6 +49,6 @@
       "ans_ok": true
     }
   ],
-  "vs_prev": "FS06 answers about shapes; FS07 answers from multi-page text documents",
-  "figure": "figures/fs07_pages.png"
+  "method": "TF-IDF DocQA",
+  "vs_prev": "shapes->documents"
 }

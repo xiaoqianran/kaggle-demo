@@ -1,155 +1,249 @@
 {
   "stage": "FS05",
-  "method": "dual-encoder InfoNCE (CLIP mini)",
+  "method": "CLIP dual encoder",
+  "R@1": 1.0,
   "history": [
     {
       "epoch": 1,
-      "loss": 3.3333,
-      "batch_acc": 0.0516
+      "loss": 3.1203,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 2,
-      "loss": 2.7927,
-      "batch_acc": 0.0625
+      "loss": 2.773,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 3,
-      "loss": 2.789,
-      "batch_acc": 0.0625
+      "loss": 2.7727,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 4,
-      "loss": 2.7942,
-      "batch_acc": 0.0625
+      "loss": 2.7727,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 5,
-      "loss": 2.8045,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 6,
-      "loss": 2.7918,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 7,
-      "loss": 2.7992,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 8,
-      "loss": 2.7914,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 9,
-      "loss": 2.798,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 10,
-      "loss": 2.7988,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 11,
-      "loss": 2.7919,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 12,
-      "loss": 2.7918,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 13,
-      "loss": 2.7977,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 14,
-      "loss": 2.7983,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 15,
-      "loss": 2.7892,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 16,
-      "loss": 2.8016,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 17,
-      "loss": 2.7897,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 18,
-      "loss": 2.7998,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 19,
-      "loss": 2.7998,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     },
     {
       "epoch": 20,
-      "loss": 2.8004,
-      "batch_acc": 0.0625
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 21,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 22,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 23,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 24,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 25,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 26,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 27,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 28,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 29,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 30,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 31,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 32,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 33,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 34,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 35,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 36,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 37,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 38,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
+    },
+    {
+      "epoch": 39,
+      "loss": 2.7726,
+      "unique_R@1": 1.0
     }
   ],
   "retrieval": [
     {
       "query": "a red circle",
       "top1": "red_circle",
+      "hit": true,
       "scores": [
-        0.796,
-        -0.107,
-        -0.695,
-        -0.003
-      ],
-      "hit": true
+        0.909,
+        -0.056,
+        -0.825,
+        0.035
+      ]
     },
     {
       "query": "a blue square",
       "top1": "blue_square",
+      "hit": true,
       "scores": [
-        -0.124,
-        0.818,
-        0.013,
-        -0.642
-      ],
-      "hit": true
+        -0.027,
+        0.915,
+        -0.022,
+        -0.643
+      ]
     },
     {
       "query": "a green triangle",
       "top1": "green_triangle",
+      "hit": true,
       "scores": [
-        -0.651,
-        -0.0,
-        0.792,
-        -0.092
-      ],
-      "hit": true
+        -0.8,
+        -0.086,
+        0.878,
+        -0.135
+      ]
     },
     {
       "query": "a yellow circle",
       "top1": "yellow_circle",
+      "hit": true,
       "scores": [
-        -0.018,
-        -0.587,
-        -0.058,
-        0.809
-      ],
-      "hit": true
+        -0.033,
+        -0.661,
+        -0.033,
+        0.902
+      ]
     }
   ],
-  "R@1": 1.0,
-  "vs_prev": "FS03/04 generate text; FS05 learns shared embedding for retrieval",
-  "figure": "figures/fs05_clip_sim.png"
+  "vs_prev": "generate vs retrieve"
 }

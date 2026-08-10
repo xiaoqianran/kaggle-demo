@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "gates": {
+    "FS00_matched_score2": true,
+    "FS00_mismatch_lt2": true,
+    "FS01_exact_match": true,
+    "FS02_val_acc": true,
+    "FS02_clean_acc": true
+  }
+}

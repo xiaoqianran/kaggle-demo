@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "accelerator": "NvidiaTeslaT4 (T4x2)",
+  "kernels": {
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs00-fs02-foundations": {
+      "FS00_matched_score2": true,
+      "FS00_mismatch_lt2": true,
+      "FS01_exact_match": true,
+      "FS02_val_acc": true,
+      "FS02_clean_acc": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs03-fs04-captioning": {
+      "FS03_cls_val": true,
+      "FS03_greedy_exact": true,
+      "FS04_cls_val": true,
+      "FS04_greedy_exact": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs05-fs06-align-vqa": {
+      "FS05_R@1": true,
+      "FS06_acc": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs07-fs08-doc": {
+      "FS07_ret": true,
+      "FS07_ans": true,
+      "FS08_visual_R@1": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs09-fs10-video-audio": {
+      "FS09_val": true,
+      "FS09_clean": true,
+      "FS10_val": true,
+      "FS10_clean": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs11-fs12-generation": {
+      "FS11_mse": true,
+      "FS11_color": true,
+      "FS12_mse": true
+    },
+    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs13-fs14-unified": {
+      "FS13_acc": true,
+      "FS14_route_acc": true
+    }
+  },
+  "stages_fs00_fs14": "ALL_PASS"
+}

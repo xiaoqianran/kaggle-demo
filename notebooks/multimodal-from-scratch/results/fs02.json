@@ -1,65 +1,54 @@
 {
   "stage": "FS02",
-  "method": "TinyCNN classifier to class name string",
+  "method": "TinyCNN",
   "val_acc": 1.0,
+  "clean_acc": 1.0,
   "history": [
     {
       "epoch": 1,
-      "train_loss": 1.0878,
-      "val_acc": 0.2833
+      "train_loss": 1.0823,
+      "val_acc": 1.0
     },
     {
       "epoch": 2,
-      "train_loss": 1.0351,
+      "train_loss": 0.9535,
       "val_acc": 1.0
     },
     {
       "epoch": 3,
-      "train_loss": 0.894,
-      "val_acc": 0.6583
+      "train_loss": 0.6219,
+      "val_acc": 1.0
     },
     {
       "epoch": 4,
-      "train_loss": 0.6409,
+      "train_loss": 0.3479,
       "val_acc": 1.0
     },
     {
       "epoch": 5,
-      "train_loss": 0.3249,
+      "train_loss": 0.1888,
       "val_acc": 1.0
     },
     {
       "epoch": 6,
-      "train_loss": 0.1241,
+      "train_loss": 0.0837,
       "val_acc": 1.0
     },
     {
       "epoch": 7,
-      "train_loss": 0.0379,
+      "train_loss": 0.0291,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0138,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.008,
       "val_acc": 1.0
     }
   ],
-  "train_seconds": 1.382,
-  "comparison_rows": [
-    {
-      "input": "red_circle",
-      "fs01_rule": "a red square",
-      "fs02_cnn": "a red circle"
-    },
-    {
-      "input": "blue_square",
-      "fs01_rule": "a blue square",
-      "fs02_cnn": "a blue square"
-    },
-    {
-      "input": "green_triangle",
-      "fs01_rule": "a green triangle",
-      "fs02_cnn": "a green triangle"
-    }
-  ],
-  "vs_prev": "FS01 fixed rules; FS02 learns filters (closed-set labels, not open captions)",
-  "figures": [
-    "figures/fs02_cnn_words.png",
-    "figures/fs02_curve.png"
-  ]
+  "vs_prev": "FS01 rules; FS02 learns"
 }

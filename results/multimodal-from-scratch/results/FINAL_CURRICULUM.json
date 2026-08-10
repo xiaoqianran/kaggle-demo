@@ -1,24 +1,10 @@
 {
-  "curriculum": "multimodal-from-scratch",
-  "stages_completed": [
+  "stages": [
     "FS13",
     "FS14"
   ],
-  "map": [
-    "FS00 tensors/alignment",
-    "FS01 bag colors",
-    "FS02 CNN word",
-    "FS03 ShowTell",
-    "FS04 Attend",
-    "FS05 CLIP",
-    "FS06 VQA",
-    "FS07 DocQA",
-    "FS08 VisDocRet",
-    "FS09 VideoText",
-    "FS10 ASR",
-    "FS11 DiffGen",
-    "FS12 VideoGen",
-    "FS13 MLLM",
-    "FS14 Any2Any"
-  ]
+  "gates": {
+    "FS13_acc": true,
+    "FS14_route_acc": true
+  }
 }

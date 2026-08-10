@@ -1,9 +1,12 @@
 {
-  "notebook": "Grok-multimodal-fs03-fs04-captioning",
   "progress": {
     "FS03": "ok",
     "FS04": "ok"
   },
-  "device": "cuda:0",
-  "gpu_count": 2
+  "gates": {
+    "FS03_cls_val": true,
+    "FS03_greedy_exact": true,
+    "FS04_cls_val": true,
+    "FS04_greedy_exact": true
+  }
 }

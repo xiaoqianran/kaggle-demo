@@ -1,421 +1,7 @@
 {
   "stage": "FS14",
-  "method": "any-to-any router with shared trunk + modality adapters",
-  "history": [
-    {
-      "epoch": 1,
-      "loss": 17.0272,
-      "l_img2txt": 2.0768,
-      "l_aud2txt": 2.0874,
-      "l_txt2img": 0.7867
-    },
-    {
-      "epoch": 2,
-      "loss": 16.4617,
-      "l_img2txt": 2.0037,
-      "l_aud2txt": 2.0235,
-      "l_txt2img": 0.7424
-    },
-    {
-      "epoch": 3,
-      "loss": 15.9015,
-      "l_img2txt": 1.9382,
-      "l_aud2txt": 1.9524,
-      "l_txt2img": 0.7033
-    },
-    {
-      "epoch": 4,
-      "loss": 15.2949,
-      "l_img2txt": 1.8636,
-      "l_aud2txt": 1.8768,
-      "l_txt2img": 0.6622
-    },
-    {
-      "epoch": 5,
-      "loss": 14.5626,
-      "l_img2txt": 1.7641,
-      "l_aud2txt": 1.7944,
-      "l_txt2img": 0.6148
-    },
-    {
-      "epoch": 6,
-      "loss": 13.8037,
-      "l_img2txt": 1.6827,
-      "l_aud2txt": 1.7113,
-      "l_txt2img": 0.5585
-    },
-    {
-      "epoch": 7,
-      "loss": 12.939,
-      "l_img2txt": 1.5475,
-      "l_aud2txt": 1.6321,
-      "l_txt2img": 0.4926
-    },
-    {
-      "epoch": 8,
-      "loss": 12.0429,
-      "l_img2txt": 1.4389,
-      "l_aud2txt": 1.5395,
-      "l_txt2img": 0.418
-    },
-    {
-      "epoch": 9,
-      "loss": 11.1116,
-      "l_img2txt": 1.2903,
-      "l_aud2txt": 1.4359,
-      "l_txt2img": 0.3382
-    },
-    {
-      "epoch": 10,
-      "loss": 10.4972,
-      "l_img2txt": 1.2256,
-      "l_aud2txt": 1.3261,
-      "l_txt2img": 0.2582
-    },
-    {
-      "epoch": 11,
-      "loss": 9.9045,
-      "l_img2txt": 1.1997,
-      "l_aud2txt": 1.2694,
-      "l_txt2img": 0.1861
-    },
-    {
-      "epoch": 12,
-      "loss": 9.3762,
-      "l_img2txt": 1.2028,
-      "l_aud2txt": 1.1853,
-      "l_txt2img": 0.131
-    },
-    {
-      "epoch": 13,
-      "loss": 9.1425,
-      "l_img2txt": 1.1207,
-      "l_aud2txt": 1.1514,
-      "l_txt2img": 0.1026
-    },
-    {
-      "epoch": 14,
-      "loss": 9.016,
-      "l_img2txt": 1.0964,
-      "l_aud2txt": 1.1248,
-      "l_txt2img": 0.1033
-    },
-    {
-      "epoch": 15,
-      "loss": 8.9138,
-      "l_img2txt": 1.1291,
-      "l_aud2txt": 1.1394,
-      "l_txt2img": 0.1196
-    },
-    {
-      "epoch": 16,
-      "loss": 9.1426,
-      "l_img2txt": 1.2061,
-      "l_aud2txt": 1.1047,
-      "l_txt2img": 0.1301
-    },
-    {
-      "epoch": 17,
-      "loss": 9.0788,
-      "l_img2txt": 1.1142,
-      "l_aud2txt": 1.1626,
-      "l_txt2img": 0.1236
-    },
-    {
-      "epoch": 18,
-      "loss": 9.0567,
-      "l_img2txt": 1.1017,
-      "l_aud2txt": 1.0698,
-      "l_txt2img": 0.1028
-    },
-    {
-      "epoch": 19,
-      "loss": 9.1062,
-      "l_img2txt": 1.163,
-      "l_aud2txt": 1.1513,
-      "l_txt2img": 0.0749
-    },
-    {
-      "epoch": 20,
-      "loss": 8.8584,
-      "l_img2txt": 1.0641,
-      "l_aud2txt": 1.122,
-      "l_txt2img": 0.0487
-    },
-    {
-      "epoch": 21,
-      "loss": 8.8168,
-      "l_img2txt": 1.0975,
-      "l_aud2txt": 1.0715,
-      "l_txt2img": 0.0314
-    },
-    {
-      "epoch": 22,
-      "loss": 8.9092,
-      "l_img2txt": 1.0779,
-      "l_aud2txt": 1.1493,
-      "l_txt2img": 0.0247
-    },
-    {
-      "epoch": 23,
-      "loss": 8.7697,
-      "l_img2txt": 1.1217,
-      "l_aud2txt": 1.0524,
-      "l_txt2img": 0.0264
-    },
-    {
-      "epoch": 24,
-      "loss": 8.7886,
-      "l_img2txt": 1.1089,
-      "l_aud2txt": 1.0655,
-      "l_txt2img": 0.0328
-    },
-    {
-      "epoch": 25,
-      "loss": 8.8095,
-      "l_img2txt": 1.0959,
-      "l_aud2txt": 1.0828,
-      "l_txt2img": 0.0402
-    },
-    {
-      "epoch": 26,
-      "loss": 8.8667,
-      "l_img2txt": 1.1862,
-      "l_aud2txt": 1.0726,
-      "l_txt2img": 0.0458
-    },
-    {
-      "epoch": 27,
-      "loss": 8.7881,
-      "l_img2txt": 1.1446,
-      "l_aud2txt": 1.0822,
-      "l_txt2img": 0.0486
-    },
-    {
-      "epoch": 28,
-      "loss": 8.9249,
-      "l_img2txt": 1.1021,
-      "l_aud2txt": 1.1105,
-      "l_txt2img": 0.0482
-    },
-    {
-      "epoch": 29,
-      "loss": 8.7262,
-      "l_img2txt": 1.0868,
-      "l_aud2txt": 1.0934,
-      "l_txt2img": 0.0449
-    },
-    {
-      "epoch": 30,
-      "loss": 8.7876,
-      "l_img2txt": 1.1031,
-      "l_aud2txt": 1.1102,
-      "l_txt2img": 0.0394
-    },
-    {
-      "epoch": 31,
-      "loss": 8.7037,
-      "l_img2txt": 1.0641,
-      "l_aud2txt": 1.1202,
-      "l_txt2img": 0.0329
-    },
-    {
-      "epoch": 32,
-      "loss": 8.7936,
-      "l_img2txt": 1.0893,
-      "l_aud2txt": 1.1517,
-      "l_txt2img": 0.0265
-    },
-    {
-      "epoch": 33,
-      "loss": 8.7438,
-      "l_img2txt": 1.0716,
-      "l_aud2txt": 1.1105,
-      "l_txt2img": 0.0212
-    },
-    {
-      "epoch": 34,
-      "loss": 8.6071,
-      "l_img2txt": 1.0767,
-      "l_aud2txt": 1.0866,
-      "l_txt2img": 0.0178
-    },
-    {
-      "epoch": 35,
-      "loss": 8.7588,
-      "l_img2txt": 1.0625,
-      "l_aud2txt": 1.103,
-      "l_txt2img": 0.0164
-    },
-    {
-      "epoch": 36,
-      "loss": 8.8287,
-      "l_img2txt": 1.0644,
-      "l_aud2txt": 1.0859,
-      "l_txt2img": 0.0163
-    },
-    {
-      "epoch": 37,
-      "loss": 8.6597,
-      "l_img2txt": 1.0537,
-      "l_aud2txt": 1.1573,
-      "l_txt2img": 0.0163
-    },
-    {
-      "epoch": 38,
-      "loss": 8.546,
-      "l_img2txt": 1.0306,
-      "l_aud2txt": 1.071,
-      "l_txt2img": 0.0157
-    },
-    {
-      "epoch": 39,
-      "loss": 8.5064,
-      "l_img2txt": 1.0387,
-      "l_aud2txt": 1.0776,
-      "l_txt2img": 0.014
-    },
-    {
-      "epoch": 40,
-      "loss": 8.5055,
-      "l_img2txt": 1.0523,
-      "l_aud2txt": 1.0946,
-      "l_txt2img": 0.0116
-    },
-    {
-      "epoch": 41,
-      "loss": 8.4171,
-      "l_img2txt": 1.0595,
-      "l_aud2txt": 1.0761,
-      "l_txt2img": 0.009
-    },
-    {
-      "epoch": 42,
-      "loss": 8.3857,
-      "l_img2txt": 1.0243,
-      "l_aud2txt": 1.0786,
-      "l_txt2img": 0.0068
-    },
-    {
-      "epoch": 43,
-      "loss": 8.375,
-      "l_img2txt": 1.0073,
-      "l_aud2txt": 1.09,
-      "l_txt2img": 0.0053
-    },
-    {
-      "epoch": 44,
-      "loss": 8.1919,
-      "l_img2txt": 1.0092,
-      "l_aud2txt": 1.0656,
-      "l_txt2img": 0.0046
-    },
-    {
-      "epoch": 45,
-      "loss": 8.3009,
-      "l_img2txt": 0.9749,
-      "l_aud2txt": 1.0697,
-      "l_txt2img": 0.0045
-    },
-    {
-      "epoch": 46,
-      "loss": 8.0455,
-      "l_img2txt": 0.95,
-      "l_aud2txt": 1.0355,
-      "l_txt2img": 0.005
-    },
-    {
-      "epoch": 47,
-      "loss": 7.932,
-      "l_img2txt": 0.8727,
-      "l_aud2txt": 1.06,
-      "l_txt2img": 0.0056
-    },
-    {
-      "epoch": 48,
-      "loss": 7.8987,
-      "l_img2txt": 0.9218,
-      "l_aud2txt": 0.9998,
-      "l_txt2img": 0.0061
-    },
-    {
-      "epoch": 49,
-      "loss": 7.738,
-      "l_img2txt": 0.8511,
-      "l_aud2txt": 1.049,
-      "l_txt2img": 0.0064
-    },
-    {
-      "epoch": 50,
-      "loss": 7.5418,
-      "l_img2txt": 0.8608,
-      "l_aud2txt": 1.0308,
-      "l_txt2img": 0.0064
-    },
-    {
-      "epoch": 51,
-      "loss": 7.4672,
-      "l_img2txt": 0.875,
-      "l_aud2txt": 1.0345,
-      "l_txt2img": 0.0061
-    },
-    {
-      "epoch": 52,
-      "loss": 7.1099,
-      "l_img2txt": 0.793,
-      "l_aud2txt": 0.9934,
-      "l_txt2img": 0.0056
-    },
-    {
-      "epoch": 53,
-      "loss": 7.1031,
-      "l_img2txt": 0.8222,
-      "l_aud2txt": 1.0575,
-      "l_txt2img": 0.0051
-    },
-    {
-      "epoch": 54,
-      "loss": 6.8513,
-      "l_img2txt": 0.7212,
-      "l_aud2txt": 1.0181,
-      "l_txt2img": 0.0047
-    },
-    {
-      "epoch": 55,
-      "loss": 6.6511,
-      "l_img2txt": 0.7081,
-      "l_aud2txt": 0.9804,
-      "l_txt2img": 0.0046
-    },
-    {
-      "epoch": 56,
-      "loss": 6.2597,
-      "l_img2txt": 0.6096,
-      "l_aud2txt": 0.9304,
-      "l_txt2img": 0.0046
-    },
-    {
-      "epoch": 57,
-      "loss": 6.1194,
-      "l_img2txt": 0.576,
-      "l_aud2txt": 0.9029,
-      "l_txt2img": 0.0046
-    },
-    {
-      "epoch": 58,
-      "loss": 5.5568,
-      "l_img2txt": 0.3986,
-      "l_aud2txt": 0.8884,
-      "l_txt2img": 0.0045
-    },
-    {
-      "epoch": 59,
-      "loss": 5.6928,
-      "l_img2txt": 0.6816,
-      "l_aud2txt": 0.8125,
-      "l_txt2img": 0.0043
-    }
-  ],
+  "method": "phased any-to-any router",
+  "route_acc": 1.0,
   "routes": [
     {
       "route": "image->text",
@@ -444,8 +30,8 @@
     {
       "route": "audio->text",
       "in": "blue",
-      "out": "green",
-      "ok": false
+      "out": "blue",
+      "ok": true
     },
     {
       "route": "audio->text",
@@ -456,46 +42,136 @@
     {
       "route": "text->image",
       "in": "red_circle",
-      "out": "image16",
       "mean_rgb": [
-        0.966,
-        0.733,
-        0.722
+        0.948,
+        0.746,
+        0.738
       ]
     },
     {
       "route": "text->image",
       "in": "blue_square",
-      "out": "image16",
       "mean_rgb": [
-        0.812,
-        0.834,
-        0.957
+        0.82,
+        0.839,
+        0.954
       ]
     },
     {
       "route": "text->image",
       "in": "green_triangle",
-      "out": "image16",
       "mean_rgb": [
-        0.796,
-        0.936,
-        0.83
+        0.866,
+        0.95,
+        0.879
       ]
     }
   ],
-  "route_acc": 0.8333333333333334,
-  "vs_prev": "FS13 single VQA LM interface; FS14 multi-route in_mod x out_mod API (frontier pattern)",
-  "figure": "figures/fs14_any2any.png",
-  "task_coverage": {
-    "audio_text": "audio->text route",
-    "image_text": "image->text + FS03-06",
-    "image_text_image": "text->image + FS11",
-    "image_text_video": "FS12",
-    "vqa": "FS06/FS13",
-    "docqa": "FS07",
-    "video_text": "FS09",
-    "visual_doc_retrieval": "FS08",
-    "any_to_any": "FS14 router"
-  }
+  "history": [
+    {
+      "phase": "image",
+      "epoch": 20,
+      "loss": 1.1321,
+      "l1": 1.1321,
+      "l2": 0.0,
+      "l3": 0.0
+    },
+    {
+      "phase": "image",
+      "epoch": 40,
+      "loss": 0.7327,
+      "l1": 0.7327,
+      "l2": 0.0,
+      "l3": 0.0
+    },
+    {
+      "phase": "image",
+      "epoch": 60,
+      "loss": 0.2385,
+      "l1": 0.2385,
+      "l2": 0.0,
+      "l3": 0.0
+    },
+    {
+      "phase": "image",
+      "epoch": 80,
+      "loss": 0.0301,
+      "l1": 0.0301,
+      "l2": 0.0,
+      "l3": 0.0
+    },
+    {
+      "phase": "audio",
+      "epoch": 20,
+      "loss": 0.4934,
+      "l1": 0.0,
+      "l2": 0.4934,
+      "l3": 0.0
+    },
+    {
+      "phase": "audio",
+      "epoch": 40,
+      "loss": 0.0109,
+      "l1": 0.0,
+      "l2": 0.0109,
+      "l3": 0.0
+    },
+    {
+      "phase": "audio",
+      "epoch": 60,
+      "loss": 0.0005,
+      "l1": 0.0,
+      "l2": 0.0005,
+      "l3": 0.0
+    },
+    {
+      "phase": "audio",
+      "epoch": 80,
+      "loss": 0.0002,
+      "l1": 0.0,
+      "l2": 0.0002,
+      "l3": 0.0
+    },
+    {
+      "phase": "txtimg",
+      "epoch": 20,
+      "loss": 0.0067,
+      "l1": 0.0,
+      "l2": 0.0,
+      "l3": 0.0067
+    },
+    {
+      "phase": "txtimg",
+      "epoch": 40,
+      "loss": 0.002,
+      "l1": 0.0,
+      "l2": 0.0,
+      "l3": 0.002
+    },
+    {
+      "phase": "txtimg",
+      "epoch": 60,
+      "loss": 0.0014,
+      "l1": 0.0,
+      "l2": 0.0,
+      "l3": 0.0014
+    },
+    {
+      "phase": "joint",
+      "epoch": 20,
+      "loss": 0.0114,
+      "l1": 0.0095,
+      "l2": 0.001,
+      "l3": 0.001
+    },
+    {
+      "phase": "joint",
+      "epoch": 40,
+      "loss": 0.0058,
+      "l1": 0.005,
+      "l2": 0.0001,
+      "l3": 0.0007
+    }
+  ],
+  "vs_prev": "single interface->multi-route"
 }

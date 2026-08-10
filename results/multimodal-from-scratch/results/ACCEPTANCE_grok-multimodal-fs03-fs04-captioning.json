@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "gates": {
+    "FS03_cls_val": true,
+    "FS03_greedy_exact": true,
+    "FS04_cls_val": true,
+    "FS04_greedy_exact": true
+  }
+}

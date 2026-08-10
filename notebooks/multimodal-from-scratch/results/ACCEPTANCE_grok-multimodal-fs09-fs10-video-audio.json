@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "gates": {
+    "FS09_val": true,
+    "FS09_clean": true,
+    "FS10_val": true,
+    "FS10_clean": true
+  }
+}

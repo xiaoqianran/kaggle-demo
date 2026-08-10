@@ -1,7 +1,7 @@
 {
   "stage": "FS08",
-  "method": "patch embeddings + MaxSim (ColPali-style visual doc retrieval)",
-  "visual_R@1": 0.6,
+  "method": "patch MaxSim",
+  "visual_R@1": 1.0,
   "text_tfidf_R@1": 1.0,
   "rows": [
     {
@@ -10,22 +10,22 @@
       "vis_ret": "d1",
       "ok": true,
       "sims": [
-        0.233,
-        0.222,
-        -0.023,
-        -0.028
+        1.094,
+        -0.195,
+        -0.178,
+        -0.403
       ]
     },
     {
       "q": "How many dollars does Globex invoice?",
       "gt_doc": "d2",
-      "vis_ret": "d1",
-      "ok": false,
+      "vis_ret": "d2",
+      "ok": true,
       "sims": [
-        0.712,
-        0.707,
-        0.51,
-        0.494
+        0.404,
+        1.366,
+        0.201,
+        0.324
       ]
     },
     {
@@ -34,22 +34,22 @@
       "vis_ret": "d3",
       "ok": true,
       "sims": [
-        0.338,
-        0.336,
-        0.357,
-        0.34
+        0.436,
+        0.373,
+        0.792,
+        0.182
       ]
     },
     {
       "q": "What is max temperature?",
       "gt_doc": "d4",
-      "vis_ret": "d1",
-      "ok": false,
+      "vis_ret": "d4",
+      "ok": true,
       "sims": [
-        0.265,
-        0.264,
-        0.26,
-        0.253
+        0.156,
+        0.08,
+        0.288,
+        0.606
       ]
     },
     {
@@ -58,115 +58,250 @@
       "vis_ret": "d1",
       "ok": true,
       "sims": [
-        0.613,
-        0.606,
-        0.533,
-        0.522
+        0.559,
+        -0.103,
+        0.227,
+        0.515
       ]
     }
   ],
   "history": [
     {
       "epoch": 1,
-      "loss": 1.3862
+      "loss": 1.4414
     },
     {
       "epoch": 2,
-      "loss": 1.3857
+      "loss": 1.3773
     },
     {
       "epoch": 3,
-      "loss": 1.3858
+      "loss": 1.3605
     },
     {
       "epoch": 4,
-      "loss": 1.3852
+      "loss": 1.3439
     },
     {
       "epoch": 5,
-      "loss": 1.3844
+      "loss": 1.3177
     },
     {
       "epoch": 6,
-      "loss": 1.3823
+      "loss": 1.2889
     },
     {
       "epoch": 7,
-      "loss": 1.3793
+      "loss": 1.2504
     },
     {
       "epoch": 8,
-      "loss": 1.3742
+      "loss": 1.2172
     },
     {
       "epoch": 9,
-      "loss": 1.3677
+      "loss": 1.1247
     },
     {
       "epoch": 10,
-      "loss": 1.3657
+      "loss": 1.0763
     },
     {
       "epoch": 11,
-      "loss": 1.3657
+      "loss": 0.9771
     },
     {
       "epoch": 12,
-      "loss": 1.3545
+      "loss": 0.9221
     },
     {
       "epoch": 13,
-      "loss": 1.3478
+      "loss": 0.8513
     },
     {
       "epoch": 14,
-      "loss": 1.3666
+      "loss": 0.7851
     },
     {
       "epoch": 15,
-      "loss": 1.347
+      "loss": 0.8088
     },
     {
       "epoch": 16,
-      "loss": 1.328
+      "loss": 0.7402
     },
     {
       "epoch": 17,
-      "loss": 1.3163
+      "loss": 0.7152
     },
     {
       "epoch": 18,
-      "loss": 1.3213
+      "loss": 0.7048
     },
     {
       "epoch": 19,
-      "loss": 1.3792
+      "loss": 0.7246
     },
     {
       "epoch": 20,
-      "loss": 1.3782
+      "loss": 0.6767
     },
     {
       "epoch": 21,
-      "loss": 1.3707
+      "loss": 0.6706
     },
     {
       "epoch": 22,
-      "loss": 1.3664
+      "loss": 0.6558
     },
     {
       "epoch": 23,
-      "loss": 1.3536
+      "loss": 0.6393
     },
     {
       "epoch": 24,
-      "loss": 1.319
+      "loss": 0.6399
     },
     {
       "epoch": 25,
-      "loss": 1.2976
+      "loss": 0.7788
+    },
+    {
+      "epoch": 26,
+      "loss": 0.729
+    },
+    {
+      "epoch": 27,
+      "loss": 0.6887
+    },
+    {
+      "epoch": 28,
+      "loss": 0.6769
+    },
+    {
+      "epoch": 29,
+      "loss": 0.6588
+    },
+    {
+      "epoch": 30,
+      "loss": 0.6306
+    },
+    {
+      "epoch": 31,
+      "loss": 0.604
+    },
+    {
+      "epoch": 32,
+      "loss": 0.5861
+    },
+    {
+      "epoch": 33,
+      "loss": 0.5758
+    },
+    {
+      "epoch": 34,
+      "loss": 0.5669
+    },
+    {
+      "epoch": 35,
+      "loss": 0.5562
+    },
+    {
+      "epoch": 36,
+      "loss": 0.5581
+    },
+    {
+      "epoch": 37,
+      "loss": 0.5327
+    },
+    {
+      "epoch": 38,
+      "loss": 0.5552
+    },
+    {
+      "epoch": 39,
+      "loss": 0.5208
+    },
+    {
+      "epoch": 40,
+      "loss": 0.53
+    },
+    {
+      "epoch": 41,
+      "loss": 0.6116
+    },
+    {
+      "epoch": 42,
+      "loss": 0.5116
+    },
+    {
+      "epoch": 43,
+      "loss": 0.543
+    },
+    {
+      "epoch": 44,
+      "loss": 0.5333
+    },
+    {
+      "epoch": 45,
+      "loss": 0.511
+    },
+    {
+      "epoch": 46,
+      "loss": 0.4994
+    },
+    {
+      "epoch": 47,
+      "loss": 0.497
+    },
+    {
+      "epoch": 48,
+      "loss": 0.4883
+    },
+    {
+      "epoch": 49,
+      "loss": 0.5051
+    },
+    {
+      "epoch": 50,
+      "loss": 0.4998
+    },
+    {
+      "epoch": 51,
+      "loss": 0.5001
+    },
+    {
+      "epoch": 52,
+      "loss": 0.4839
+    },
+    {
+      "epoch": 53,
+      "loss": 0.4731
+    },
+    {
+      "epoch": 54,
+      "loss": 0.4742
+    },
+    {
+      "epoch": 55,
+      "loss": 0.4664
+    },
+    {
+      "epoch": 56,
+      "loss": 0.4569
+    },
+    {
+      "epoch": 57,
+      "loss": 0.4534
+    },
+    {
+      "epoch": 58,
+      "loss": 0.4766
+    },
+    {
+      "epoch": 59,
+      "loss": 0.457
     }
   ],
-  "vs_prev": "FS07 retrieves on OCR text only; FS08 retrieves from page pixels/patches",
-  "figure": "figures/fs08_patches.png"
+  "vs_prev": "OCR text vs page pixels"
 }

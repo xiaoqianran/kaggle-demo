@@ -1,8 +1,11 @@
 {
-  "notebook": "Grok-multimodal-fs07-fs08-doc",
   "progress": {
     "FS07": "ok",
     "FS08": "ok"
   },
-  "device": "cuda:0"
+  "gates": {
+    "FS07_ret": true,
+    "FS07_ans": true,
+    "FS08_visual_R@1": true
+  }
 }

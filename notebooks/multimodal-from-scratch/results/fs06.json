@@ -1,156 +1,175 @@
 {
   "stage": "FS06",
-  "method": "CNN+question-emb concat fusion VQA",
-  "history": [
-    {
-      "epoch": 1,
-      "loss": 1.5861,
-      "acc": 0.4302
-    },
-    {
-      "epoch": 2,
-      "loss": 0.5403,
-      "acc": 0.8729
-    },
-    {
-      "epoch": 3,
-      "loss": 0.1149,
-      "acc": 0.9953
-    },
-    {
-      "epoch": 4,
-      "loss": 0.0154,
-      "acc": 1.0
-    },
-    {
-      "epoch": 5,
-      "loss": 0.0054,
-      "acc": 1.0
-    },
-    {
-      "epoch": 6,
-      "loss": 0.0034,
-      "acc": 1.0
-    },
-    {
-      "epoch": 7,
-      "loss": 0.0026,
-      "acc": 1.0
-    },
-    {
-      "epoch": 8,
-      "loss": 0.0018,
-      "acc": 1.0
-    },
-    {
-      "epoch": 9,
-      "loss": 0.0015,
-      "acc": 1.0
-    },
-    {
-      "epoch": 10,
-      "loss": 0.0012,
-      "acc": 1.0
-    },
-    {
-      "epoch": 11,
-      "loss": 0.001,
-      "acc": 1.0
-    },
-    {
-      "epoch": 12,
-      "loss": 0.0008,
-      "acc": 1.0
-    },
-    {
-      "epoch": 13,
-      "loss": 0.0006,
-      "acc": 1.0
-    },
-    {
-      "epoch": 14,
-      "loss": 0.0005,
-      "acc": 1.0
-    },
-    {
-      "epoch": 15,
-      "loss": 0.0005,
-      "acc": 1.0
-    }
-  ],
+  "method": "VQA fusion",
   "acc": 1.0,
   "rows": [
     {
       "image": "red_circle",
-      "question": "what color?",
+      "q": "what color?",
       "gt": "red",
       "pred": "red",
       "ok": true
     },
     {
       "image": "red_circle",
-      "question": "what shape?",
+      "q": "what shape?",
       "gt": "circle",
       "pred": "circle",
       "ok": true
     },
     {
       "image": "red_circle",
-      "question": "is it blue?",
+      "q": "is it blue?",
       "gt": "no",
       "pred": "no",
       "ok": true
     },
     {
       "image": "blue_square",
-      "question": "what color?",
+      "q": "what color?",
       "gt": "blue",
       "pred": "blue",
       "ok": true
     },
     {
       "image": "blue_square",
-      "question": "what shape?",
+      "q": "what shape?",
       "gt": "square",
       "pred": "square",
       "ok": true
     },
     {
       "image": "blue_square",
-      "question": "is it a square?",
+      "q": "is it a square?",
       "gt": "yes",
       "pred": "yes",
       "ok": true
     },
     {
       "image": "green_triangle",
-      "question": "what color?",
+      "q": "what color?",
       "gt": "green",
       "pred": "green",
       "ok": true
     },
     {
       "image": "green_triangle",
-      "question": "what shape?",
+      "q": "what shape?",
       "gt": "triangle",
       "pred": "triangle",
       "ok": true
     },
     {
       "image": "yellow_circle",
-      "question": "what color?",
+      "q": "what color?",
       "gt": "yellow",
       "pred": "yellow",
       "ok": true
     },
     {
       "image": "yellow_circle",
-      "question": "is it a circle?",
+      "q": "is it a circle?",
       "gt": "yes",
       "pred": "yes",
       "ok": true
     }
   ],
-  "vs_prev": "FS05 retrieves similar images; FS06 answers free questions about one image",
-  "figure": "figures/fs06_vqa.png"
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.3635,
+      "acc": 0.5484
+    },
+    {
+      "epoch": 2,
+      "loss": 0.3492,
+      "acc": 0.8992
+    },
+    {
+      "epoch": 3,
+      "loss": 0.0811,
+      "acc": 0.9941
+    },
+    {
+      "epoch": 4,
+      "loss": 0.0174,
+      "acc": 1.0
+    },
+    {
+      "epoch": 5,
+      "loss": 0.0065,
+      "acc": 1.0
+    },
+    {
+      "epoch": 6,
+      "loss": 0.0033,
+      "acc": 1.0
+    },
+    {
+      "epoch": 7,
+      "loss": 0.0021,
+      "acc": 1.0
+    },
+    {
+      "epoch": 8,
+      "loss": 0.0016,
+      "acc": 1.0
+    },
+    {
+      "epoch": 9,
+      "loss": 0.0011,
+      "acc": 1.0
+    },
+    {
+      "epoch": 10,
+      "loss": 0.0008,
+      "acc": 1.0
+    },
+    {
+      "epoch": 11,
+      "loss": 0.0007,
+      "acc": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0005,
+      "acc": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": 0.0004,
+      "acc": 1.0
+    },
+    {
+      "epoch": 14,
+      "loss": 0.0004,
+      "acc": 1.0
+    },
+    {
+      "epoch": 15,
+      "loss": 0.0003,
+      "acc": 1.0
+    },
+    {
+      "epoch": 16,
+      "loss": 0.0003,
+      "acc": 1.0
+    },
+    {
+      "epoch": 17,
+      "loss": 0.0002,
+      "acc": 1.0
+    },
+    {
+      "epoch": 18,
+      "loss": 0.0002,
+      "acc": 1.0
+    },
+    {
+      "epoch": 19,
+      "loss": 0.0002,
+      "acc": 1.0
+    }
+  ],
+  "vs_prev": "retrieve vs answer"
 }

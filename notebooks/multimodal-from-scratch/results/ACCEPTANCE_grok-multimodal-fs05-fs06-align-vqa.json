@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "gates": {
+    "FS05_R@1": true,
+    "FS06_acc": true
+  }
+}

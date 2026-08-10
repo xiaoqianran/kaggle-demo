@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "gates": {
+    "FS11_mse": true,
+    "FS11_color": true,
+    "FS12_mse": true
+  }
+}

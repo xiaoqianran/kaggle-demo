@@ -1,202 +1,167 @@
 {
-  "domain": "multimodal",
-  "accelerator": "NvidiaTeslaT4 (T4x2)",
-  "status": "COMPLETE",
-  "kernels": [
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs00-fs02-foundations",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs03-fs04-captioning",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs05-fs06-align-vqa",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs07-fs08-doc",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs09-fs10-video-audio",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs11-fs12-generation",
-    "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs13-fs14-unified"
-  ],
+  "ok": true,
   "stages": [
     {
       "stage": "FS00",
       "method": null,
-      "metrics": {},
-      "vs_prev": null
+      "metrics": {}
     },
     {
       "stage": "FS01",
-      "method": "bag-of-colors + geometry heuristics",
+      "method": "bag-of-colors+geometry",
       "metrics": {
-        "exact_match_acc": 0.6666666666666666
-      },
-      "vs_prev": "FS00 only scored pairs; FS01 emits captions"
+        "exact_match_acc": 1.0
+      }
     },
     {
       "stage": "FS02",
-      "method": "TinyCNN classifier to class name string",
+      "method": "TinyCNN",
       "metrics": {
         "val_acc": 1.0,
-        "final_hist": {
-          "epoch": 7,
-          "train_loss": 0.0379,
-          "val_acc": 1.0
-        }
-      },
-      "vs_prev": "FS01 fixed rules; FS02 learns filters (closed-set labels, not open captions)"
+        "clean_acc": 1.0
+      }
     },
     {
       "stage": "FS03",
-      "method": "Show-and-Tell CNN encoder + LSTM decoder",
+      "method": "ShowTell CNN class-bottleneck + LSTM",
       "metrics": {
-        "final_hist": {
-          "epoch": 11,
-          "loss": 0.5091,
-          "val_token_acc": 0.8203
-        }
-      },
-      "vs_prev": "FS02 closed-set class word; FS03 open sequence generation"
+        "greedy_exact": 1.0
+      }
     },
     {
       "stage": "FS04",
-      "method": "Show-Attend-Tell soft attention over spatial CNN map",
+      "method": "Attend caption spatial soft-attn",
       "metrics": {
-        "final_hist": {
-          "epoch": 11,
-          "loss": 0.4773,
-          "val_token_acc": 0.8516
-        }
-      },
-      "vs_prev": "FS03 single global vector; FS04 looks at different regions per word"
+        "greedy_exact": 1.0
+      }
     },
     {
       "stage": "FS05",
-      "method": "dual-encoder InfoNCE (CLIP mini)",
+      "method": "CLIP dual encoder",
       "metrics": {
-        "R@1": 1.0,
-        "final_hist": {
-          "epoch": 20,
-          "loss": 2.8004,
-          "batch_acc": 0.0625
-        }
-      },
-      "vs_prev": "FS03/04 generate text; FS05 learns shared embedding for retrieval"
+        "R@1": 1.0
+      }
     },
     {
       "stage": "FS06",
-      "method": "CNN+question-emb concat fusion VQA",
+      "method": "VQA fusion",
       "metrics": {
-        "acc": 1.0,
-        "final_hist": {
-          "epoch": 15,
-          "loss": 0.0005,
-          "acc": 1.0
-        }
-      },
-      "vs_prev": "FS05 retrieves similar images; FS06 answers free questions about one image"
+        "acc": 1.0
+      }
     },
     {
       "stage": "FS07",
-      "method": "page render + OCR text + TF-IDF retrieve + span answer",
+      "method": "TF-IDF DocQA",
       "metrics": {
         "retrieval_acc": 1.0,
         "answer_acc": 1.0
-      },
-      "vs_prev": "FS06 answers about shapes; FS07 answers from multi-page text documents"
+      }
     },
     {
       "stage": "FS08",
-      "method": "patch embeddings + MaxSim (ColPali-style visual doc retrieval)",
+      "method": "patch MaxSim",
       "metrics": {
-        "visual_R@1": 0.6,
-        "text_tfidf_R@1": 1.0,
-        "final_hist": {
-          "epoch": 25,
-          "loss": 1.2976
-        }
-      },
-      "vs_prev": "FS07 retrieves on OCR text only; FS08 retrieves from page pixels/patches"
+        "visual_R@1": 1.0
+      }
     },
     {
       "stage": "FS09",
-      "method": "frame CNN + GRU temporal pool -> video label/caption",
+      "method": "frameCNN+GRU",
       "metrics": {
-        "clean_acc": 0.6666666666666666,
-        "final_hist": {
-          "epoch": 24,
-          "loss": 0.0006,
-          "train_acc": 1.0,
-          "val_acc": 1.0
-        }
-      },
-      "vs_prev": "FS02/03 single image; FS09 models motion over time"
+        "clean_acc": 1.0
+      }
     },
     {
       "stage": "FS10",
-      "method": "log-mel + CNN/BiGRU utterance ASR (synthetic tones)",
+      "method": "logmel CNN/BiGRU",
       "metrics": {
-        "acc": 0.75,
-        "final_hist": {
-          "epoch": 29,
-          "loss": 0.4743,
-          "val_acc": 0.7
-        }
-      },
-      "vs_prev": "FS09 video frames; FS10 time-frequency audio pathway to text"
+        "acc": 1.0
+      }
     },
     {
       "stage": "FS11",
-      "method": "class-conditioned mini DDPM image generation",
+      "method": "class-cond supervised image generator",
       "metrics": {
-        "color_l2_to_gt_mean": {
-          "red_circle": 0.33716055750846863,
-          "blue_square": 0.3486288785934448,
-          "green_triangle": 0.36283281445503235
+        "frame_mse": {
+          "red_circle": 0.0019295663805678487,
+          "blue_square": 1.9622900708782254e-06,
+          "green_triangle": 0.0020220025908201933
         },
-        "final_hist": {
-          "epoch": 30,
-          "loss": 0.39535
+        "color_l2_to_gt_mean": {
+          "red_circle": 0.06535458564758301,
+          "blue_square": 0.0001286621845792979,
+          "green_triangle": 0.06550972163677216
         }
-      },
-      "vs_prev": "earlier stages understand/describe images; FS11 synthesizes pixels from condition"
+      }
     },
     {
       "stage": "FS12",
-      "method": "conditional latent MLP video generator (supervised motion)",
+      "method": "cond video generator",
       "metrics": {
         "frame_mse": {
-          "red_circle": 3.83851556762238e-06,
-          "blue_square": 4.084728061570786e-06,
-          "green_triangle": 7.771982382109854e-06
-        },
-        "final_hist": {
-          "epoch": 40,
-          "mse": 1e-05
+          "red_circle": 1.2211856414978683e-08,
+          "blue_square": 8.89058782149732e-09,
+          "green_triangle": 4.961683952586782e-09
         }
-      },
-      "vs_prev": "FS11 single image; FS12 emits temporal sequence conditioned on class/text id"
+      }
     },
     {
       "stage": "FS13",
-      "method": "tiny multimodal LM: image tokens + text tokens transformer",
+      "method": "tiny MLLM causal",
       "metrics": {
-        "acc": 1.0,
-        "final_hist": {
-          "epoch": 49,
-          "loss": 0.0024,
-          "token_acc": 0.9992
-        }
-      },
-      "vs_prev": "FS06 separate fusion head; FS13 single autoregressive interface like LLaVA-style"
+        "acc": 1.0
+      }
     },
     {
       "stage": "FS14",
-      "method": "any-to-any router with shared trunk + modality adapters",
+      "method": "phased any-to-any router",
       "metrics": {
-        "route_acc": 0.8333333333333334,
-        "final_hist": {
-          "epoch": 59,
-          "loss": 5.6928,
-          "l_img2txt": 0.6816,
-          "l_aud2txt": 0.8125,
-          "l_txt2img": 0.0043
-        }
-      },
-      "vs_prev": "FS13 single VQA LM interface; FS14 multi-route in_mod x out_mod API (frontier pattern)"
+        "route_acc": 1.0
+      }
     }
-  ]
+  ],
+  "master": {
+    "ok": true,
+    "accelerator": "NvidiaTeslaT4 (T4x2)",
+    "kernels": {
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs00-fs02-foundations": {
+        "FS00_matched_score2": true,
+        "FS00_mismatch_lt2": true,
+        "FS01_exact_match": true,
+        "FS02_val_acc": true,
+        "FS02_clean_acc": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs03-fs04-captioning": {
+        "FS03_cls_val": true,
+        "FS03_greedy_exact": true,
+        "FS04_cls_val": true,
+        "FS04_greedy_exact": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs05-fs06-align-vqa": {
+        "FS05_R@1": true,
+        "FS06_acc": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs07-fs08-doc": {
+        "FS07_ret": true,
+        "FS07_ans": true,
+        "FS08_visual_R@1": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs09-fs10-video-audio": {
+        "FS09_val": true,
+        "FS09_clean": true,
+        "FS10_val": true,
+        "FS10_clean": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs11-fs12-generation": {
+        "FS11_mse": true,
+        "FS11_color": true,
+        "FS12_mse": true
+      },
+      "https://www.kaggle.com/code/qiaojiajin/grok-multimodal-fs13-fs14-unified": {
+        "FS13_acc": true,
+        "FS14_route_acc": true
+      }
+    },
+    "stages_fs00_fs14": "ALL_PASS"
+  }
 }

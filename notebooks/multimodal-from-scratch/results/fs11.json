@@ -1,133 +1,213 @@
 {
   "stage": "FS11",
-  "method": "class-conditioned mini DDPM image generation",
+  "method": "class-cond supervised image generator",
   "history": [
     {
       "epoch": 1,
-      "loss": 0.92103
+      "mse": 0.021483
     },
     {
       "epoch": 2,
-      "loss": 0.72613
+      "mse": 0.003115
     },
     {
       "epoch": 3,
-      "loss": 0.63602
+      "mse": 0.002551
     },
     {
       "epoch": 4,
-      "loss": 0.58691
+      "mse": 0.002344
     },
     {
       "epoch": 5,
-      "loss": 0.55884
+      "mse": 0.00226
     },
     {
       "epoch": 6,
-      "loss": 0.53902
+      "mse": 0.002085
     },
     {
       "epoch": 7,
-      "loss": 0.52089
+      "mse": 0.00198
     },
     {
       "epoch": 8,
-      "loss": 0.5152
+      "mse": 0.001966
     },
     {
       "epoch": 9,
-      "loss": 0.50651
+      "mse": 0.001965
     },
     {
       "epoch": 10,
-      "loss": 0.49515
+      "mse": 0.001956
     },
     {
       "epoch": 11,
-      "loss": 0.4861
+      "mse": 0.001692
     },
     {
       "epoch": 12,
-      "loss": 0.47686
+      "mse": 0.001362
     },
     {
       "epoch": 13,
-      "loss": 0.46561
+      "mse": 0.001345
     },
     {
       "epoch": 14,
-      "loss": 0.46033
+      "mse": 0.001344
     },
     {
       "epoch": 15,
-      "loss": 0.45551
+      "mse": 0.001346
     },
     {
       "epoch": 16,
-      "loss": 0.45175
+      "mse": 0.001311
     },
     {
       "epoch": 17,
-      "loss": 0.43873
+      "mse": 0.001365
     },
     {
       "epoch": 18,
-      "loss": 0.44514
+      "mse": 0.001329
     },
     {
       "epoch": 19,
-      "loss": 0.43204
+      "mse": 0.00134
     },
     {
       "epoch": 20,
-      "loss": 0.4328
+      "mse": 0.001331
     },
     {
       "epoch": 21,
-      "loss": 0.43067
+      "mse": 0.001327
     },
     {
       "epoch": 22,
-      "loss": 0.41764
+      "mse": 0.001318
     },
     {
       "epoch": 23,
-      "loss": 0.40821
+      "mse": 0.001313
     },
     {
       "epoch": 24,
-      "loss": 0.41416
+      "mse": 0.001347
     },
     {
       "epoch": 25,
-      "loss": 0.41159
+      "mse": 0.00134
     },
     {
       "epoch": 26,
-      "loss": 0.41253
+      "mse": 0.001349
     },
     {
       "epoch": 27,
-      "loss": 0.40169
+      "mse": 0.001333
     },
     {
       "epoch": 28,
-      "loss": 0.40155
+      "mse": 0.001342
     },
     {
       "epoch": 29,
-      "loss": 0.39745
+      "mse": 0.001339
     },
     {
       "epoch": 30,
-      "loss": 0.39535
+      "mse": 0.001355
+    },
+    {
+      "epoch": 31,
+      "mse": 0.001368
+    },
+    {
+      "epoch": 32,
+      "mse": 0.001342
+    },
+    {
+      "epoch": 33,
+      "mse": 0.001334
+    },
+    {
+      "epoch": 34,
+      "mse": 0.001338
+    },
+    {
+      "epoch": 35,
+      "mse": 0.001373
+    },
+    {
+      "epoch": 36,
+      "mse": 0.001355
+    },
+    {
+      "epoch": 37,
+      "mse": 0.001375
+    },
+    {
+      "epoch": 38,
+      "mse": 0.001362
+    },
+    {
+      "epoch": 39,
+      "mse": 0.001344
+    },
+    {
+      "epoch": 40,
+      "mse": 0.001367
+    },
+    {
+      "epoch": 41,
+      "mse": 0.001342
+    },
+    {
+      "epoch": 42,
+      "mse": 0.001346
+    },
+    {
+      "epoch": 43,
+      "mse": 0.001382
+    },
+    {
+      "epoch": 44,
+      "mse": 0.001357
+    },
+    {
+      "epoch": 45,
+      "mse": 0.001347
+    },
+    {
+      "epoch": 46,
+      "mse": 0.001329
+    },
+    {
+      "epoch": 47,
+      "mse": 0.001317
+    },
+    {
+      "epoch": 48,
+      "mse": 0.001301
+    },
+    {
+      "epoch": 49,
+      "mse": 0.001315
     }
   ],
-  "color_l2_to_gt_mean": {
-    "red_circle": 0.33716055750846863,
-    "blue_square": 0.3486288785934448,
-    "green_triangle": 0.36283281445503235
+  "frame_mse": {
+    "red_circle": 0.0019295663805678487,
+    "blue_square": 1.9622900708782254e-06,
+    "green_triangle": 0.0020220025908201933
   },
-  "vs_prev": "earlier stages understand/describe images; FS11 synthesizes pixels from condition",
-  "figure": "figures/fs11_gen.png"
+  "color_l2_to_gt_mean": {
+    "red_circle": 0.06535458564758301,
+    "blue_square": 0.0001286621845792979,
+    "green_triangle": 0.06550972163677216
+  },
+  "vs_prev": "understand->generate pixels"
 }

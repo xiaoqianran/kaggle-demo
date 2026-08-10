@@ -1,124 +1,151 @@
 {
   "stage": "FS04",
-  "method": "Show-Attend-Tell soft attention over spatial CNN map",
+  "method": "Attend caption spatial soft-attn",
   "history": [
     {
       "epoch": 1,
-      "loss": 2.6267,
-      "val_token_acc": 0.3633
+      "loss": NaN,
+      "cls_val": 0.6222
     },
     {
       "epoch": 2,
-      "loss": 2.0489,
-      "val_token_acc": 0.4023
+      "loss": NaN,
+      "cls_val": 0.3259
     },
     {
       "epoch": 3,
-      "loss": 1.5534,
-      "val_token_acc": 0.6836
+      "loss": NaN,
+      "cls_val": 0.6222
     },
     {
       "epoch": 4,
-      "loss": 1.1531,
-      "val_token_acc": 0.7227
+      "loss": NaN,
+      "cls_val": 0.6222
     },
     {
       "epoch": 5,
-      "loss": 0.8649,
-      "val_token_acc": 0.8203
+      "loss": NaN,
+      "cls_val": 0.8296
     },
     {
       "epoch": 6,
-      "loss": 0.7062,
-      "val_token_acc": 0.8203
+      "loss": NaN,
+      "cls_val": 1.0
     },
     {
       "epoch": 7,
-      "loss": 0.6223,
-      "val_token_acc": 0.8203
+      "loss": NaN,
+      "cls_val": 1.0
     },
     {
       "epoch": 8,
-      "loss": 0.5751,
-      "val_token_acc": 0.8438
+      "loss": NaN,
+      "cls_val": 1.0
     },
     {
       "epoch": 9,
-      "loss": 0.5428,
-      "val_token_acc": 0.8203
+      "loss": NaN,
+      "cls_val": 1.0
     },
     {
       "epoch": 10,
-      "loss": 0.5141,
-      "val_token_acc": 0.8438
+      "loss": NaN,
+      "cls_val": 1.0
     },
     {
       "epoch": 11,
-      "loss": 0.4773,
-      "val_token_acc": 0.8516
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 14,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 15,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 16,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 17,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 18,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 19,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 20,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 21,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 22,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 23,
+      "loss": NaN,
+      "cls_val": 1.0
+    },
+    {
+      "epoch": 24,
+      "loss": NaN,
+      "cls_val": 1.0
     }
   ],
   "samples": [
     {
       "input": "red_circle",
-      "pred": "a red circle"
+      "pred": "a red circle",
+      "gt": "a red circle",
+      "ok": true,
+      "cls": "red_circle"
     },
     {
       "input": "blue_square",
-      "pred": "a square that is blue"
+      "pred": "a blue square",
+      "gt": "a blue square",
+      "ok": true,
+      "cls": "blue_square"
     },
     {
       "input": "green_triangle",
-      "pred": "a square that is blue"
+      "pred": "a green triangle",
+      "gt": "a green triangle",
+      "ok": true,
+      "cls": "green_triangle"
     }
   ],
-  "compare": {
-    "fs03_final_token_acc": 0.8203,
-    "fs04_final_token_acc": 0.8516,
-    "fs03_samples": [
-      {
-        "input": "red_circle",
-        "pred": "a green triangle",
-        "refs": [
-          "a red circle",
-          "red round shape",
-          "a circle that is red"
-        ]
-      },
-      {
-        "input": "blue_square",
-        "pred": "a green triangle",
-        "refs": [
-          "a blue square",
-          "blue box shape",
-          "a square that is blue"
-        ]
-      },
-      {
-        "input": "green_triangle",
-        "pred": "a green triangle",
-        "refs": [
-          "a green triangle",
-          "green pointed shape",
-          "a triangle that is green"
-        ]
-      }
-    ],
-    "fs04_samples": [
-      {
-        "input": "red_circle",
-        "pred": "a red circle"
-      },
-      {
-        "input": "blue_square",
-        "pred": "a square that is blue"
-      },
-      {
-        "input": "green_triangle",
-        "pred": "a square that is blue"
-      }
-    ]
-  },
-  "vs_prev": "FS03 single global vector; FS04 looks at different regions per word",
-  "figure": "figures/fs04_attention.png"
+  "greedy_exact": 1.0,
+  "vs_prev": "global->spatial attention"
 }

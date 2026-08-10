@@ -1,176 +1,176 @@
 {
   "stage": "FS09",
-  "method": "frame CNN + GRU temporal pool -> video label/caption",
+  "method": "frameCNN+GRU",
   "history": [
     {
       "epoch": 1,
-      "loss": 1.1097,
-      "train_acc": 0.3151,
-      "val_acc": 0.3542
+      "loss": 1.1007,
+      "val_acc": 0.625
     },
     {
       "epoch": 2,
-      "loss": 1.0993,
-      "train_acc": 0.3385,
-      "val_acc": 0.3125
+      "loss": 1.0868,
+      "val_acc": 0.2833
     },
     {
       "epoch": 3,
-      "loss": 1.0962,
-      "train_acc": 0.3555,
-      "val_acc": 0.3333
+      "loss": 1.0522,
+      "val_acc": 0.7167
     },
     {
       "epoch": 4,
-      "loss": 1.0831,
-      "train_acc": 0.388,
-      "val_acc": 0.3333
+      "loss": 0.9387,
+      "val_acc": 0.7167
     },
     {
       "epoch": 5,
-      "loss": 0.8923,
-      "train_acc": 0.5625,
-      "val_acc": 0.6458
+      "loss": 0.5131,
+      "val_acc": 1.0
     },
     {
       "epoch": 6,
-      "loss": 0.5194,
-      "train_acc": 0.7174,
-      "val_acc": 0.6458
+      "loss": 0.1533,
+      "val_acc": 1.0
     },
     {
       "epoch": 7,
-      "loss": 0.3345,
-      "train_acc": 0.9492,
+      "loss": 0.042,
       "val_acc": 1.0
     },
     {
       "epoch": 8,
-      "loss": 0.1128,
-      "train_acc": 1.0,
+      "loss": 0.0174,
       "val_acc": 1.0
     },
     {
       "epoch": 9,
-      "loss": 0.0189,
-      "train_acc": 1.0,
+      "loss": 0.0116,
       "val_acc": 1.0
     },
     {
       "epoch": 10,
-      "loss": 0.0081,
-      "train_acc": 1.0,
+      "loss": 0.0086,
       "val_acc": 1.0
     },
     {
       "epoch": 11,
-      "loss": 0.0052,
-      "train_acc": 1.0,
+      "loss": 0.007,
       "val_acc": 1.0
     },
     {
       "epoch": 12,
-      "loss": 0.0034,
-      "train_acc": 1.0,
+      "loss": 0.0059,
       "val_acc": 1.0
     },
     {
       "epoch": 13,
-      "loss": 0.0026,
-      "train_acc": 1.0,
+      "loss": 0.0051,
       "val_acc": 1.0
     },
     {
       "epoch": 14,
-      "loss": 0.002,
-      "train_acc": 1.0,
+      "loss": 0.0044,
       "val_acc": 1.0
     },
     {
       "epoch": 15,
-      "loss": 0.0016,
-      "train_acc": 1.0,
+      "loss": 0.0039,
       "val_acc": 1.0
     },
     {
       "epoch": 16,
-      "loss": 0.0015,
-      "train_acc": 1.0,
+      "loss": 0.0035,
       "val_acc": 1.0
     },
     {
       "epoch": 17,
-      "loss": 0.0012,
-      "train_acc": 1.0,
+      "loss": 0.0032,
       "val_acc": 1.0
     },
     {
       "epoch": 18,
-      "loss": 0.0011,
-      "train_acc": 1.0,
+      "loss": 0.0029,
       "val_acc": 1.0
     },
     {
       "epoch": 19,
-      "loss": 0.001,
-      "train_acc": 1.0,
+      "loss": 0.0026,
       "val_acc": 1.0
     },
     {
       "epoch": 20,
-      "loss": 0.0009,
-      "train_acc": 1.0,
+      "loss": 0.0024,
       "val_acc": 1.0
     },
     {
       "epoch": 21,
-      "loss": 0.0008,
-      "train_acc": 1.0,
+      "loss": 0.0022,
       "val_acc": 1.0
     },
     {
       "epoch": 22,
-      "loss": 0.0007,
-      "train_acc": 1.0,
+      "loss": 0.0021,
       "val_acc": 1.0
     },
     {
       "epoch": 23,
-      "loss": 0.0007,
-      "train_acc": 1.0,
+      "loss": 0.0019,
       "val_acc": 1.0
     },
     {
       "epoch": 24,
-      "loss": 0.0006,
-      "train_acc": 1.0,
+      "loss": 0.0018,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 25,
+      "loss": 0.0017,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 26,
+      "loss": 0.0016,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 27,
+      "loss": 0.0015,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 28,
+      "loss": 0.0014,
+      "val_acc": 1.0
+    },
+    {
+      "epoch": 29,
+      "loss": 0.0013,
       "val_acc": 1.0
     }
   ],
   "samples": [
     {
       "input": "circle_right",
+      "pred_label": "circle_right",
       "gt": "circle moving right",
-      "pred_label": "square_down",
-      "pred_caption": "square moving down",
-      "ok": false
+      "pred_caption": "circle moving right",
+      "ok": true
     },
     {
       "input": "square_down",
-      "gt": "square moving down",
       "pred_label": "square_down",
+      "gt": "square moving down",
       "pred_caption": "square moving down",
       "ok": true
     },
     {
       "input": "triangle_pulse",
-      "gt": "triangle color pulse",
       "pred_label": "triangle_pulse",
+      "gt": "triangle color pulse",
       "pred_caption": "triangle color pulse",
       "ok": true
     }
   ],
-  "clean_acc": 0.6666666666666666,
-  "vs_prev": "FS02/03 single image; FS09 models motion over time",
-  "figure": "figures/fs09_video.png"
+  "clean_acc": 1.0,
+  "vs_prev": "image->video motion"
 }

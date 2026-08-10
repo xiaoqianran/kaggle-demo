@@ -1,70 +1,115 @@
 {
   "stage": "FS13",
-  "method": "tiny multimodal LM: image tokens + text tokens transformer",
+  "method": "tiny MLLM causal",
+  "acc": 1.0,
+  "rows": [
+    {
+      "image": "red_circle",
+      "q": "what color ?",
+      "gt": "red",
+      "pred": "red",
+      "ok": true
+    },
+    {
+      "image": "red_circle",
+      "q": "what shape ?",
+      "gt": "circle",
+      "pred": "circle",
+      "ok": true
+    },
+    {
+      "image": "blue_square",
+      "q": "what color ?",
+      "gt": "blue",
+      "pred": "blue",
+      "ok": true
+    },
+    {
+      "image": "blue_square",
+      "q": "is it a square ?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "image": "green_triangle",
+      "q": "what shape ?",
+      "gt": "triangle",
+      "pred": "triangle",
+      "ok": true
+    },
+    {
+      "image": "green_triangle",
+      "q": "is it a circle ?",
+      "gt": "no",
+      "pred": "no",
+      "ok": true
+    }
+  ],
   "history": [
     {
       "epoch": 1,
-      "loss": 0.5829,
-      "token_acc": 0.7224
+      "loss": 0.5298,
+      "token_acc": 0.7568
     },
     {
       "epoch": 2,
-      "loss": 0.154,
-      "token_acc": 0.9133
+      "loss": 0.0623,
+      "token_acc": 0.9793
     },
     {
       "epoch": 3,
-      "loss": 0.0273,
-      "token_acc": 0.9945
+      "loss": 0.0043,
+      "token_acc": 1.0
     },
     {
       "epoch": 4,
-      "loss": 0.0041,
+      "loss": 0.0024,
       "token_acc": 1.0
     },
     {
       "epoch": 5,
-      "loss": 0.0025,
+      "loss": 0.0016,
       "token_acc": 1.0
     },
     {
       "epoch": 6,
-      "loss": 0.0019,
+      "loss": 0.0012,
       "token_acc": 1.0
     },
     {
       "epoch": 7,
-      "loss": 0.0015,
+      "loss": 0.0009,
       "token_acc": 1.0
     },
     {
       "epoch": 8,
-      "loss": 0.001,
-      "token_acc": 1.0
-    },
-    {
-      "epoch": 9,
-      "loss": 0.0008,
-      "token_acc": 1.0
-    },
-    {
-      "epoch": 10,
       "loss": 0.0007,
       "token_acc": 1.0
     },
     {
-      "epoch": 11,
+      "epoch": 9,
       "loss": 0.0006,
       "token_acc": 1.0
     },
     {
-      "epoch": 12,
+      "epoch": 10,
       "loss": 0.0005,
       "token_acc": 1.0
     },
     {
-      "epoch": 13,
+      "epoch": 11,
       "loss": 0.0004,
+      "token_acc": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0003,
+      "token_acc": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": 0.0003,
       "token_acc": 1.0
     },
     {
@@ -74,17 +119,17 @@
     },
     {
       "epoch": 15,
-      "loss": 0.0003,
+      "loss": 0.0002,
       "token_acc": 1.0
     },
     {
       "epoch": 16,
-      "loss": 0.0003,
+      "loss": 0.0002,
       "token_acc": 1.0
     },
     {
       "epoch": 17,
-      "loss": 0.0003,
+      "loss": 0.0002,
       "token_acc": 1.0
     },
     {
@@ -94,17 +139,17 @@
     },
     {
       "epoch": 19,
-      "loss": 0.0002,
+      "loss": 0.0001,
       "token_acc": 1.0
     },
     {
       "epoch": 20,
-      "loss": 0.0002,
+      "loss": 0.0001,
       "token_acc": 1.0
     },
     {
       "epoch": 21,
-      "loss": 0.0002,
+      "loss": 0.0001,
       "token_acc": 1.0
     },
     {
@@ -169,22 +214,22 @@
     },
     {
       "epoch": 34,
-      "loss": 0.0001,
+      "loss": 0.0,
       "token_acc": 1.0
     },
     {
       "epoch": 35,
-      "loss": 0.0001,
+      "loss": 0.0,
       "token_acc": 1.0
     },
     {
       "epoch": 36,
-      "loss": 0.0001,
+      "loss": 0.0,
       "token_acc": 1.0
     },
     {
       "epoch": 37,
-      "loss": 0.0001,
+      "loss": 0.0,
       "token_acc": 1.0
     },
     {
@@ -204,95 +249,49 @@
     },
     {
       "epoch": 41,
-      "loss": 0.003,
-      "token_acc": 0.9992
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 42,
-      "loss": 0.2154,
-      "token_acc": 0.9331
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 43,
-      "loss": 0.0045,
-      "token_acc": 0.999
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 44,
-      "loss": 0.001,
+      "loss": 0.0,
       "token_acc": 1.0
     },
     {
       "epoch": 45,
-      "loss": 0.0018,
-      "token_acc": 0.9997
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 46,
-      "loss": 0.001,
-      "token_acc": 0.9997
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 47,
-      "loss": 0.0037,
-      "token_acc": 0.9992
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 48,
-      "loss": 0.0008,
-      "token_acc": 0.9997
+      "loss": 0.0,
+      "token_acc": 1.0
     },
     {
       "epoch": 49,
-      "loss": 0.0024,
-      "token_acc": 0.9992
+      "loss": 0.0,
+      "token_acc": 1.0
     }
   ],
-  "acc": 1.0,
-  "rows": [
-    {
-      "image": "red_circle",
-      "q": "what color ?",
-      "gt": "red",
-      "pred": "red",
-      "ok": true
-    },
-    {
-      "image": "red_circle",
-      "q": "what shape ?",
-      "gt": "circle",
-      "pred": "circle",
-      "ok": true
-    },
-    {
-      "image": "blue_square",
-      "q": "what color ?",
-      "gt": "blue",
-      "pred": "blue",
-      "ok": true
-    },
-    {
-      "image": "blue_square",
-      "q": "is it a square ?",
-      "gt": "yes",
-      "pred": "yes",
-      "ok": true
-    },
-    {
-      "image": "green_triangle",
-      "q": "what shape ?",
-      "gt": "triangle",
-      "pred": "triangle",
-      "ok": true
-    },
-    {
-      "image": "green_triangle",
-      "q": "is it a circle ?",
-      "gt": "no",
-      "pred": "no",
-      "ok": true
-    }
-  ],
-  "vs_prev": "FS06 separate fusion head; FS13 single autoregressive interface like LLaVA-style",
-  "figure": "figures/fs13_mllm.png"
+  "vs_prev": "fusion->AR"
 }

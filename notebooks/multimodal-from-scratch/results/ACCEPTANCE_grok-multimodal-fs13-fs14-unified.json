@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "gates": {
+    "FS13_acc": true,
+    "FS14_route_acc": true
+  },
+  "progress": {
+    "FS13": "ok",
+    "FS14": "ok"
+  }
+}

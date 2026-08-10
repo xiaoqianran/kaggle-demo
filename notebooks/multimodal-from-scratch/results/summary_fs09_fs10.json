@@ -1,8 +1,12 @@
 {
-  "notebook": "Grok-multimodal-fs09-fs10-video-audio",
   "progress": {
     "FS09": "ok",
     "FS10": "ok"
   },
-  "device": "cuda:0"
+  "gates": {
+    "FS09_val": true,
+    "FS09_clean": true,
+    "FS10_val": true,
+    "FS10_clean": true
+  }
 }
