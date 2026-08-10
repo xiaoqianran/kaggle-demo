@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "stage": "01-bandits",
+  "title": "Grok-rl-01-bandits",
+  "seed": 42,
+  "steps": 5000,
+  "n_runs": 30,
+  "true_probs": [
+    0.1,
+    0.2,
+    0.25,
+    0.15,
+    0.55,
+    0.35,
+    0.3,
+    0.4,
+    0.22,
+    0.18
+  ],
+  "optimal_arm": 4,
+  "summary": [
+    {
+      "agent": "Thompson",
+      "final_avg_reward": 0.5310133333333333,
+      "final_cum_regret": 83.4153333333334,
+      "final_opt_rate": 0.9329399999999999
+    },
+    {
+      "agent": "eps-greedy(0.1)",
+      "final_avg_reward": 0.5087933333333334,
+      "final_cum_regret": 196.73400000000038,
+      "final_opt_rate": 0.8451466666666666
+    },
+    {
+      "agent": "eps-greedy(0.01)",
+      "final_avg_reward": 0.4631733333333333,
+      "final_cum_regret": 428.9656666666668,
+      "final_opt_rate": 0.57764
+    },
+    {
+      "agent": "UCB1(c=2)",
+      "final_avg_reward": 0.43552,
+      "final_cum_regret": 558.642999999993,
+      "final_opt_rate": 0.57852
+    }
+  ],
+  "random_baseline_cum_regret": 1398.0723333333356,
+  "best_agent": "Thompson",
+  "improvement_vs_random_regret_ratio": 16.760375790222437,
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "torch": "2.10.0+cu128"
+  },
+  "elapsed_sec": 21.797923803329468,
+  "concept": "exploration-exploitation tradeoff without state transitions",
+  "new_capability": "structured exploration (UCB/Thompson) reduces cumulative regret vs random/epsilon",
+  "compare_to_previous": "Stage 00 had no decision problem; now we learn which action is best from rewards alone"
+}

@@ -100,3 +100,12 @@ kaggle kernels output shuhuaqqq/grok-infra-t4x2-smoke -p artifacts/out -o
 - 加速器：`NvidiaTeslaT4`（平台 **T4×2**；勿用 P100 + 默认 cu128 镜像）
 
 Repo: https://github.com/xiaoqianran/kaggle-demo
+
+
+## RL + Robotics From Scratch
+
+完整实验地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)  
+进度：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
+
+全部在 **Kaggle T4×2** 执行。Notebook 命名 `Grok-rl-*` / `Grok-robotics-*`。
+
