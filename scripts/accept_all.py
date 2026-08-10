@@ -37,15 +37,15 @@ def main() -> int:
             fails.append(str(p.relative_to(ROOT)))
         else:
             print(f"PASS {p.relative_to(ROOT)}")
-    # RL stages present
-    rl = ROOT / "results/rl-robotics"
-    if rl.is_dir():
-        stages = sorted(rl.glob("results_stage*.json"))
-        if len(stages) < 10:
-            fails.append(f"rl stages count={len(stages)}")
-            print(f"FAIL rl stages count={len(stages)}")
-        else:
-            print(f"PASS rl stages={len(stages)}")
+    # RL quality gate
+    print("== RL ==")
+    cp = run([sys.executable, "scripts/rl_accept.py"])
+    print(cp.stdout, end="")
+    if cp.returncode != 0:
+        fails.append("rl")
+        print(cp.stderr[-400:] if cp.stderr else "")
+    else:
+        print("PASS rl quality bar")
     print("---")
     if fails:
         print("MASTER_FAIL", fails)

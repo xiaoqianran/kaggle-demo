@@ -80,6 +80,12 @@ def main():
     m = d["metrics"]
     if m["return_rtg_high"] <= m["return_rtg_low"] + 10: fails.append("10 rtg")
     if m["return_rtg_high"] < -25: fails.append(f"10 high weak {m['return_rtg_high']}")
+    dt_h = m.get("dt_return_high")
+    dt_l = m.get("dt_return_low")
+    if dt_h is not None and dt_h < -15:
+        fails.append(f"10 MiniDT/SeqBC weak {dt_h}")
+    if dt_h is not None and dt_l is not None and dt_h <= dt_l + 20:
+        fails.append(f"10 SeqBC not better than baseline {dt_h} vs {dt_l}")
 
     # gpu all
     for i in range(1, 11):

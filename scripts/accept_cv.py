@@ -81,7 +81,7 @@ def main() -> int:
         errs = check_result(t, r)
         if live:
             cp = subprocess.run(
-                ["python3.11", "-m", "kaggle", "kernels", "status", meta["id"]],
+                ["kaggle", "kernels", "status", meta["id"]],
                 text=True, capture_output=True,
             )
             out = (cp.stdout or "") + (cp.stderr or "")
