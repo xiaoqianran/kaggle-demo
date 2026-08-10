@@ -1,0 +1,15 @@
+{
+  "task": "baseline",
+  "concept": "Constant predictors: majority class / train mean",
+  "metrics": {
+    "cls_acc": 0.556,
+    "reg_rmse": 3.902800753582752,
+    "majority_class": 1,
+    "mean_y": -0.3914336732907038
+  },
+  "vs_prev": "FS00 \u53ea\u5b9a\u4e49\u5c3a\u5b50\uff1bFS01 \u7ed9\u51fa\u4e0d\u53ef\u518d\u4f4e\u7684\u53c2\u7167\u7ebf",
+  "you_should_feel": "\u4efb\u4f55\u6a21\u578b\u82e5\u6253\u4e0d\u8fc7\u57fa\u7ebf\uff0c\u5b9e\u73b0\u6216\u6cc4\u6f0f\u6709\u95ee\u9898",
+  "ok": true,
+  "stage": "fs01_baselines",
+  "saved_at": "2026-08-10T21:18:10Z"
+}

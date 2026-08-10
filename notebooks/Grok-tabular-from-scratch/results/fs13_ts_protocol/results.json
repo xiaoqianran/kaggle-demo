@@ -1,0 +1,13 @@
+{
+  "task": "ts_protocol",
+  "concept": "Time series must use temporal splits; shuffle leaks future",
+  "metrics": {
+    "rmse_shuffle": 1.1920468660919594,
+    "rmse_walk_forward": 1.0786458990814147
+  },
+  "you_should_feel": "\u6253\u4e71\u65f6\u95f4=\u8003\u8bd5\u5077\u770b\u7b54\u6848\uff1b\u5fc5\u987b walk-forward",
+  "vs_prev": "\u4ece i.i.d. \u8868\u683c\u8fdb\u5165\u65f6\u5e8f\u534f\u8bae",
+  "ok": true,
+  "stage": "fs13_ts_protocol",
+  "saved_at": "2026-08-10T21:18:23Z"
+}

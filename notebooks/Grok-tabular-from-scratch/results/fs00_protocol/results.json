@@ -1,0 +1,25 @@
+{
+  "task": "protocol",
+  "concept": "Before models: fix split, metrics, leakage rules",
+  "metrics": {
+    "class_base_rate": 0.551,
+    "acc_perfect": 1.0,
+    "acc_random": 0.5135,
+    "acc_all_zero": 0.449,
+    "auc_perfect": 1.0,
+    "auc_random": 0.5010953965052405,
+    "reg_y_std": 3.96639793457995,
+    "reg_rmse_mean_baseline": 3.96639793457995,
+    "ts_length": 1500,
+    "ts_naive_last_rmse_tail14": 1.4233131308017588
+  },
+  "leakage_rules": [
+    "Fit scalers/encoders on train only",
+    "Time series: never shuffle; only past\u2192future",
+    "Target encoding must use train folds only"
+  ],
+  "you_should_feel": "\u5c3a\u5b50\u5148\u9501\u6b7b\uff0c\u5426\u5219\u540e\u9762\u4efb\u4f55\u63d0\u5347\u90fd\u4e0d\u53ef\u4fe1",
+  "ok": true,
+  "stage": "fs00_protocol",
+  "saved_at": "2026-08-10T21:18:10Z"
+}

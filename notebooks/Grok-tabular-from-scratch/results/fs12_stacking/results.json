@@ -1,0 +1,17 @@
+{
+  "task": "stacking",
+  "concept": "Blend diverse inductive biases with a meta-learner",
+  "metrics": {
+    "gbdt_acc": 0.738,
+    "linear_acc": 0.724,
+    "stack_acc": 0.722,
+    "stack_auc": 0.8056581761617733
+  },
+  "cls_acc": 0.722,
+  "reg_rmse": 0.8410577095298485,
+  "vs_prev": "best base 0.738 \u2192 stack 0.722",
+  "you_should_feel": "\u7ade\u8d5b\u540e\u671f\u9760\u591a\u6837\u6027 stacking \u62a0\u70b9",
+  "ok": true,
+  "stage": "fs12_stacking",
+  "saved_at": "2026-08-10T21:18:23Z"
+}

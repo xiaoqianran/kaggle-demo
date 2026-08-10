@@ -1,0 +1,17 @@
+{
+  "task": "mlp",
+  "concept": "Deep MLP + early stopping on standardized tabular inputs",
+  "device": "cuda",
+  "metrics": {
+    "cls_acc": 0.704,
+    "cls_auc": 0.7857767839782228,
+    "reg_rmse": 0.7492352816377801
+  },
+  "cls_acc": 0.704,
+  "reg_rmse": 0.7492352816377801,
+  "vs_prev": "cls 0.710\u21920.704 (often GBDT still wins small data)",
+  "you_should_feel": "\u7eaf MLP \u5728\u4e2d\u5c0f\u8868\u683c\u5e38\u8f93\u7ed9 GBDT\u2014\u2014\u8fd9\u662f\u9886\u57df\u4e8b\u5b9e",
+  "ok": true,
+  "stage": "fs09_mlp",
+  "saved_at": "2026-08-10T21:18:19Z"
+}

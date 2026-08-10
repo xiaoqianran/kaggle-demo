@@ -1,0 +1,16 @@
+{
+  "task": "feature_engineering",
+  "concept": "Binning + hand interactions unlock nonlinear signal for linear models",
+  "metrics": {
+    "cls_acc": 0.724,
+    "cls_auc": 0.811912632056517,
+    "reg_rmse": 0.49406430776686494
+  },
+  "cls_acc": 0.724,
+  "reg_rmse": 0.49406430776686494,
+  "vs_prev": "cls 0.724\u21920.724; rmse 1.073\u21920.494",
+  "you_should_feel": "\u7279\u5f81\u5de5\u7a0b=\u628a\u975e\u7ebf\u6027\u53d8\u6210\u7ebf\u6027\u6a21\u578b\u53ef\u8bfb\u7684\u5217",
+  "ok": true,
+  "stage": "fs03_feature_engineering",
+  "saved_at": "2026-08-10T21:18:10Z"
+}

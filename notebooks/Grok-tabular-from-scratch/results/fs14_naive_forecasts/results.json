@@ -1,0 +1,16 @@
+{
+  "task": "ts_naive",
+  "concept": "Last / seasonal naive / MA are mandatory baselines",
+  "metrics": {
+    "rmse_naive_last": 2.3687164746285445,
+    "rmse_seasonal_naive7": 0.9117903987066313,
+    "rmse_ma7": 1.432124968418714,
+    "smape_seasonal": 3.190409284882323
+  },
+  "rmse": 0.9117903987066313,
+  "vs_prev": "\u7ed9\u51fa\u65f6\u5e8f\u4e0d\u53ef\u518d\u4f4e\u7684\u53c2\u7167",
+  "you_should_feel": "\u5b63\u8282\u6734\u7d20\u7ecf\u5e38\u610f\u5916\u5730\u5f3a",
+  "ok": true,
+  "stage": "fs14_naive_forecasts",
+  "saved_at": "2026-08-10T21:18:23Z"
+}

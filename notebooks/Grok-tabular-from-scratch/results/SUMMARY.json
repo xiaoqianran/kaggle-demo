@@ -1,0 +1,376 @@
+{
+  "stages": {
+    "fs00_protocol": {
+      "task": "protocol",
+      "concept": "Before models: fix split, metrics, leakage rules",
+      "metrics": {
+        "class_base_rate": 0.551,
+        "acc_perfect": 1.0,
+        "acc_random": 0.5135,
+        "acc_all_zero": 0.449,
+        "auc_perfect": 1.0,
+        "auc_random": 0.5010953965052405,
+        "reg_y_std": 3.96639793457995,
+        "reg_rmse_mean_baseline": 3.96639793457995,
+        "ts_length": 1500,
+        "ts_naive_last_rmse_tail14": 1.4233131308017588
+      },
+      "you_should_feel": "\u5c3a\u5b50\u5148\u9501\u6b7b\uff0c\u5426\u5219\u540e\u9762\u4efb\u4f55\u63d0\u5347\u90fd\u4e0d\u53ef\u4fe1",
+      "ok": true
+    },
+    "fs01_baselines": {
+      "task": "baseline",
+      "concept": "Constant predictors: majority class / train mean",
+      "metrics": {
+        "cls_acc": 0.556,
+        "reg_rmse": 3.902800753582752,
+        "majority_class": 1,
+        "mean_y": -0.3914336732907038
+      },
+      "vs_prev": "FS00 \u53ea\u5b9a\u4e49\u5c3a\u5b50\uff1bFS01 \u7ed9\u51fa\u4e0d\u53ef\u518d\u4f4e\u7684\u53c2\u7167\u7ebf",
+      "you_should_feel": "\u4efb\u4f55\u6a21\u578b\u82e5\u6253\u4e0d\u8fc7\u57fa\u7ebf\uff0c\u5b9e\u73b0\u6216\u6cc4\u6f0f\u6709\u95ee\u9898",
+      "ok": true
+    },
+    "fs02_linear": {
+      "task": "linear",
+      "concept": "Linear models on standardized one-hot features",
+      "metrics": {
+        "classification": {
+          "acc": 0.724,
+          "auc": 0.8043457126190939,
+          "logloss": 0.529318761050994
+        },
+        "regression": {
+          "rmse": 1.0731486155282521,
+          "mae": 0.7671740853241192,
+          "r2": 0.9242686712322662
+        }
+      },
+      "vs_prev": "cls 0.556\u21920.724; rmse 3.903\u21921.073",
+      "you_should_feel": "\u7ebf\u6027\u6a21\u578b\u5403\u6389\u53ef\u52a0\u6027\u4fe1\u53f7\uff1b\u975e\u7ebf\u6027\u4ea4\u4e92\u4ecd\u5403\u4e0d\u6389",
+      "ok": true
+    },
+    "fs03_feature_engineering": {
+      "task": "feature_engineering",
+      "concept": "Binning + hand interactions unlock nonlinear signal for linear models",
+      "metrics": {
+        "cls_acc": 0.724,
+        "cls_auc": 0.811912632056517,
+        "reg_rmse": 0.49406430776686494
+      },
+      "vs_prev": "cls 0.724\u21920.724; rmse 1.073\u21920.494",
+      "you_should_feel": "\u7279\u5f81\u5de5\u7a0b=\u628a\u975e\u7ebf\u6027\u53d8\u6210\u7ebf\u6027\u6a21\u578b\u53ef\u8bfb\u7684\u5217",
+      "ok": true
+    },
+    "fs04_trees": {
+      "task": "decision_tree",
+      "concept": "Axis-aligned partitions learn interactions without hand FE",
+      "metrics": {
+        "cls_acc": 0.686,
+        "cls_auc": 0.7725387257761358,
+        "reg_rmse": 2.0289746620967812,
+        "n_nodes": 27
+      },
+      "vs_prev": "cls 0.724\u21920.686",
+      "you_should_feel": "\u6811\u81ea\u52a8\u5207\u4ea4\u4e92\uff0c\u4f46\u5355\u68f5\u9ad8\u65b9\u5dee\u3001\u8fb9\u754c\u952f\u9f7f",
+      "ok": true
+    },
+    "fs05_random_forest": {
+      "task": "random_forest",
+      "concept": "Bagging + feature subsample averages noisy trees",
+      "metrics": {
+        "cls_acc": 0.728,
+        "cls_auc": 0.8170976732127812,
+        "reg_rmse": 2.792691777021854
+      },
+      "vs_prev": "cls 0.686\u21920.728",
+      "you_should_feel": "\u96c6\u6210\u7528\u5e73\u5747\u6362\u7a33\u5b9a\uff1bRF \u662f\u8868\u683c\u7ecf\u5178\u751c\u70b9",
+      "ok": true
+    },
+    "fs06_gbdt_scratch": {
+      "task": "gbdt_scratch",
+      "concept": "Stage-wise additive modeling on residuals / pseudo-residuals",
+      "metrics": {
+        "cls_acc": 0.726,
+        "cls_auc": 0.801315704193402,
+        "reg_rmse": 1.4045432612976125
+      },
+      "vs_prev": "cls 0.728\u21920.726; rmse 2.793\u21921.405",
+      "you_should_feel": "Boosting \u7528\u504f\u5dee\u6362\u7cbe\u5ea6\uff1b\u8868\u683c\u738b\u5ea7\u7684\u6838\u5fc3\u673a\u5236",
+      "ok": true
+    },
+    "fs07_hist_gbdt": {
+      "task": "hist_gbdt",
+      "concept": "Histogram binning + deeper boosting = modern tabular default",
+      "metrics": {
+        "cls_acc": 0.716,
+        "cls_auc": 0.7847073692397434,
+        "reg_rmse": 0.8410577095298485
+      },
+      "vs_prev": "cls 0.726\u21920.716",
+      "you_should_feel": "\u5de5\u4e1a GBDT\uff1a\u66f4\u5feb\u3001\u66f4\u7a33\u3001Kaggle \u8868\u683c\u9ed8\u8ba4\u6b66\u5668",
+      "ok": true
+    },
+    "fs08_target_encoding": {
+      "task": "target_encoding",
+      "concept": "Smoothed P(y|category) compresses high-cardinality cats",
+      "metrics": {
+        "te_linear_acc": 0.728,
+        "te_linear_auc": 0.802709184004148,
+        "te_gbdt_acc": 0.71,
+        "te_gbdt_auc": 0.7868786052239289
+      },
+      "vs_prev": "cls 0.716\u21920.710 with TE",
+      "you_should_feel": "\u7c7b\u522b\u5217\u7684\u6b63\u786e\u7f16\u7801\u5f80\u5f80 > \u6362\u6a21\u578b\uff1b\u4f46\u6cc4\u6f0f\u4f1a\u865a\u9ad8",
+      "ok": true
+    },
+    "fs09_mlp": {
+      "task": "mlp",
+      "concept": "Deep MLP + early stopping on standardized tabular inputs",
+      "metrics": {
+        "cls_acc": 0.704,
+        "cls_auc": 0.7857767839782228,
+        "reg_rmse": 0.7492352816377801
+      },
+      "vs_prev": "cls 0.710\u21920.704 (often GBDT still wins small data)",
+      "you_should_feel": "\u7eaf MLP \u5728\u4e2d\u5c0f\u8868\u683c\u5e38\u8f93\u7ed9 GBDT\u2014\u2014\u8fd9\u662f\u9886\u57df\u4e8b\u5b9e",
+      "ok": true
+    },
+    "fs10_embeddings": {
+      "task": "embeddings",
+      "concept": "Learned embeddings share statistical strength across rare categories",
+      "metrics": {
+        "onehot_mlp_acc": 0.704,
+        "embed_mlp_acc": 0.728
+      },
+      "vs_prev": "onehot 0.704 vs emb 0.728",
+      "you_should_feel": "Embedding \u662f DL \u5904\u7406\u7c7b\u522b\u7684\u6b63\u786e\u59ff\u52bf",
+      "ok": true
+    },
+    "fs11_ft_transformer": {
+      "task": "ft_transformer",
+      "concept": "Tokenize each feature + Transformer \u2014 modern tabular DL backbone",
+      "metrics": {
+        "cls_acc": 0.734,
+        "cls_auc": 0.7973945168189772,
+        "reg_rmse": 1.0477130505957564
+      },
+      "vs_prev": "cls 0.728\u21920.734",
+      "you_should_feel": "\u7279\u5f81\u5373 token\uff1a\u6ce8\u610f\u529b\u5efa\u6a21\u7279\u5f81\u4ea4\u4e92",
+      "ok": true
+    },
+    "fs12_stacking": {
+      "task": "stacking",
+      "concept": "Blend diverse inductive biases with a meta-learner",
+      "metrics": {
+        "gbdt_acc": 0.738,
+        "linear_acc": 0.724,
+        "stack_acc": 0.722,
+        "stack_auc": 0.8056581761617733
+      },
+      "vs_prev": "best base 0.738 \u2192 stack 0.722",
+      "you_should_feel": "\u7ade\u8d5b\u540e\u671f\u9760\u591a\u6837\u6027 stacking \u62a0\u70b9",
+      "ok": true
+    },
+    "fs13_ts_protocol": {
+      "task": "ts_protocol",
+      "concept": "Time series must use temporal splits; shuffle leaks future",
+      "metrics": {
+        "rmse_shuffle": 1.1920468660919594,
+        "rmse_walk_forward": 1.0786458990814147
+      },
+      "you_should_feel": "\u6253\u4e71\u65f6\u95f4=\u8003\u8bd5\u5077\u770b\u7b54\u6848\uff1b\u5fc5\u987b walk-forward",
+      "vs_prev": "\u4ece i.i.d. \u8868\u683c\u8fdb\u5165\u65f6\u5e8f\u534f\u8bae",
+      "ok": true
+    },
+    "fs14_naive_forecasts": {
+      "task": "ts_naive",
+      "concept": "Last / seasonal naive / MA are mandatory baselines",
+      "metrics": {
+        "rmse_naive_last": 2.3687164746285445,
+        "rmse_seasonal_naive7": 0.9117903987066313,
+        "rmse_ma7": 1.432124968418714,
+        "smape_seasonal": 3.190409284882323
+      },
+      "rmse": 0.9117903987066313,
+      "vs_prev": "\u7ed9\u51fa\u65f6\u5e8f\u4e0d\u53ef\u518d\u4f4e\u7684\u53c2\u7167",
+      "you_should_feel": "\u5b63\u8282\u6734\u7d20\u7ecf\u5e38\u610f\u5916\u5730\u5f3a",
+      "ok": true
+    },
+    "fs15_exp_smoothing": {
+      "task": "exp_smoothing",
+      "concept": "Level+trend+season recursive updates (ETS family)",
+      "metrics": {
+        "rmse_holt": 5.0133820605970145,
+        "rmse_holt_winters": 1.047722792329578,
+        "smape_hw": 3.663384608326873
+      },
+      "rmse": 1.047722792329578,
+      "vs_prev": "seas_naive 0.912 \u2192 HW 1.048",
+      "you_should_feel": "\u5e73\u6ed1\u6cd5\u7528\u9012\u5f52\u72b6\u6001\u6355\u6349\u6c34\u5e73/\u8d8b\u52bf/\u5b63\u8282",
+      "ok": true
+    },
+    "fs16_lag_tree": {
+      "task": "lag_tree",
+      "concept": "Tabularize TS via lags/rolling feats + GBDT",
+      "metrics": {
+        "rmse": 1.039603805682996,
+        "mae": 0.9045414153937469,
+        "smape": 3.603611083578463,
+        "backend": "hist_gbdt"
+      },
+      "rmse": 1.039603805682996,
+      "vs_prev": "HW 1.048 \u2192 lag-tree 1.040",
+      "you_should_feel": "\u65f6\u5e8f\u2192\u8868\u683c\u5316\u662f\u5de5\u4e1a\u6700\u5f3a\u6377\u5f84\u4e4b\u4e00",
+      "ok": true
+    },
+    "fs17_ar_linear": {
+      "task": "ar_linear",
+      "concept": "Autoregressive linear model \u2014 ARIMA's AR core",
+      "metrics": {
+        "rmse": 0.8779134500499444,
+        "smape": 2.744832936240875
+      },
+      "rmse": 0.8779134500499444,
+      "vs_prev": "lag-tree 1.040 vs AR 0.878",
+      "you_should_feel": "\u7ebf\u6027 AR \u89e3\u91ca\u6027\u5f3a\uff0c\u975e\u7ebf\u6027\u5b63\u8282/\u51b2\u51fb\u65f6\u5403\u529b",
+      "ok": true
+    },
+    "fs18_lstm": {
+      "task": "lstm",
+      "concept": "Sequence model memorizes temporal state end-to-end",
+      "metrics": {
+        "rmse": 2.2351406996129497,
+        "smape": 7.8539465322357245,
+        "device": "cuda"
+      },
+      "rmse": 2.2351406996129497,
+      "vs_prev": "AR 0.878 \u2192 LSTM 2.235",
+      "you_should_feel": "LSTM \u81ea\u52a8\u5b66\u8bb0\u5fc6\uff0c\u4f46\u5c0f\u6570\u636e\u6613\u8fc7\u62df\u5408\u3001\u8bad\u7ec3\u66f4\u91cd",
+      "ok": true
+    },
+    "fs19_tcn_nbeats": {
+      "task": "tcn_nbeats",
+      "concept": "Dilated conv (TCN) and doubly residual basis (N-BEATS)",
+      "metrics": {
+        "rmse_tcn": 1.6633436595875437,
+        "rmse_nbeats": 0.8118687688831862,
+        "best_rmse": 0.8118687688831862,
+        "device": "cuda",
+        "rmse": 0.8118687688831862
+      },
+      "rmse": 0.8118687688831862,
+      "vs_prev": "LSTM 2.235 \u2192 best conv/nbeats 0.812",
+      "you_should_feel": "\u73b0\u4ee3\u65f6\u5e8f DL\uff1a\u5377\u79ef\u611f\u53d7\u91ce\u4e0e\u53ef\u89e3\u91ca stack \u5757",
+      "ok": true
+    },
+    "fs20_patch_transformer": {
+      "task": "patch_transformer",
+      "concept": "Patchify time + Transformer channels \u2014 PatchTST spirit",
+      "metrics": {
+        "rmse": 1.3820505264148928,
+        "smape": 5.128600853177454,
+        "device": "cuda"
+      },
+      "rmse": 1.3820505264148928,
+      "vs_prev": "TCN/NBEATS 0.812 \u2192 Patch 1.382",
+      "you_should_feel": "\u524d\u6cbf\u65f6\u5e8f\uff1a\u628a\u65f6\u95f4\u5207 patch \u5f53 token",
+      "ok": true
+    },
+    "fs21_leaderboard": {
+      "task": "leaderboard",
+      "concept": "Full-domain map: from constants to modern tabular/TS systems",
+      "you_should_feel": "\u8868\u683c\u4e3b\u7ebf=\u57fa\u7ebf\u2192\u7ebf\u6027\u2192\u6811\u2192\u63d0\u5347\u2192\u7f16\u7801\u2192DL/Transformer\u2192\u96c6\u6210\uff1b\u65f6\u5e8f=\u534f\u8bae\u2192\u6734\u7d20\u2192\u5e73\u6ed1\u2192\u6ede\u540e\u6811\u2192\u5e8f\u5217DL\u2192Patch",
+      "ok": true
+    }
+  },
+  "started_at": "2026-08-10T21:17:41Z",
+  "elapsed_sec": 18.56,
+  "stage_order": [
+    "fs00_protocol",
+    "fs01_baselines",
+    "fs02_linear",
+    "fs03_feature_engineering",
+    "fs04_trees",
+    "fs05_random_forest",
+    "fs06_gbdt_scratch",
+    "fs07_hist_gbdt",
+    "fs08_target_encoding",
+    "fs09_mlp",
+    "fs10_embeddings",
+    "fs11_ft_transformer",
+    "fs12_stacking",
+    "fs13_ts_protocol",
+    "fs14_naive_forecasts",
+    "fs15_exp_smoothing",
+    "fs16_lag_tree",
+    "fs17_ar_linear",
+    "fs18_lstm",
+    "fs19_tcn_nbeats",
+    "fs20_patch_transformer",
+    "fs21_leaderboard",
+    "fs00_protocol",
+    "fs01_baselines",
+    "fs02_linear",
+    "fs03_feature_engineering",
+    "fs04_trees",
+    "fs05_random_forest",
+    "fs06_gbdt_scratch",
+    "fs07_hist_gbdt",
+    "fs08_target_encoding",
+    "fs09_mlp",
+    "fs10_embeddings",
+    "fs11_ft_transformer",
+    "fs12_stacking",
+    "fs13_ts_protocol",
+    "fs14_naive_forecasts",
+    "fs15_exp_smoothing",
+    "fs16_lag_tree",
+    "fs17_ar_linear",
+    "fs18_lstm",
+    "fs19_tcn_nbeats",
+    "fs20_patch_transformer",
+    "fs21_leaderboard"
+  ],
+  "finished_at": "2026-08-10T21:18:28Z",
+  "ok": true,
+  "leaderboard": {
+    "classification_acc": {
+      "maj": 0.556,
+      "linear": 0.724,
+      "FE": 0.724,
+      "tree": 0.686,
+      "RF": 0.728,
+      "GBDTs": 0.726,
+      "HistGB": 0.716,
+      "TE": 0.71,
+      "MLP": 0.704,
+      "Emb": 0.728,
+      "FTT": 0.734,
+      "Stack": 0.722
+    },
+    "regression_rmse": {
+      "mean": 3.902800753582752,
+      "ridge": 1.0731486155282521,
+      "FE": 0.49406430776686494,
+      "tree": 2.0289746620967812,
+      "RF": 2.792691777021854,
+      "GBDTs": 1.4045432612976125,
+      "HistGB": 0.8410577095298485,
+      "MLP": 0.7492352816377801,
+      "FTT": 1.0477130505957564
+    },
+    "timeseries_rmse": {
+      "seas_naive": 0.9117903987066313,
+      "HW": 1.047722792329578,
+      "lag_tree": 1.039603805682996,
+      "AR": 0.8779134500499444,
+      "LSTM": 2.2351406996129497,
+      "TCN/NB": 0.8118687688831862,
+      "Patch": 1.3820505264148928
+    },
+    "best_cls": "FTT",
+    "best_reg": "FE",
+    "best_ts": "TCN/NB"
+  }
+}

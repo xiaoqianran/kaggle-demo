@@ -1,0 +1,16 @@
+{
+  "task": "gbdt_scratch",
+  "concept": "Stage-wise additive modeling on residuals / pseudo-residuals",
+  "metrics": {
+    "cls_acc": 0.726,
+    "cls_auc": 0.801315704193402,
+    "reg_rmse": 1.4045432612976125
+  },
+  "cls_acc": 0.726,
+  "reg_rmse": 1.4045432612976125,
+  "vs_prev": "cls 0.728\u21920.726; rmse 2.793\u21921.405",
+  "you_should_feel": "Boosting \u7528\u504f\u5dee\u6362\u7cbe\u5ea6\uff1b\u8868\u683c\u738b\u5ea7\u7684\u6838\u5fc3\u673a\u5236",
+  "ok": true,
+  "stage": "fs06_gbdt_scratch",
+  "saved_at": "2026-08-10T21:18:17Z"
+}

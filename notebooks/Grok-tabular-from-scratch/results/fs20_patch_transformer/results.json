@@ -1,0 +1,15 @@
+{
+  "task": "patch_transformer",
+  "concept": "Patchify time + Transformer channels \u2014 PatchTST spirit",
+  "metrics": {
+    "rmse": 1.3820505264148928,
+    "smape": 5.128600853177454,
+    "device": "cuda"
+  },
+  "rmse": 1.3820505264148928,
+  "vs_prev": "TCN/NBEATS 0.812 \u2192 Patch 1.382",
+  "you_should_feel": "\u524d\u6cbf\u65f6\u5e8f\uff1a\u628a\u65f6\u95f4\u5207 patch \u5f53 token",
+  "ok": true,
+  "stage": "fs20_patch_transformer",
+  "saved_at": "2026-08-10T21:18:28Z"
+}

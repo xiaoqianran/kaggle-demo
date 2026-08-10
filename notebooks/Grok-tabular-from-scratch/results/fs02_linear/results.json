@@ -1,0 +1,23 @@
+{
+  "task": "linear",
+  "concept": "Linear models on standardized one-hot features",
+  "metrics": {
+    "classification": {
+      "acc": 0.724,
+      "auc": 0.8043457126190939,
+      "logloss": 0.529318761050994
+    },
+    "regression": {
+      "rmse": 1.0731486155282521,
+      "mae": 0.7671740853241192,
+      "r2": 0.9242686712322662
+    }
+  },
+  "cls_acc": 0.724,
+  "reg_rmse": 1.0731486155282521,
+  "vs_prev": "cls 0.556\u21920.724; rmse 3.903\u21921.073",
+  "you_should_feel": "\u7ebf\u6027\u6a21\u578b\u5403\u6389\u53ef\u52a0\u6027\u4fe1\u53f7\uff1b\u975e\u7ebf\u6027\u4ea4\u4e92\u4ecd\u5403\u4e0d\u6389",
+  "ok": true,
+  "stage": "fs02_linear",
+  "saved_at": "2026-08-10T21:18:10Z"
+}

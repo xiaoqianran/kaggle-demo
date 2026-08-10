@@ -1,0 +1,17 @@
+{
+  "task": "tcn_nbeats",
+  "concept": "Dilated conv (TCN) and doubly residual basis (N-BEATS)",
+  "metrics": {
+    "rmse_tcn": 1.6633436595875437,
+    "rmse_nbeats": 0.8118687688831862,
+    "best_rmse": 0.8118687688831862,
+    "device": "cuda",
+    "rmse": 0.8118687688831862
+  },
+  "rmse": 0.8118687688831862,
+  "vs_prev": "LSTM 2.235 \u2192 best conv/nbeats 0.812",
+  "you_should_feel": "\u73b0\u4ee3\u65f6\u5e8f DL\uff1a\u5377\u79ef\u611f\u53d7\u91ce\u4e0e\u53ef\u89e3\u91ca stack \u5757",
+  "ok": true,
+  "stage": "fs19_tcn_nbeats",
+  "saved_at": "2026-08-10T21:18:26Z"
+}

@@ -1,0 +1,17 @@
+{
+  "task": "hist_gbdt",
+  "concept": "Histogram binning + deeper boosting = modern tabular default",
+  "backend": "sklearn_hist_gbdt",
+  "metrics": {
+    "cls_acc": 0.716,
+    "cls_auc": 0.7847073692397434,
+    "reg_rmse": 0.8410577095298485
+  },
+  "cls_acc": 0.716,
+  "reg_rmse": 0.8410577095298485,
+  "vs_prev": "cls 0.726\u21920.716",
+  "you_should_feel": "\u5de5\u4e1a GBDT\uff1a\u66f4\u5feb\u3001\u66f4\u7a33\u3001Kaggle \u8868\u683c\u9ed8\u8ba4\u6b66\u5668",
+  "ok": true,
+  "stage": "fs07_hist_gbdt",
+  "saved_at": "2026-08-10T21:18:18Z"
+}
