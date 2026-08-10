@@ -1,32 +1,27 @@
 # PROGRESS — RL + Robotics From Scratch
 
-全部阶段在 **Kaggle T4×2**（`NvidiaTeslaT4`）执行并通过。
+**状态：10/10 质量验收通过（hardened re-run on Kaggle T4×2）**
 
-| Stage | Status | Kaggle | 关键可观察结果 |
-|-------|--------|--------|----------------|
-| 00 Roadmap | DONE | — | [ROADMAP.md](ROADMAP.md) |
-| 01 Bandits | **DONE** | [grok-rl-01-bandits](https://www.kaggle.com/code/qixiaer/grok-rl-01-bandits) | Thompson regret≈83 ≪ random≈1398 |
-| 02 MDP+DP | **DONE** | [grok-rl-02-mdp-dp](https://www.kaggle.com/code/qixiaer/grok-rl-02-mdp-dp) | V*(start)≫V_random；VI/PI 策略一致 |
-| 03 MC/TD/QL | **DONE** | [grok-rl-03-mc-td-qlearning](https://www.kaggle.com/code/qixiaer/grok-rl-03-mc-td-qlearning) | SARSA / Q-Learning / MC 悬崖策略对比 |
-| 04 DQN | **DONE** | [grok-rl-04-dqn](https://www.kaggle.com/code/qixiaer/grok-rl-04-dqn) | CartPole 连续状态神经 Q |
-| 05 PG→PPO | **DONE** | [grok-rl-05-pg-ppo](https://www.kaggle.com/code/qixiaer/grok-rl-05-pg-ppo) | REINFORCE / baseline / PPO |
-| 06 Classical Robotics | **DONE** | [grok-robotics-06-classical](https://www.kaggle.com/code/qixiaer/grok-robotics-06-classical) | 2R 臂 FK/IK + PD 跟踪误差更低 |
-| 07 Continuous SAC | **DONE** | [grok-rl-07-continuous-sac](https://www.kaggle.com/code/qixiaer/grok-rl-07-continuous-sac) | SAC eval≈-152 ≫ random≈-1225 |
-| 08 MBRL+MPC | **DONE** | [grok-robotics-08-mbrl-mpc](https://www.kaggle.com/code/qixiaer/grok-robotics-08-mbrl-mpc) | Dyna 早期更快；真模型 MPC≫random |
-| 09 Imitation+Offline | **DONE** | [grok-rl-09-imitation-offline](https://www.kaggle.com/code/qixiaer/grok-rl-09-imitation-offline) | BC≈专家；朴素 offline DQN 坠崖；CQL 稳健 |
-| 10 Frontier DT | **DONE** | [grok-rl-10-frontier-dt](https://www.kaggle.com/code/qixiaer/grok-rl-10-frontier-dt) | 高 RTG 回报 > 低 RTG（条件生成策略） |
+| Stage | Status | Kaggle | Quality bar |
+|-------|--------|--------|-------------|
+| 01 Bandits | DONE | [link](https://www.kaggle.com/code/qixiaer/grok-rl-01-bandits) | Thompson ≪ random regret |
+| 02 MDP+DP | DONE | [link](https://www.kaggle.com/code/qixiaer/grok-rl-02-mdp-dp) | V* ≫ V_random；VI≡PI |
+| 03 MC/TD/QL | DONE | [link](https://www.kaggle.com/code/qixiaer/grok-rl-03-mc-td-qlearning) | SARSA/QL 学会避悬崖 |
+| 04 DQN | DONE✓fix | [link](https://www.kaggle.com/code/qixiaer/grok-rl-04-dqn) | DQN≫frozen-target |
+| 05 PG→PPO | DONE✓fix | [link](https://www.kaggle.com/code/qixiaer/grok-rl-05-pg-ppo) | PPO last50≈253 |
+| 06 Classical | DONE✓fix | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-06-classical) | PD err≈0.02 ≪ open-loop |
+| 07 SAC | DONE | [link](https://www.kaggle.com/code/qixiaer/grok-rl-07-continuous-sac) | SAC≫random pendulum |
+| 08 MBRL+MPC | DONE✓fix | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-08-mbrl-mpc) | Dyna early+late win；MPC≫random |
+| 09 Offline | DONE | [link](https://www.kaggle.com/code/qixiaer/grok-rl-09-imitation-offline) | BC≈专家；CQL≫naive offline |
+| 10 DT | DONE✓fix | [link](https://www.kaggle.com/code/qixiaer/grok-rl-10-frontier-dt) | RC-BC：G=-6→-6；G=-100→-106 |
 
-## 能力阶梯（一句话）
+## Hardened fixes this pass
+- **04**: 消融改为 frozen random target（CartPole 上 online-TD 过强，旧消融倒置）
+- **05**: episode-based multi-epoch PPO-clip（旧 batched rollout 欠训练）
+- **06**: 更慢参考轨迹 + 速度误差 PD（跟踪误差 0.74→0.02）
+- **08**: 更紧 episode 预算让 Dyna 前半/后半都更好；held-out MSE 随数据下降
+- **10**: 混合质量 demo + Return-Conditioned BC；目标回报用 in-distribution G=-6
 
-```
-探索臂 → 有模型规划 → 无模型采样控制 → 深度价值 → 策略梯度/PPO
-→ 机器人运动学+PD → 连续力矩 SAC → 模型复用/MPC → 离线/模仿 → DT 序列决策
-```
+验收脚本：`python scripts/rl_accept.py`
 
-## 产物位置
-
-- Notebooks: `notebooks/Grok-rl-*`, `notebooks/Grok-robotics-*`
-- 结果 JSON/图: `results/rl-robotics/`
-- 运行器: `scripts/kaggle_run.py`（T4×2 push + 轮询 + 下载）
-
-Last updated: full curriculum COMPLETE on Kaggle T4×2
+Last updated: full quality acceptance PASSED

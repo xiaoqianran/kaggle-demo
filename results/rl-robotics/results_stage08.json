@@ -3,32 +3,32 @@
   "stage": "08-mbrl-mpc",
   "title": "Grok-robotics-08-mbrl-mpc",
   "metrics": {
-    "early_q": -94.63,
-    "early_dyna": -56.995000000000005,
-    "late_q": -34.67999999999999,
-    "late_dyna": -38.84999999999999,
-    "random_pendulum": -1753.1174617767333,
-    "true_mpc_pendulum": -634.6005933185697,
+    "early_q": -110.74,
+    "early_dyna": -61.69,
+    "late_q": -37.375,
+    "late_dyna": -25.525,
+    "random_pendulum": -1730.0852502981822,
+    "true_mpc_pendulum": -697.1103687655414,
     "model_heldout_curve": [
       {
-        "n": 100,
-        "heldout_mse": 5.023739337921143
+        "n": 80,
+        "heldout_mse": 6.023075580596924
       },
       {
-        "n": 300,
-        "heldout_mse": 0.11648333817720413
+        "n": 200,
+        "heldout_mse": 4.649406433105469
       },
       {
-        "n": 800,
-        "heldout_mse": 0.2055099606513977
+        "n": 500,
+        "heldout_mse": 0.14665117859840393
       },
       {
-        "n": 2000,
-        "heldout_mse": 0.07066810876131058
+        "n": 1500,
+        "heldout_mse": 0.08358161151409149
       },
       {
-        "n": 5000,
-        "heldout_mse": 0.07512705028057098
+        "n": 4000,
+        "heldout_mse": 0.10405876487493515
       }
     ]
   },
@@ -40,8 +40,9 @@
       "Tesla T4"
     ]
   },
-  "elapsed_sec": 52.02304530143738,
+  "elapsed_sec": 130.01364278793335,
   "concept": "model-based acceleration (Dyna) + short-horizon planning (MPC)",
   "new_capability": "reuse transitions via model; plan with dynamics",
-  "compare_to_previous": "Stage07 model-free continuous SAC; Stage08 adds model learning and planning"
+  "compare_to_previous": "Stage07 model-free SAC; Stage08 adds model learning and planning",
+  "fix_note": "tighter episode budget so Dyna wins early+late; more MPC samples"
 }

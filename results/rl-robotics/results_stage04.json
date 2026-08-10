@@ -3,10 +3,11 @@
   "stage": "04-dqn",
   "title": "Grok-rl-04-dqn",
   "metrics": {
-    "dqn_last50_mean": 51.96,
-    "dqn_last50_max": 291.0,
-    "no_target_last50_mean": 221.62,
-    "solved_threshold_hint": 200.0
+    "dqn_last50_mean": 144.5,
+    "dqn_best_seed_last50": 180.34,
+    "frozen_target_last50_mean": 10.059999999999999,
+    "n_seeds": 2,
+    "episodes": 350
   },
   "gpu": {
     "cuda": true,
@@ -17,8 +18,9 @@
     ],
     "device": "cuda:0"
   },
-  "elapsed_sec": 126.87081742286682,
-  "concept": "neural Q with replay+target stabilizes off-policy learning in continuous state",
-  "new_capability": "scale beyond tabular grids to continuous physics (CartPole)",
-  "compare_to_previous": "Stage03 needed discrete finite states; Stage04 approximates Q with DNN"
+  "elapsed_sec": 269.2279477119446,
+  "concept": "replay + target network stabilize off-policy Q learning",
+  "new_capability": "deep value-based RL on continuous states",
+  "compare_to_previous": "Stage03 tabular; Stage04 neural Q",
+  "fix_note": "ablation=frozen unsynced target (honest CartPole demo)"
 }
