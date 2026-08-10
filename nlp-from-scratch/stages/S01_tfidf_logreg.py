@@ -52,6 +52,8 @@ class TfidfVectorizer:
         return X
 
 
+STOPWORDS = {"the","a","an","and","or","of","in","on","to","is","are","this","that"}
+
 class SoftmaxRegression:
     def __init__(self, lr=0.5, epochs=400, l2=1e-3):
         self.lr = lr
@@ -92,8 +94,16 @@ class SoftmaxRegression:
     def top_features(self, vocab: list[str], class_name: str, k: int = 5) -> list[tuple[str, float]]:
         j = self.classes.index(class_name)
         w = self.W[:, j]
-        order = np.argsort(-w)[:k]
-        return [(vocab[i], float(w[i])) for i in order]
+        order = np.argsort(-w)
+        out = []
+        for i in order:
+            tok = vocab[i]
+            if tok in STOPWORDS:
+                continue
+            out.append((tok, float(w[i])))
+            if len(out) >= k:
+                break
+        return out
 
 
 def main() -> None:

@@ -1,0 +1,16 @@
+{
+  "task": "gat",
+  "concept": "Learned attention over neighbors instead of fixed \u00c2 weights",
+  "metrics": {
+    "test_acc": 0.8916666666666667,
+    "val_acc": 0.95,
+    "best_val": 0.949999988079071,
+    "device": "cuda"
+  },
+  "test_acc": 0.8916666666666667,
+  "vs_prev": "GCN 1.000 \u2192 GAT 0.892",
+  "you_should_feel": "\u6ce8\u610f\u529b\u8ba9\u91cd\u8981\u90bb\u5c45\u6743\u91cd\u5927\uff1b\u5f02\u6784\u90bb\u57df\u65f6\u66f4\u6709\u7528",
+  "ok": true,
+  "stage": "fs07_gat",
+  "saved_at": "2026-08-10T21:42:45Z"
+}

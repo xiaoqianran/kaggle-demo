@@ -1,39 +1,47 @@
 {
   "concept": "NLI-based zero-shot classification (entailment to label hypotheses)",
   "vs_previous": "S06/S11 need labeled training data; S13 only needs label names",
+  "model": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0",
+  "metric": {
+    "hits": 4,
+    "n": 4
+  },
   "demos": [
     {
       "text": "The team won the championship after a thrilling final",
+      "gold": "sports",
       "labels": [
         "sports",
-        "movie review",
         "business",
-        "science"
+        "science",
+        "movie review"
       ],
       "scores": [
-        0.4629735052585602,
-        0.23693223297595978,
-        0.20624859631061554,
-        0.09384559094905853
+        0.998823881149292,
+        0.0007959753856994212,
+        0.00027134642004966736,
+        0.00010878069588216022
       ]
     },
     {
       "text": "Investors cheered as company profits beat estimates",
+      "gold": "business",
       "labels": [
         "business",
+        "science",
         "sports",
-        "movie review",
-        "science"
+        "movie review"
       ],
       "scores": [
-        0.5487914681434631,
-        0.1853387951850891,
-        0.16491426527500153,
-        0.1009555459022522
+        0.997696042060852,
+        0.0019563366658985615,
+        0.00018196766905020922,
+        0.00016568343562539667
       ]
     },
     {
       "text": "I absolutely loved this wonderful cinema masterpiece",
+      "gold": "movie review",
       "labels": [
         "movie review",
         "science",
@@ -41,25 +49,26 @@
         "sports"
       ],
       "scores": [
-        0.7254949808120728,
-        0.10209403187036514,
-        0.09607191383838654,
-        0.07633902877569199
+        0.9987781643867493,
+        0.0005354128079488873,
+        0.0004980858648195863,
+        0.00018831501074600965
       ]
     },
     {
-      "text": "A new study explains how chlorophyll absorbs sunlight",
+      "text": "A new study explains how chlorophyll absorbs sunlight in plant leaves",
+      "gold": "science",
       "labels": [
-        "sports",
         "science",
-        "movie review",
-        "business"
+        "business",
+        "sports",
+        "movie review"
       ],
       "scores": [
-        0.28433138132095337,
-        0.26180213689804077,
-        0.25046098232269287,
-        0.203405499458313
+        0.9986329674720764,
+        0.0011092154309153557,
+        0.00013067800318822265,
+        0.00012715318007394671
       ]
     }
   ],

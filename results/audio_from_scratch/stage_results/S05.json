@@ -41,5 +41,5 @@
   "n_good": 3,
   "concept": "large-scale supervised seq2seq ASR",
   "comparison": "toy CTC alphabet vs natural language ASR",
-  "t": 1786397079.0268974
+  "t": 1786397602.187706
 }

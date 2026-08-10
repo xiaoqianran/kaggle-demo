@@ -19,7 +19,7 @@
       "concept": "Embedding+TextCNN end-to-end classification",
       "metric": {
         "test_acc": 1.0,
-        "train_time_s": 5.736380577087402,
+        "train_time_s": 4.101884126663208,
         "final_train_acc": 1.0
       },
       "vs_previous": "S01 handcrafted TF-IDF; S06 learns features from labels",
@@ -29,10 +29,10 @@
           "gold": "pos",
           "pred": "pos",
           "probs": {
-            "business": 0.11217745393514633,
-            "neg": 0.21873092651367188,
+            "business": 0.11217742413282394,
+            "neg": 0.2187308818101883,
             "pos": 0.5581073760986328,
-            "sports": 0.11098427325487137
+            "sports": 0.11098431050777435
           }
         },
         {
@@ -40,10 +40,10 @@
           "gold": "neg",
           "pred": "neg",
           "probs": {
-            "business": 0.07710786163806915,
-            "neg": 0.8199186325073242,
-            "pos": 0.03632190451025963,
-            "sports": 0.06665153056383133
+            "business": 0.07710783183574677,
+            "neg": 0.819918692111969,
+            "pos": 0.03632189333438873,
+            "sports": 0.06665153801441193
           }
         },
         {
@@ -51,10 +51,10 @@
           "gold": "business",
           "pred": "business",
           "probs": {
-            "business": 0.7553101181983948,
-            "neg": 0.036207228899002075,
-            "pos": 0.14434044063091278,
-            "sports": 0.06414226442575455
+            "business": 0.75531005859375,
+            "neg": 0.03620722517371178,
+            "pos": 0.1443404257297516,
+            "sports": 0.06414228677749634
           }
         },
         {
@@ -62,9 +62,9 @@
           "gold": "sports",
           "pred": "sports",
           "probs": {
-            "business": 0.10966574400663376,
-            "neg": 0.04697979986667633,
-            "pos": 0.11540132015943527,
+            "business": 0.10966569930315018,
+            "neg": 0.046979788690805435,
+            "pos": 0.11540128290653229,
             "sports": 0.7279531955718994
           }
         }
@@ -286,14 +286,18 @@
       "new_capability": "Neural machine translation (en→fr mini)"
     },
     "S10_tiny_transformer": {
-      "concept": "Multi-head Transformer encoder trained with MLM + causal LM",
+      "concept": "Multi-head Transformer + MLM + supervised contrastive features + causal LM",
       "metric": {
         "V": 165,
-        "d": 64,
-        "layers": 2,
-        "heads": 4
+        "d": 96,
+        "layers": 3,
+        "heads": 4,
+        "mean_related_cos": 0.9995744029680887,
+        "mean_unrelated_cos": 0.08765928819775581,
+        "min_related": 0.999413013458252,
+        "max_unrelated": 0.0880231112241745
       },
-      "vs_previous": "S09 RNN attention; S10 pure self-attention, bidirectional MLM",
+      "vs_previous": "S09 RNN attention; S10 self-attention + contrastive sentence space",
       "fill_mask": [
         {
           "template": [
@@ -303,10 +307,10 @@
             "movie"
           ],
           "mask_index": 1,
-          "pred": "love",
+          "pred": "acting",
           "filled": [
             "i",
-            "love",
+            "acting",
             "this",
             "movie"
           ]
@@ -344,19 +348,39 @@
       ],
       "features": [
         {
-          "a": "i love this movie",
-          "b": "fantastic film wonderful",
-          "cos": -0.0689646452665329
+          "a": "i love this movie amazing acting",
+          "b": "fantastic film highly recommend",
+          "cos": 0.999413013458252,
+          "related": true,
+          "tag": "pos-pos"
         },
         {
-          "a": "i love this movie",
-          "b": "team won championship",
-          "cos": 0.5033416152000427
+          "a": "i love this movie amazing acting",
+          "b": "goal scored seals victory",
+          "cos": 0.0880231112241745,
+          "related": false,
+          "tag": "pos-sports"
         },
         {
-          "a": "investors buy shares",
-          "b": "company profits growth",
-          "cos": 0.07572915405035019
+          "a": "stock market rose after earnings",
+          "b": "investors buy shares strong growth",
+          "cos": 0.9995265603065491,
+          "related": true,
+          "tag": "biz-biz"
+        },
+        {
+          "a": "this movie is terrible boring",
+          "b": "awful film waste of time",
+          "cos": 0.9997836351394653,
+          "related": true,
+          "tag": "neg-neg"
+        },
+        {
+          "a": "this movie is terrible boring",
+          "b": "stock market rose after earnings",
+          "cos": 0.08729546517133713,
+          "related": false,
+          "tag": "neg-biz"
         }
       ],
       "generation": [
@@ -368,7 +392,7 @@
           "generated": [
             "i",
             "love",
-            "cats"
+            "dogs"
           ]
         },
         {
@@ -379,8 +403,7 @@
           "generated": [
             "the",
             "team",
-            "is",
-            "nice"
+            "is"
           ]
         },
         {

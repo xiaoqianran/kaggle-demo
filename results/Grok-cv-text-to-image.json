@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-text-to-image",
+  "task": "text-to-image",
+  "domain": "cv",
+  "model": "nota-ai/bk-sdm-tiny",
+  "prompt": "a small orange cat sitting on a wooden table, photo",
+  "image_shape": [
+    256,
+    256,
+    3
+  ],
+  "inference_s": 1.6446387767791748,
+  "elapsed_s": 54.81970548629761,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-text-to-3d",
+  "task": "text-to-3d",
+  "domain": "cv",
+  "model": "clip-vit-base + procedural-mesh",
+  "prompt": "a simple wooden chair",
+  "num_points": 1020,
+  "artifact": "/kaggle/working/text3d.ply",
+  "embedding_norm": 23.476558685302734,
+  "inference_s": 0.5833992958068848,
+  "elapsed_s": 35.414021253585815,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

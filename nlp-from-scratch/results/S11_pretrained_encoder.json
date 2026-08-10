@@ -2,22 +2,22 @@
   "concept": "Pretrained Transformer encoder + task heads (transfer learning)",
   "vs_previous": "S10 tiny from-scratch Transformer; S11 large pretrained knowledge",
   "fill_mask": {
-    "input": "The capital of France is <mask>.",
+    "input": "The capital of France is [MASK].",
     "top": [
       {
-        "seq": "The capital of France is Paris.",
-        "score": 0.2703702449798584,
-        "token": " Paris"
+        "seq": "the capital of france is paris.",
+        "score": 0.4167884886264801,
+        "token": "paris"
       },
       {
-        "seq": "The capital of France is Lyon.",
-        "score": 0.055882930755615234,
-        "token": " Lyon"
+        "seq": "the capital of france is lille.",
+        "score": 0.07141659408807755,
+        "token": "lille"
       },
       {
-        "seq": "The capital of France is Barcelona.",
-        "score": 0.029897717759013176,
-        "token": " Barcelona"
+        "seq": "the capital of france is lyon.",
+        "score": 0.0633925125002861,
+        "token": "lyon"
       }
     ]
   },
@@ -89,18 +89,18 @@
   "qa": [
     {
       "q": "What do plants produce during photosynthesis?",
-      "answer": "chemical energy",
-      "score": 0.3737497627735138
+      "answer": "oxygen and glucose",
+      "score": 0.9029321074485779
     },
     {
       "q": "What does Newton's second law say?",
       "answer": "force equals mass times acceleration",
-      "score": 0.8794702887535095
+      "score": 0.9337928891181946
     },
     {
       "q": "When did the French Revolution begin?",
       "answer": "1789",
-      "score": 0.9737656712532043
+      "score": 0.9754495024681091
     }
   ],
   "new_capability": "Production-quality multi-task NLP via pretrained encoders"

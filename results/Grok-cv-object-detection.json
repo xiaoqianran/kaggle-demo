@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-object-detection",
+  "task": "object-detection",
+  "domain": "cv",
+  "model": "fasterrcnn_mobilenet_v3_large_fpn",
+  "num_detections": 1,
+  "detections": [
+    {
+      "label": "cat",
+      "score": 0.9394458532333374,
+      "box": [
+        46.4808235168457,
+        7.559131145477295,
+        274.1883850097656,
+        284.6777038574219
+      ]
+    }
+  ],
+  "inference_s": 1.3545384407043457,
+  "elapsed_s": 9.026154279708862,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

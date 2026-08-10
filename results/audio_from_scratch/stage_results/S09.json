@@ -9,9 +9,14 @@
     "denoised",
     "brighter"
   ],
-  "f0_orig": 133.33333333333334,
-  "f0_pitch_up": 168.42105263157896,
+  "sine_f0": 160.0,
+  "sine_f0_up": 202.53164556962025,
+  "sine_f0_down": 126.98412698412699,
+  "ratio_up": 1.2658227848101267,
+  "ratio_down": 0.7936507936507937,
+  "expected_ratio": 1.2599210498948732,
+  "method": "resample pitch shift (duration scales); TD frame hop time-stretch",
   "concept": "signal processing A2A: pitch/time/noise/timbre",
   "comparison": "generation (S08) vs transformation (S09)",
-  "t": 1786397083.2574873
+  "t": 1786397606.275186
 }

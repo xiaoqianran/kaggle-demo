@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-mask-generation",
+  "task": "mask-generation",
+  "domain": "cv",
+  "model": "facebook/sam-vit-base",
+  "mask_shape": [
+    256,
+    256
+  ],
+  "mask_coverage": 0.3413543701171875,
+  "iou_scores": [
+    0.9342621564865112,
+    0.9715267419815063,
+    0.5422149896621704
+  ],
+  "inference_s": 1.2031528949737549,
+  "elapsed_s": 30.935799837112427,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

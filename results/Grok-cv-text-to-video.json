@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-text-to-video",
+  "task": "text-to-video",
+  "domain": "cv",
+  "model": "nota-ai/bk-sdm-tiny",
+  "prompt": "a red car driving on a mountain road, cinematic",
+  "num_frames": 6,
+  "frame_shape": [
+    256,
+    256,
+    3
+  ],
+  "inference_s": 3.4963440895080566,
+  "elapsed_s": 53.2385618686676,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "video_path": "/kaggle/working/t2v.mp4"
+}

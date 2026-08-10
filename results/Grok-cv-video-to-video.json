@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-video-to-video",
+  "task": "video-to-video",
+  "domain": "cv",
+  "model": "torch-gpu-stylize-v2v",
+  "num_frames": 10,
+  "frame_shape": [
+    256,
+    256,
+    3
+  ],
+  "inference_s": 0.9568140506744385,
+  "elapsed_s": 5.631937026977539,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "video_path": "/kaggle/working/v2v.mp4"
+}

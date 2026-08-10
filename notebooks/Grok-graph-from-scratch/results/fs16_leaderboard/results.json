@@ -1,0 +1,56 @@
+{
+  "task": "leaderboard",
+  "concept": "Full GML map: structureless \u2192 classical \u2192 MP \u2192 attention \u2192 expressive \u2192 modern/SSL",
+  "node_classification": {
+    "feat": 0.525,
+    "LP": 1.0,
+    "spectral": 1.0,
+    "DeepWalk": 1.0,
+    "meanAgg": 0.8833333333333333,
+    "GCN": 1.0,
+    "GAT": 0.8916666666666667,
+    "GIN": 1.0,
+    "GraphTR": 0.8333333333333334,
+    "SSL": 1.0,
+    "ResGCN": 1.0
+  },
+  "link_prediction_auc": 0.7163074152873864,
+  "graph_classification_acc": 0.8333333333333334,
+  "hetero_acc": 1.0,
+  "ssl_acc": 1.0,
+  "over_smoothing_collapse_ratio": 0.008455120329120635,
+  "best_node": "LP",
+  "map": {
+    "from_zero": [
+      "fs00",
+      "fs01"
+    ],
+    "classic": [
+      "fs02",
+      "fs03",
+      "fs04"
+    ],
+    "key_breakthroughs": [
+      "fs05",
+      "fs06",
+      "fs07",
+      "fs08"
+    ],
+    "modern_systems": [
+      "fs09",
+      "fs10",
+      "fs11",
+      "fs12"
+    ],
+    "frontier": [
+      "fs13",
+      "fs14",
+      "fs15",
+      "fs16"
+    ]
+  },
+  "you_should_feel": "\u56fe\u80fd\u529b\u94fe\uff1a\u7279\u5f81\u2192\u6807\u7b7e\u4f20\u64ad\u2192\u8c31/\u6e38\u8d70\u2192\u6d88\u606f\u4f20\u9012\u2192\u6ce8\u610f\u529b/\u8868\u8fbe\u529b\u2192\u4efb\u52a1\u65cf\u2192Transformer/SSL/\u8fc7\u5e73\u6ed1\u6cbb\u7406",
+  "ok": true,
+  "stage": "fs16_leaderboard",
+  "saved_at": "2026-08-10T21:43:05Z"
+}

@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "stage": "09-imitation-offline",
+  "title": "Grok-rl-09-imitation-offline",
+  "metrics": {
+    "expert": -6.0,
+    "bc": -6.0,
+    "offline_dqn": -100.0,
+    "cql": -4.0
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 22.231109142303467,
+  "concept": "learn from fixed demos without online exploration; CQL conservatively regularizes Q",
+  "new_capability": "deployable policies from logged robot data",
+  "compare_to_previous": "Stages07-08 needed online interaction; Stage09 only uses offline dataset"
+}

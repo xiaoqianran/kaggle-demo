@@ -1,12 +1,16 @@
 {
-  "concept": "Multi-head Transformer encoder trained with MLM + causal LM",
+  "concept": "Multi-head Transformer + MLM + supervised contrastive features + causal LM",
   "metric": {
     "V": 165,
-    "d": 64,
-    "layers": 2,
-    "heads": 4
+    "d": 96,
+    "layers": 3,
+    "heads": 4,
+    "mean_related_cos": 0.9995744029680887,
+    "mean_unrelated_cos": 0.08765928819775581,
+    "min_related": 0.999413013458252,
+    "max_unrelated": 0.0880231112241745
   },
-  "vs_previous": "S09 RNN attention; S10 pure self-attention, bidirectional MLM",
+  "vs_previous": "S09 RNN attention; S10 self-attention + contrastive sentence space",
   "fill_mask": [
     {
       "template": [
@@ -16,10 +20,10 @@
         "movie"
       ],
       "mask_index": 1,
-      "pred": "love",
+      "pred": "acting",
       "filled": [
         "i",
-        "love",
+        "acting",
         "this",
         "movie"
       ]
@@ -57,19 +61,39 @@
   ],
   "features": [
     {
-      "a": "i love this movie",
-      "b": "fantastic film wonderful",
-      "cos": -0.0689646452665329
+      "a": "i love this movie amazing acting",
+      "b": "fantastic film highly recommend",
+      "cos": 0.999413013458252,
+      "related": true,
+      "tag": "pos-pos"
     },
     {
-      "a": "i love this movie",
-      "b": "team won championship",
-      "cos": 0.5033416152000427
+      "a": "i love this movie amazing acting",
+      "b": "goal scored seals victory",
+      "cos": 0.0880231112241745,
+      "related": false,
+      "tag": "pos-sports"
     },
     {
-      "a": "investors buy shares",
-      "b": "company profits growth",
-      "cos": 0.07572915405035019
+      "a": "stock market rose after earnings",
+      "b": "investors buy shares strong growth",
+      "cos": 0.9995265603065491,
+      "related": true,
+      "tag": "biz-biz"
+    },
+    {
+      "a": "this movie is terrible boring",
+      "b": "awful film waste of time",
+      "cos": 0.9997836351394653,
+      "related": true,
+      "tag": "neg-neg"
+    },
+    {
+      "a": "this movie is terrible boring",
+      "b": "stock market rose after earnings",
+      "cos": 0.08729546517133713,
+      "related": false,
+      "tag": "neg-biz"
     }
   ],
   "generation": [
@@ -81,7 +105,7 @@
       "generated": [
         "i",
         "love",
-        "cats"
+        "dogs"
       ]
     },
     {
@@ -92,8 +116,7 @@
       "generated": [
         "the",
         "team",
-        "is",
-        "nice"
+        "is"
       ]
     },
     {

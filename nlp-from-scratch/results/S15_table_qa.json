@@ -1,5 +1,5 @@
 {
-  "concept": "Table QA via TAPAS pipeline + structured pandas baseline",
+  "concept": "Table QA via neural row retrieval + column projection (TAPAS attempted)",
   "vs_previous": "S05 text-only retrieval QA; S15 structured table reasoning",
   "table": {
     "City": [
@@ -34,25 +34,200 @@
   "demos": [
     {
       "q": "Which city is in Japan?",
+      "gold": "Tokyo",
       "pandas_baseline": "Tokyo",
-      "tapas_error": "'token_type_ids'"
+      "neural_row_retrieve": {
+        "answer": "Tokyo",
+        "row_index": 0,
+        "row_score": 0.8484796524047852,
+        "row": {
+          "City": "Tokyo",
+          "Country": "Japan",
+          "Population_M": "37",
+          "Language": "Japanese"
+        },
+        "all_row_scores": [
+          {
+            "score": 0.8484796524047852,
+            "i": 0,
+            "desc": "City Tokyo is in Country Japan; Population_M 37 million; Language Japanese."
+          },
+          {
+            "score": 0.286790668964386,
+            "i": 3,
+            "desc": "City Sao Paulo is in Country Brazil; Population_M 22 million; Language Portugues"
+          },
+          {
+            "score": 0.2715669274330139,
+            "i": 4,
+            "desc": "City New York is in Country USA; Population_M 19 million; Language English."
+          },
+          {
+            "score": 0.2257751226425171,
+            "i": 2,
+            "desc": "City Cairo is in Country Egypt; Population_M 22 million; Language Arabic."
+          },
+          {
+            "score": 0.17460089921951294,
+            "i": 1,
+            "desc": "City Paris is in Country France; Population_M 11 million; Language French."
+          }
+        ]
+      },
+      "tapas_answer": null,
+      "ok_pandas": true,
+      "ok_neural": true,
+      "ok_tapas": false
     },
     {
       "q": "What language is spoken in Paris?",
+      "gold": "French",
       "pandas_baseline": "French",
-      "tapas_error": "'token_type_ids'"
+      "neural_row_retrieve": {
+        "answer": "French",
+        "row_index": 1,
+        "row_score": 0.8607532024383545,
+        "row": {
+          "City": "Paris",
+          "Country": "France",
+          "Population_M": "11",
+          "Language": "French"
+        },
+        "all_row_scores": [
+          {
+            "score": 0.8607532024383545,
+            "i": 1,
+            "desc": "City Paris is in Country France; Population_M 11 million; Language French."
+          },
+          {
+            "score": 0.3270403742790222,
+            "i": 3,
+            "desc": "City Sao Paulo is in Country Brazil; Population_M 22 million; Language Portugues"
+          },
+          {
+            "score": 0.32301366329193115,
+            "i": 2,
+            "desc": "City Cairo is in Country Egypt; Population_M 22 million; Language Arabic."
+          },
+          {
+            "score": 0.26598435640335083,
+            "i": 4,
+            "desc": "City New York is in Country USA; Population_M 19 million; Language English."
+          },
+          {
+            "score": 0.24439606070518494,
+            "i": 0,
+            "desc": "City Tokyo is in Country Japan; Population_M 37 million; Language Japanese."
+          }
+        ]
+      },
+      "tapas_answer": null,
+      "ok_pandas": true,
+      "ok_neural": true,
+      "ok_tapas": false
     },
     {
       "q": "Which city has a population of 37 million?",
+      "gold": "Tokyo",
       "pandas_baseline": "Tokyo",
-      "tapas_error": "'token_type_ids'"
+      "neural_row_retrieve": {
+        "answer": "Tokyo",
+        "row_index": 0,
+        "row_score": 0.8543595671653748,
+        "row": {
+          "City": "Tokyo",
+          "Country": "Japan",
+          "Population_M": "37",
+          "Language": "Japanese"
+        },
+        "all_row_scores": [
+          {
+            "score": 0.8543595671653748,
+            "i": 0,
+            "desc": "City Tokyo is in Country Japan; Population_M 37 million; Language Japanese."
+          },
+          {
+            "score": 0.5408939123153687,
+            "i": 2,
+            "desc": "City Cairo is in Country Egypt; Population_M 22 million; Language Arabic."
+          },
+          {
+            "score": 0.5138314962387085,
+            "i": 4,
+            "desc": "City New York is in Country USA; Population_M 19 million; Language English."
+          },
+          {
+            "score": 0.5104694366455078,
+            "i": 3,
+            "desc": "City Sao Paulo is in Country Brazil; Population_M 22 million; Language Portugues"
+          },
+          {
+            "score": 0.48988938331604004,
+            "i": 1,
+            "desc": "City Paris is in Country France; Population_M 11 million; Language French."
+          }
+        ]
+      },
+      "tapas_answer": null,
+      "ok_pandas": true,
+      "ok_neural": true,
+      "ok_tapas": false
     },
     {
       "q": "What is the country of Cairo?",
+      "gold": "Egypt",
       "pandas_baseline": "Egypt",
-      "tapas_error": "'token_type_ids'"
+      "neural_row_retrieve": {
+        "answer": "Egypt",
+        "row_index": 2,
+        "row_score": 0.864998722076416,
+        "row": {
+          "City": "Cairo",
+          "Country": "Egypt",
+          "Population_M": "22",
+          "Language": "Arabic"
+        },
+        "all_row_scores": [
+          {
+            "score": 0.864998722076416,
+            "i": 2,
+            "desc": "City Cairo is in Country Egypt; Population_M 22 million; Language Arabic."
+          },
+          {
+            "score": 0.36092209815979004,
+            "i": 3,
+            "desc": "City Sao Paulo is in Country Brazil; Population_M 22 million; Language Portugues"
+          },
+          {
+            "score": 0.2712554931640625,
+            "i": 0,
+            "desc": "City Tokyo is in Country Japan; Population_M 37 million; Language Japanese."
+          },
+          {
+            "score": 0.26960405707359314,
+            "i": 1,
+            "desc": "City Paris is in Country France; Population_M 11 million; Language French."
+          },
+          {
+            "score": 0.2546875476837158,
+            "i": 4,
+            "desc": "City New York is in Country USA; Population_M 19 million; Language English."
+          }
+        ]
+      },
+      "tapas_answer": null,
+      "ok_pandas": true,
+      "ok_neural": true,
+      "ok_tapas": false
     }
   ],
-  "tapas_available": true,
+  "tapas_available": false,
+  "tapas_error": "tokenizer returned keys ['input_ids', 'attention_mask'] without token_type_ids (transformers TAPAS wiring regression)",
+  "hits": {
+    "pandas": 4,
+    "neural": 4,
+    "tapas": 0
+  },
+  "method": "neural_row_retrieve_plus_column_project",
   "new_capability": "Answer questions over relational tables"
 }

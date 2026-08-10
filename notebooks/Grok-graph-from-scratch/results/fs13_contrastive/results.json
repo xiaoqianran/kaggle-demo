@@ -1,0 +1,15 @@
+{
+  "task": "contrastive",
+  "concept": "Two graph augmentations + InfoNCE; linear probe (GraphCL spirit)",
+  "metrics": {
+    "test_acc": 1.0,
+    "val_acc": 0.975,
+    "device": "cuda"
+  },
+  "test_acc": 1.0,
+  "vs_prev": "supervised ref 1.000 \u2192 SSL 1.000",
+  "you_should_feel": "\u81ea\u76d1\u7763\u56fe\u5b66\u4e60\uff1a\u5c11\u6807\u7b7e\u65f6\u9760\u589e\u5f3a\u4e0e\u5bf9\u6bd4",
+  "ok": true,
+  "stage": "fs13_contrastive",
+  "saved_at": "2026-08-10T21:43:03Z"
+}

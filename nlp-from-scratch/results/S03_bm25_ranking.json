@@ -184,5 +184,5 @@
   "new_capability": "Principled multi-document ranking for search-like queries",
   "previous": "S02 similarity was pairwise vectors; BM25 is IR ranking",
   "stage": "S03_bm25_ranking",
-  "saved_at": "2026-08-10T21:08:21.406353+00:00"
+  "saved_at": "2026-08-10T21:38:18.755099+00:00"
 }

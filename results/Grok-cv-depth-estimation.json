@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-depth-estimation",
+  "task": "depth-estimation",
+  "domain": "cv",
+  "model": "Intel/dpt-hybrid-midas",
+  "depth_shape": [
+    384,
+    384
+  ],
+  "depth_min": 0.0,
+  "depth_max": 255.0,
+  "inference_s": 0.949354887008667,
+  "elapsed_s": 31.73141098022461,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

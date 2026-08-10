@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-video-classification",
+  "task": "video-classification",
+  "domain": "cv",
+  "model": "MCG-NJU/videomae-base-finetuned-kinetics",
+  "label": "petting cat",
+  "confidence": 0.698474645614624,
+  "num_frames": 16,
+  "inference_s": 0.8992784023284912,
+  "elapsed_s": 32.109819412231445,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

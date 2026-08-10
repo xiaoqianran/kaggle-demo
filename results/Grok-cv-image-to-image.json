@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-image-to-image",
+  "task": "image-to-image",
+  "domain": "cv",
+  "model": "nota-ai/bk-sdm-tiny",
+  "prompt": "oil painting of a cat, vivid colors",
+  "image_shape": [
+    256,
+    256,
+    3
+  ],
+  "inference_s": 1.7409732341766357,
+  "elapsed_s": 44.78925848007202,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

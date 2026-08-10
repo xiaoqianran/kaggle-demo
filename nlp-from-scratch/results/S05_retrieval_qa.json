@@ -104,7 +104,7 @@
       "doc_id": "d1",
       "doc_title": "Photosynthesis",
       "sentence": "Chlorophyll in leaves absorbs light.",
-      "answer": "chlorophyll in",
+      "answer": "Chlorophyll in leaves",
       "retrieval": [
         {
           "id": "d1",
@@ -160,5 +160,5 @@
   "previous": "S03 ranking only; S05 returns an answer span",
   "limitation": "Brittle paraphrase; neural RC comes later",
   "stage": "S05_retrieval_qa",
-  "saved_at": "2026-08-10T21:09:39.465316+00:00"
+  "saved_at": "2026-08-10T21:38:18.878989+00:00"
 }

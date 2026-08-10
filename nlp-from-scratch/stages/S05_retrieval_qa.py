@@ -66,6 +66,15 @@ def extract_span(question: str, sent: str) -> str:
         if nums:
             return nums[0]
 
+    # absorb/absorbs patterns (e.g. chlorophyll absorbs light)
+    m = re.search(r"([A-Za-z][A-Za-z\s-]{2,40}?)\s+absorbs?\s+", sent, re.I)
+    if m:
+        return m.group(1).strip()
+    m = re.search(r"absorbs?\s+(.+?)(?:\.|$)", sent, re.I)
+    if m and "what" in qlow:
+        # "What absorbs X" → subject before absorbs is better; already handled above
+        pass
+
     # produce/become patterns
     m = re.search(
         r"(?:become|becomes|producing|produce|produced)\s+(.+?)(?:\.|$)",

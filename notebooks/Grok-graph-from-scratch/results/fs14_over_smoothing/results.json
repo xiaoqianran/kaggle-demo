@@ -1,0 +1,15 @@
+{
+  "task": "over_smoothing",
+  "concept": "Deep message passing \u2192 node representations become indistinguishable",
+  "metrics": {
+    "pairwise_dist_depth0": 5.7186513475425365,
+    "pairwise_dist_depth5": 0.13317680159275194,
+    "pairwise_dist_depth10": 0.04835188526376002,
+    "collapse_ratio": 0.008455120329120635
+  },
+  "vs_prev": "\u89e3\u91ca\u4e3a\u4f55\u4e0d\u80fd\u65e0\u8111\u5806 GCN \u5c42",
+  "you_should_feel": "\u8fc7\u5e73\u6ed1\u662f\u6df1\u5c42 GNN \u7ecf\u5178\u75c5\uff1b\u6b8b\u5dee/\u6ce8\u610f\u529b/\u6269\u6563\u7f13\u89e3",
+  "ok": true,
+  "stage": "fs14_over_smoothing",
+  "saved_at": "2026-08-10T21:43:03Z"
+}

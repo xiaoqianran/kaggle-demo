@@ -1,0 +1,20 @@
+{
+  "id": "shuhuaqqq/grok-cv-text-to-3d",
+  "title": "Grok-cv-text-to-3d",
+  "code_file": "Grok-cv-text-to-3d.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "keywords": [
+    "gpu",
+    "beginner"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

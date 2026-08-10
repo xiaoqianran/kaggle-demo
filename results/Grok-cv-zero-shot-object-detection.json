@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-zero-shot-object-detection",
+  "task": "zero-shot-object-detection",
+  "domain": "cv",
+  "model": "google/owlvit-base-patch32",
+  "num_detections": 0,
+  "detections": [],
+  "inference_s": 1.3007328510284424,
+  "elapsed_s": 32.64046049118042,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

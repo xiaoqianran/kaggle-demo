@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "stage": "06-classical-robotics",
+  "title": "Grok-robotics-06-classical",
+  "metrics": {
+    "pd_mean_err": 0.7423524326541309,
+    "weak_pd_mean_err": 1.1933288852948534,
+    "openloop_mean_err": 1.5201653494178082
+  },
+  "gpu": {
+    "cuda": true,
+    "device_count": 2,
+    "names": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "elapsed_sec": 0.42035531997680664,
+  "concept": "FK/IK + PD feedback tracks trajectories without learning",
+  "new_capability": "classical robot control baseline that RL must eventually beat or match in sample efficiency",
+  "compare_to_previous": "Stages01-05 were decision-theoretic; Stage06 introduces embodiment geometry and feedback control"
+}

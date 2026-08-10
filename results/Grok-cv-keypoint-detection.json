@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-keypoint-detection",
+  "task": "keypoint-detection",
+  "domain": "cv",
+  "model": "keypointrcnn_resnet50_fpn",
+  "num_instances": 1,
+  "scores": [
+    0.6259782314300537
+  ],
+  "keypoints_shape": [
+    1,
+    17,
+    3
+  ],
+  "inference_s": 1.5609633922576904,
+  "elapsed_s": 11.293680191040039,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  }
+}

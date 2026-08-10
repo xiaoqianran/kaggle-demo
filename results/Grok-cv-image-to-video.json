@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "notebook": "Grok-cv-image-to-video",
+  "task": "image-to-video",
+  "domain": "cv",
+  "model": "affine-motion+optional-bk-sdm-tiny",
+  "num_frames": 12,
+  "frame_shape": [
+    256,
+    256,
+    3
+  ],
+  "diffusion_refine": true,
+  "inference_s": 0.41433238983154297,
+  "elapsed_s": 51.35417103767395,
+  "gpu": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "devices": [
+      "Tesla T4",
+      "Tesla T4"
+    ]
+  },
+  "video_path": "/kaggle/working/i2v.mp4"
+}

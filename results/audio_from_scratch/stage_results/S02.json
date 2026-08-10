@@ -11,5 +11,5 @@
   "acc_cnn": 1.0,
   "comparison": "handcrafted=0.975 vs Mel-CNN=1.0",
   "concept": "classification = features\u2192label; CNN learns features on Mel",
-  "t": 1786397033.7401633
+  "t": 1786397556.1895792
 }

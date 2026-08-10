@@ -11,6 +11,7 @@ Notebook：`Grok-{领域}-{任务}`
 |------|------|------|--------|
 | `Grok-ml-t4x2-smoke` | ml | t4x2-smoke | [qiaojiajin/grok-ml-t4x2-smoke](https://www.kaggle.com/code/qiaojiajin/grok-ml-t4x2-smoke) |
 | `Grok-tabular-from-scratch` | tabular | from-scratch FS00–21 | [yunianan/grok-tabular-from-scratch](https://www.kaggle.com/code/yunianan/grok-tabular-from-scratch) ✅ |
+| `Grok-graph-from-scratch` | graph | from-scratch FS00–16 | [yunianan/grok-graph-from-scratch](https://www.kaggle.com/code/yunianan/grok-graph-from-scratch) ✅ |
 | `Grok-ml-gpu-smoke` | ml | gpu-smoke | [zhengyingxiong/grok-ml-gpu-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-ml-gpu-smoke) |
 | `Grok-gpu-t4x2-smoke` | gpu | t4x2-smoke | [zhengyingxiong/grok-gpu-t4x2-smoke](https://www.kaggle.com/code/zhengyingxiong/grok-gpu-t4x2-smoke) |
 | `Grok-ML-gpu-smoke` | ML | gpu-smoke | [yunianan/grok-ml-gpu-smoke](https://www.kaggle.com/code/yunianan/grok-ml-gpu-smoke) ✅ |
@@ -87,6 +88,42 @@ python scripts/push_and_wait.py -p notebooks/Grok-GPU-T4x2-Smoke --accelerator N
 - `results/audio_from_scratch/` · Speech/Audio From Scratch S00–S10 全通过
 - `PROGRESS.md` · 实验进度与能力阶梯
 
+
+## 计算机视觉（Grok-cv-*）— 19 任务全量 T4×2 跑通
+
+命名：`Grok-cv-{任务}`。全部在账号 `shuhuaqqq` 上以 **NvidiaTeslaT4（T4×2）** 后台执行，`result.json` + `SMOKE_OK`。
+
+| 任务 | Notebook | Kaggle |
+|------|----------|--------|
+| 深度估计 | Grok-cv-depth-estimation | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-depth-estimation) ✅ |
+| 图像分类 | Grok-cv-image-classification | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-classification) ✅ |
+| 目标检测 | Grok-cv-object-detection | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-object-detection) ✅ |
+| 图像分割 | Grok-cv-image-segmentation | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-segmentation) ✅ |
+| 文本转图像 | Grok-cv-text-to-image | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-image) ✅ |
+| 图像转文本 | Grok-cv-image-to-text | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-text) ✅ |
+| 图像到图像 | Grok-cv-image-to-image | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-image) ✅ |
+| 图像转视频 | Grok-cv-image-to-video | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-video) ✅ |
+| 无条件图像生成 | Grok-cv-unconditional-image-generation | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-unconditional-image-generation) ✅ |
+| 视频分类 | Grok-cv-video-classification | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-video-classification) ✅ |
+| 文字转视频 | Grok-cv-text-to-video | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-video) ✅ |
+| 零样本图像分类 | Grok-cv-zero-shot-image-classification | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-zero-shot-image-classification) ✅ |
+| 掩模生成 | Grok-cv-mask-generation | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-mask-generation) ✅ |
+| 零样本目标检测 | Grok-cv-zero-shot-object-detection | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-zero-shot-object-detection) ✅ |
+| 文本转3D | Grok-cv-text-to-3d | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-text-to-3d) ✅ |
+| 图像到3D | Grok-cv-image-to-3d | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-to-3d) ✅ |
+| 图像特征提取 | Grok-cv-image-feature-extraction | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-image-feature-extraction) ✅ |
+| 关键点检测 | Grok-cv-keypoint-detection | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-keypoint-detection) ✅ |
+| 视频转视频 | Grok-cv-video-to-video | [link](https://www.kaggle.com/code/shuhuaqqq/grok-cv-video-to-video) ✅ |
+
+批量复跑：
+
+```bash
+python scripts/run_cv_batch.py                 # 全部 19 个
+python scripts/run_cv_batch.py depth-estimation image-classification
+```
+
+结果快照：`results/Grok-cv-*.json` + `results/Grok-cv-ALL-SUMMARY.json`
+
 ## 常用命令
 
 ```bash
@@ -117,9 +154,26 @@ Repo: https://github.com/xiaoqianran/kaggle-demo
 
 ## RL + Robotics From Scratch
 
-完整实验地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)  
-进度：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
+完整 **From Scratch 实验地图**（强化学习 × 机器人）：
 
+- 地图：[`docs/rl-robotics-from-scratch/ROADMAP.md`](docs/rl-robotics-from-scratch/ROADMAP.md)
+- 进度（10/10 DONE）：[`docs/rl-robotics-from-scratch/PROGRESS.md`](docs/rl-robotics-from-scratch/PROGRESS.md)
+- 结果快照：[`results/rl-robotics/`](results/rl-robotics/)
+
+| Stage | Notebook | Kaggle |
+|------:|----------|--------|
+| 01 | `Grok-rl-01-bandits` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-01-bandits) |
+| 02 | `Grok-rl-02-mdp-dp` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-02-mdp-dp) |
+| 03 | `Grok-rl-03-mc-td-qlearning` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-03-mc-td-qlearning) |
+| 04 | `Grok-rl-04-dqn` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-04-dqn) |
+| 05 | `Grok-rl-05-pg-ppo` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-05-pg-ppo) |
+| 06 | `Grok-robotics-06-classical` | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-06-classical) |
+| 07 | `Grok-rl-07-continuous-sac` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-07-continuous-sac) |
+| 08 | `Grok-robotics-08-mbrl-mpc` | [link](https://www.kaggle.com/code/qixiaer/grok-robotics-08-mbrl-mpc) |
+| 09 | `Grok-rl-09-imitation-offline` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-09-imitation-offline) |
+| 10 | `Grok-rl-10-frontier-dt` | [link](https://www.kaggle.com/code/qixiaer/grok-rl-10-frontier-dt) |
+
+全部在 **Kaggle T4×2** 后台跑通；本地只做 push/轮询。
 全部在 **Kaggle T4×2** 执行。Notebook 命名 `Grok-rl-*` / `Grok-robotics-*`。
 ## NLP From Scratch
 

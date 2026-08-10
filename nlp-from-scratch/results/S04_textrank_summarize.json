@@ -81,5 +81,5 @@
   "new_capability": "Unsupervised extractive summarization without labels",
   "previous": "S03 ranks docs; S04 ranks sentences inside a doc",
   "stage": "S04_textrank_summarize",
-  "saved_at": "2026-08-10T21:08:21.488131+00:00"
+  "saved_at": "2026-08-10T21:38:18.837971+00:00"
 }
