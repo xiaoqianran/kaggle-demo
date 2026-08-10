@@ -193,5 +193,5 @@
   "new_capability": "Dense feature extraction & soft semantic similarity",
   "previous": "S01 sparse TF-IDF",
   "stage": "S02_embeddings_similarity",
-  "saved_at": "2026-08-10T21:09:15.903163+00:00"
+  "saved_at": "2026-08-10T21:24:53.926431+00:00"
 }

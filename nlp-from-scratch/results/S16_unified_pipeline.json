@@ -3,7 +3,9 @@
   "vs_previous": "Entire route from S00 bags-of-words to production pretrained stacks",
   "unified": {
     "input_text": "John visited Paris and said the film was absolutely wonderful.",
-    "fill_mask": "Paris is the capital of Europe.",
+    "fill_mask_input": "The capital of France is [MASK].",
+    "fill_mask": "the capital of france is paris.",
+    "fill_mask_token": "paris",
     "classification": {
       "label": "POSITIVE",
       "score": 0.9998854398727417
@@ -19,7 +21,7 @@
       }
     ],
     "qa": {
-      "score": 0.9827024936676025,
+      "score": 0.9811787605285645,
       "start": 13,
       "end": 18,
       "answer": "Paris"
@@ -40,7 +42,7 @@
       ]
     },
     "translation_fr": "J'adore ce film merveilleux",
-    "summarization": "John visited Paris in 2024.",
+    "summarization": "the film was absolutely wonderful and moving.",
     "similarity": {
       "a": "I love this wonderful film",
       "b": "This movie is amazing",
